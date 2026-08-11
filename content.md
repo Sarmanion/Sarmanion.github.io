@@ -17,23 +17,23 @@
 
 # Проекты
 
-| id | title | company | genre | platform | status | grade | period | result | link | image |
-|---|---|---|---|---|---|---|---|---|---|---|
-| 15 | Трон Мидгарда | RixGames | Баттлер | Кроссплатформа | Софт-ланч | Миддл | апр 2025 – дек 2025 | Проект вышел в софт-ланч; игровые системы и мета-игра спроектированы с нуля. | https://ok.ru/game/dragonthrone | https://i.okcdn.ru/i?r=CID0QJv1RQZIqEhgaodS9yccDS-rYcy4Tl-9KXHwTM1BNk7ZfXSllfk-N6m2mBjNBD4h5CLn4RLqAy3atQUOjwd9QmPgsSpWAmNEZAikMDcn9b5GSj0NDsmswZfwOwCk3xU_AcsrhWW6LFDJkdZG2XYNTBg4qvun20jMt9giI1oA2zRx88TeC0L9VocHx0mGRql6FYJo6FlSA4v0xX_cd4e8gaH0_m65Ua7clqeAdLCwQqw2pCMuSq14iHgiGnQ-zk4LMVNiLdsmlCslEubypmVrp7s9e0g58cYd7JbY__1i47pp-dlJwGqm94DKofZ_YXd6dqLqAAAAKQ |
-| 5 | Stellar Wind Idle | Entropy Games | Баттлер | Мобильная | Вышла | Джуниор | июн 2021 – фев 2022 | Релиз расширенной версии: 20 кораблей, 9 режимов, новая мета; стабильно $20 000/мес; lifetime 1→2 года. | https://play.google.com/store/apps/details?id=com.StellarWind.StellarWindIdle | https://pewpewgamers.com/wp-content/uploads/2024/05/maxresdefault-1_11zon-2.jpg |
-| 6 | Encased | Dark Crystal Games | cRPG | PC | Вышла | Джуниор | апр 2022 – май 2022 | Выявлены системные проблемы баланса выпущенной cRPG; предложены решения. | https://encasedgame.com | https://cdn.akamai.steamstatic.com/steam/apps/921800/capsule_616x353.jpg |
-| 14 | Iron Frontier | Bibamus | RTS | PC | В разработке | Миддл | май 2024 – 2026 | Система перков реализована в релизе; баланс, контент в Unity. | https://store.steampowered.com/app/2131290/Iron_Frontier | https://cdn.akamai.steamstatic.com/steam/apps/2131290/capsule_616x353.jpg |
-| 11 | Battle Ships | Фриланс | Симулятор (PvP) | Мобильная | В разработке | Миддл | июн 2023 – дек 2023 | Готовая документация и интерактивный UX/UI-прототип. | https://vk.com/battleship.mobilegame | https://image.qwenlm.ai/public_source/ba4e84a8-ef61-40e1-945c-6696e3409361/1d8de43ae-d076-4ce2-9ebf-21030f68f57d.png |
-| 13 | Отзвуки серебряного ветра | Фриланс | Стратегия | Настольная игра | В разработке | Миддл | май 2024 – окт 2025 | Создана полная документация для прототипирования и поиска финансирования. | – | https://image.qwenlm.ai/public_source/ba4e84a8-ef61-40e1-945c-6696e3409361/1cdf5e6a4-e9c5-4e30-9e79-77d7538837d8.png |
-| 12 | Chaffer | Фриланс | EdTech, бизнес-симулятор | Веб | Закрыто | Миддл | май 2024 – ноя 2024 | Создан интерактивный прототип для привлечения инвестиций. | https://www.chaffer.me/ | – |
-| 8 | Girand: in lost city | L2L Games | Баттлер | Кроссплатформа | Закрыто | Миддл | сен 2022 – дек 2022 | Опыт в кроссплатформенном баттлере с токеномикой. | https://girand.cheshiretail.ru | – |
-| 7 | Enchained | Dark Crystal Games | Баттлер | Кроссплатформа | Закрыто | Джуниор | апр 2022 – май 2022 | – | https://drive.google.com/file/d/1kWgNJxpJPQEVDXzSmcaRc9T6QwkntHNd/view | – |
-| 10 | Space Troopers TD | Фриланс | Tower Defence | Мобильная | Закрыто | Миддл | мар 2023 – май 2023 | – | https://www.figma.com/design/LX4cIfxOoTxcEBkOGlJK7y/TD?node-id=0-1&t=s5MAKppESIkrTz5R-1 | – |
-| 4 | Brain DOP | Фриланс | Головоломка | Мобильная | Вышла | Джуниор | май 2021 | Сгенерировано ТЗ 10 уровней-головоломок. | https://apps.apple.com/us/app/brain-dop-erase-one-part-game/id1567375619 | – |
-| 3 | Plutocracy | Redwood Games | Экономический симулятор | PC | Вышла | Стажёр | окт 2020 – ноя 2020 | Сгенерировано 5 питчей идей политической системы. | https://store.steampowered.com/app/764420/Plutocracy/ | – |
-| 2 | Color Arena.io | Khangames | Аркада | Мобильная | Закрыто | Стажёр | июн 2020 – июл 2020 | Собраны 20 уровней в Unity. | https://play.google.com/store/apps/details?id=hero.scapes.match.color.master | – |
-| 9 | Mini-game Inlostcity | L2L Games | Раннер | Кроссплатформа | Прототип | Миддл | сен 2021 – дек 2022 | ГК-раннер для маркетинговой кампании. | https://mini-game.inlostcity.com | – |
-| 1 | ZooSWAT | Геймджем | Тактическая | PC | Прототип | Стажёр | май 2020 – май 2021 | Собран уровень в Unity. | https://rockbee.itch.io/zooswat | – |
+| № | Проект | Жанр | Платформа | Монетизация | Статус | Компания | Период | Срок | Занятость | Должность | Ссылка на компанию | Ссылка на проект | Достижения | Кейсы |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 15 | Трон Мидгарда | Баттлер | Кроссплатформа | F2P | Софт-ланч, в разработке | RixGames | апр 2025 – дек 2025 | 9 мес. | Полная | Миддл, Гейм-дизайнер | – | https://ok.ru/game/dragonthrone | Проект вышел в софт-ланч; спроектирована боевая система | Системный дизайн, баланс боёвки, экономика, UX/UI-прототип, ведение GDD |
+| 14 | Iron Frontier | RTS | PC | Premium | В разработке | Bibamus | май 2024 – 2026 | 2 года | Фриланс | Миддл, Гейм-дизайнер | https://bibamus.ru | https://store.steampowered.com/app/2131290/Iron_Frontier | Система перков реализована в релизе | Система перков, настройка баланса, работа в Unity (анимации, префабы) |
+| 13 | Отзвуки серебряного ветра | Стратегия | Настольная игра | — | В разработке | Фриланс | май 2024 – окт 2025 | 2 года | Фриланс | Миддл, Гейм-дизайнер | – | – | Создана полная документация для прототипирования и поиска финансирования | Идея, концепт, GDD, игровые системы, баланс, прототип, курирование |
+| 12 | Chaffer | EdTech, бизнес-симулятор | Веб | — | Закрыто | Фриланс | май 2024 – ноя 2024 | 7 мес. | Фриланс | Миддл, Гейм-дизайнер | – | https://www.chaffer.me/ | Создан интерактивный прототип для привлечения инвестиций | UX/UI-дизайн (схемы, прототип в Figma), полная проектная документация |
+| 11 | Battle Ships | Симулятор (PvP) | Мобильная | F2P | В разработке | Фриланс | июн 2023 – дек 2023 | 7 мес. | Полная | Миддл, Гейм-дизайнер | – | https://vk.com/battleship.mobilegame | Готовая документация и интерактивный прототип | Мета-игра, система прокачки, баланс, UX/UI-прототип в Figma |
+| 10 | Space Troopers TD | Tower Defence | Мобильная | F2P | Закрыто | Фриланс | мар 2023 – май 2023 | 3 мес. | Фриланс | Миддл, Гейм-дизайнер | – | https://www.figma.com/design/LX4cIfxOoTxcEBkOGlJK7y/TD?node-id=0-1&t=s5MAKppESIkrTz5R-1 | – | Концепт, GDD, карта интерфейсов |
+| 9 | Mini-game Inlostcity | Раннер | Кроссплатформа | P2E | Прототип, закрыто | L2L Games | сен 2021 – дек 2022 | 4 мес. | Полная | Миддл, Гейм-дизайнер | https://l2lgames.com | https://mini-game.inlostcity.com | – | – |
+| 8 | Girand: in lost city | Баттлер | Кроссплатформа | P2E | Закрыто | L2L Games | сен 2022 – дек 2022 | 4 мес. | Полная | Миддл, Гейм-дизайнер | https://l2lgames.com | https://girand.cheshiretail.ru | Опыт в кроссплатформенном баттлере с токеномикой | Мета-игра, боевая система, баланс, мокапы, монетизация, токеномика |
+| 7 | Enchained | Баттлер | Кроссплатформа | P2E | Закрыто | Dark Crystal Games | апр 2022 – май 2022 | 2 мес. | Полная | Джуниор, Гейм-дизайнер | https://darkcrystalgames.com | https://drive.google.com/file/d/1kWgNJxpJPQEVDXzSmcaRc9T6QwkntHNd/view | – | Боевая система, описание абилок |
+| 6 | Encased | cRPG | PC | Premium | Вышла | Dark Crystal Games | апр 2022 – май 2022 | 2 мес. | Полная | Джуниор, Гейм-дизайнер | https://darkcrystalgames.com | https://encasedgame.com | Выявлены системные проблемы баланса, предложены решения | Анализ игровых систем, баланс экономики и боёвки, ведение документации |
+| 5 | Stellar Wind Idle | Баттлер | Мобильная | F2P | Вышла | Entropy Games | июн 2021 – фев 2022 | 9 мес. | Полная | Джуниор, Гейм-дизайнер, Продюсер | https://entropy.games | https://play.google.com/store/apps/details?id=com.StellarWind.StellarWindIdle | Увеличены монетизация и retention; проект стабильно зарабатывает 20 000 $/мес | Расширенная мета-игра, баланс экономики, UX/UI-дизайн, полная документация |
+| 4 | Brain DOP | Головоломка | Мобильная | F2P | Вышла | Фриланс | май 2021 | – | Разовая | Джуниор, Левел-дизайнер | – | https://apps.apple.com/us/app/brain-dop-erase-one-part-game/id1567375619 | Сгенерировано ТЗ 10 уровней-головоломок | – |
+| 3 | Plutocracy | Экономический симулятор | PC | Premium | Вышла | Redwood Games | окт 2020 – ноя 2020 | 1 мес. | Стажировка | Стажёр, Гейм-дизайнер | https://redwood.games | https://store.steampowered.com/app/764420/Plutocracy/ | Сгенерировано 5 питчей идей политической системы | – |
+| 2 | Color Arena.io | Аркада | Мобильная | F2P | Софт-ланч, закрыто | Khangames | июн 2020 – июл 2020 | 1 мес. | Стажировка | Стажёр, Левел-дизайнер | http://khangames.online | https://play.google.com/store/apps/details?id=hero.scapes.match.color.master | Собраны 20 уровней в Unity | – |
+| 1 | ZooSWAT | Тактическая | PC | — | Прототип | Геймджем | май 2020 – май 2021 | – | Геймджем | Стажёр, Левел-дизайнер | – | https://rockbee.itch.io/zooswat | Собран уровень в Unity | – |
 
 # Навыки
 
@@ -85,3 +85,24 @@
 | telegram | Telegram · @SarvasDesign | https://t.me/SarvasDesign |
 | email | SarvasGameDesign@gmail.com | mailto:SarvasGameDesign@gmail.com |
 | phone | +7 951 949-64-50 | tel:+79519496450 |
+
+
+# Изображения
+
+| Проект | Изображение | Источник |
+|---|---|---|
+| Трон Мидгарда | https://i.okcdn.ru/i?r=CID0QJv1RQZIqEhgaodS9yccDS-rYcy4Tl-9KXHwTM1BNk7ZfXSllfk-N6m2mBjNBD4h5CLn4RLqAy3atQUOjwd9QmPgsSpWAmNEZAikMDcn9b5GSj0NDsmswZfwOwCk3xU_AcsrhWW6LFDJkdZG2XYNTBg4qvun20jMt9giI1oA2zRx88TeC0L9VocHx0mGRql6FYJo6FlSA4v0xX_cd4e8gaH0_m65Ua7clqeAdLCwQqw2pCMuSq14iHgiGnQ-zk4LMVNiLdsmlCslEubypmVrp7s9e0g58cYd7JbY__1i47pp-dlJwGqm94DKofZ_YXd6dqLqAAAAKQ | ok.ru, og:image |
+| Iron Frontier | https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2131290/641b3448ea73ff0aab925f96406391e2f2ab7b6d/header.jpg?t=1782156651 | Steam CDN |
+| Отзвуки серебряного ветра | сгенерировано в чате (covers/echoes.png) | страницы нет |
+| Chaffer | — | страница 404 |
+| Battle Ships | сгенерировано в чате (covers/bs.png) | vk, og:image нет |
+| Space Troopers TD | — | figma |
+| Mini-game Inlostcity | — | домен истёк |
+| Girand: in lost city | — | сайт приостановлен |
+| Enchained | — | drive |
+| Encased | https://cdn.akamai.steamstatic.com/steam/apps/921800/capsule_616x353.jpg | Steam CDN |
+| Stellar Wind Idle | https://pewpewgamers.com/wp-content/uploads/2024/05/maxresdefault-1_11zon-2.jpg | статья |
+| Brain DOP | — | App Store |
+| Plutocracy | https://cdn.akamai.steamstatic.com/steam/apps/764420/capsule_616x353.jpg | Steam CDN |
+| Color Arena.io | — | Google Play |
+| ZooSWAT | — | itch.io, og:image нет |
