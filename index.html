@@ -4,9 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SARVAS – геймдизайнер Василь Сарманаев</title>
-<!-- ID: Site_Build_Final_v1
-     Файлы рядом: content.md, logo.png, photo.jpg, covers/echoes.png, covers/bs.png.
-     Весь контент правится в content.md без изменения кода. -->
+<!-- ID: Site_Build_Final_v3
+     Файлы рядом: content.md, logo.png, photo.jpg, covers/echoes.png, covers/bs.png. -->
 <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/imperial">
 <style>
 @font-face{font-family:'Russo One';font-style:normal;font-weight:400;font-display:swap;src:url('https://cdn.jsdelivr.net/fontsource/fonts/russo-one@latest/cyrillic-400-normal.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
@@ -39,6 +38,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:16
 .wrap{max-width:1240px;margin:0 auto;padding:0 24px}
 a{color:var(--red3);text-decoration:none}
 img{display:block;max-width:100%}
+.dim{color:var(--dim)}
 #err{display:none;margin:18px 0;padding:14px 18px;border:1px solid var(--red3);color:var(--red3);font-weight:600}
 /* NAV */
 .nav{position:sticky;top:0;z-index:50;background:rgba(12,10,14,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
@@ -63,14 +63,16 @@ img{display:block;max-width:100%}
 .frame i.c2{top:0;right:0;border-left:0;border-bottom:0}
 .frame i.c3{bottom:0;left:0;border-right:0;border-top:0}
 .frame i.c4{bottom:0;right:0;border-left:0;border-top:0}
-.photo{position:relative;overflow:hidden;background:var(--panel);height:100%}
+.photo{position:relative;overflow:hidden;background:var(--panel);height:100%;box-shadow:inset 0 0 70px rgba(0,0,0,.5)}
 .photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(15%) contrast(1.06)}
 .photo .ph-fb{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--imp);font-size:64px;color:var(--red2)}
 .photo img.img-missing{display:none}
 .photo::after{content:'';position:absolute;inset:0;pointer-events:none;
-  background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(0,0,0,.16) 3px 4px);
-  animation:scan 9s linear infinite}
-@keyframes scan{from{background-position:0 0}to{background-position:0 120px}}
+  background:linear-gradient(115deg,transparent 32%,rgba(255,255,255,.09) 45%,rgba(255,59,92,.10) 52%,transparent 68%);
+  background-size:260% 100%;background-position:130% 0;
+  animation:glare 7.5s ease-in-out infinite}
+@keyframes glare{0%{background-position:130% 0}60%{background-position:-70% 0}100%{background-position:-70% 0}}
+.hlogo{height:44px;width:auto;margin:0 0 12px}
 .kicker{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--red3)}
 .kicker::before{content:'';width:34px;height:2px;background:var(--red)}
 .brand{font-family:var(--imp);font-size:clamp(44px,7vw,84px);line-height:1;letter-spacing:.06em;margin:14px 0 6px;color:var(--text);text-shadow:0 0 34px rgba(216,26,58,.35)}
@@ -101,14 +103,8 @@ h2 .idx{font-size:.55em;color:var(--red);letter-spacing:.1em}
 .vmode{margin-left:auto;display:flex;gap:8px}
 .vmode button{font-family:var(--disp);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);background:var(--panel);border:1px solid var(--line2);padding:8px 14px;cursor:pointer;transition:color .2s,border-color .2s}
 .vmode button.active{color:var(--red3);border-color:rgba(255,59,92,.5)}
-/* CARDS / SLIDER */
+/* CARDS */
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-.slider-wrap{position:relative;margin-top:26px}
-.slider{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px;scrollbar-width:thin;scrollbar-color:var(--red2) var(--panel)}
-.slider .card{min-width:340px;max-width:340px;scroll-snap-align:start}
-.sl-btns{display:flex;gap:10px;margin-top:14px}
-.sl-btns button{font-family:var(--disp);font-size:14px;color:var(--text);background:var(--panel);border:1px solid var(--line2);width:46px;height:40px;cursor:pointer;transition:border-color .2s,color .2s}
-.sl-btns button:hover{border-color:rgba(255,59,92,.5);color:var(--red3)}
 .card{background:var(--panel);border:1px solid var(--line);position:relative;transition:transform .35s,border-color .35s,box-shadow .35s}
 .card:hover{transform:translateY(-7px);border-color:var(--red2);box-shadow:0 22px 50px rgba(0,0,0,.5)}
 .card::before{content:'';position:absolute;top:-1px;left:-1px;width:22px;height:22px;border-top:2px solid var(--red);border-left:2px solid var(--red);z-index:2;transition:width .3s,height .3s}
@@ -129,22 +125,38 @@ h2 .idx{font-size:.55em;color:var(--red);letter-spacing:.1em}
 .cbody p{color:var(--muted);font-size:14.5px;margin-bottom:16px}
 .clink{font-family:var(--disp);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
 .clink:hover{text-shadow:0 0 14px rgba(255,59,92,.6)}
+/* SLIDER */
+.slider-wrap{position:relative;margin-top:34px}
+.slider{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:thin;scrollbar-color:var(--red2) var(--panel)}
+.slider .card{min-width:250px;max-width:250px;scroll-snap-align:start}
+.slider .cover{aspect-ratio:16/10}
+.slider .cover-ph b{font-size:15px}
+.slider .cbody{padding:14px 16px 16px}
+.slider .cbody h3{font-size:15px;margin-bottom:8px}
+.slider .cbody p{font-size:12.5px;margin-bottom:10px}
+.slider .tags{margin-bottom:10px}
+.sl-btns{display:flex;gap:10px;margin-top:14px}
+.sl-btns button{font-family:var(--disp);font-size:14px;color:var(--text);background:var(--panel);border:1px solid var(--line2);width:46px;height:40px;cursor:pointer;transition:border-color .2s,color .2s}
+.sl-btns button:hover{border-color:rgba(255,59,92,.5);color:var(--red3)}
 /* TABLES */
 .tbl-wrap{overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
 table{width:100%;border-collapse:collapse;min-width:980px;font-size:14px}
 th{font-family:var(--disp);font-weight:400;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--th);text-align:center;padding:14px 16px;border-bottom:1px solid var(--line2);background:var(--bg2)}
 th.left{text-align:left}
-td{padding:13px 16px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top;text-align:center}
+td{padding:13px 16px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:middle;text-align:center}
+td,th{vertical-align:middle}
 td.left{text-align:left}
 td.pn{color:var(--text);font-weight:600}
 tr:last-child td{border-bottom:0}
 tbody tr{transition:background .2s}
 tbody tr:hover{background:rgba(216,26,58,.06)}
 tr.grp td{background:var(--bg2);color:var(--red3);font-family:var(--disp);font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:10px 16px;text-align:left}
-.badge{display:inline-block;padding:4px 10px;font-family:var(--disp);font-size:10px;letter-spacing:.14em;text-transform:uppercase;border:1px solid;background:rgba(12,10,14,.5)}
-.thumb{width:48px;height:27px;object-fit:cover;border:1px solid var(--line2);display:inline-block;vertical-align:middle;margin-right:10px;background:var(--panel2)}
-.pcell{display:flex;align-items:center;gap:4px;text-align:left}
-.pcell .meta{display:block;font-size:12px;color:var(--dim);font-weight:400;margin-top:2px}
+.badge{display:inline-block;padding:4px 10px;font-family:var(--disp);font-size:10px;letter-spacing:.14em;text-transform:uppercase;border:1px solid;background:rgba(12,10,14,.5);margin-left:10px;vertical-align:middle}
+.thumb{width:48px;height:27px;object-fit:cover;border:1px solid var(--line2);flex:none;background:var(--panel2)}
+.pcell{display:flex;align-items:center;gap:12px;text-align:left}
+.pcell .meta{display:block;font-size:12px;color:var(--dim);font-weight:400;margin-top:3px}
+.td-period .p-line{display:block;white-space:nowrap}
+.td-period .dim{display:block;margin-top:3px}
 .pips{display:inline-flex;gap:5px;justify-content:center}
 .pips i{width:14px;height:6px;background:var(--line2);transform:skewX(-16deg)}
 .pips i.f{background:linear-gradient(90deg,var(--red2),var(--red3))}
@@ -188,11 +200,11 @@ footer{border-top:1px solid var(--line);background:var(--bg2);padding:64px 0 40p
   .hero .wrap{grid-template-columns:1fr;gap:40px}
   .frame{max-width:400px;height:auto}
   .photo img{aspect-ratio:4/5;height:auto}
-  .cards{grid-template-columns:1fr 1fr}
   .fgrid{grid-template-columns:1fr}
   .fcontacts{text-align:left}
 }
-@media (max-width:640px){.cards{grid-template-columns:1fr}.slider .card{min-width:290px;max-width:290px}}
+@media (max-width:760px){.cards{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.cards{grid-template-columns:1fr}.slider .card{min-width:230px;max-width:230px}}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none}
@@ -225,6 +237,7 @@ footer{border-top:1px solid var(--line);background:var(--bg2);padding:64px 0 40p
         </div>
       </div>
       <div>
+        <img class="hlogo" src="logo.png" alt="" onerror="this.style.display='none'">
         <span class="kicker" id="hRole"></span>
         <div class="brand" id="hBrand">SARVAS</div>
         <h1 id="hName"></h1>
@@ -235,7 +248,7 @@ footer{border-top:1px solid var(--line);background:var(--bg2);padding:64px 0 40p
     </div>
   </section>
 
-  <div class="ticker" aria-hidden="false"><div class="ticker-track" id="ticker"></div></div>
+  <div class="ticker"><div class="ticker-track" id="ticker"></div></div>
 
   <section id="projects">
     <div class="wrap">
@@ -328,8 +341,7 @@ function parseMD(src){
 function sec(sections,name){ for(var i=0;i<sections.length;i++) if(sections[i].name.toLowerCase()===name.toLowerCase()) return sections[i]; return null; }
 function kv(rows){ var o={}; (rows||[]).forEach(function(r){ var k=Object.keys(r)[0]; o[k.toLowerCase()]=r[k]; }); return o; }
 
-var DATA={}, STATUS={};
-
+var STATUS={};
 function imgFor(map,title){
   var r=(map||[]).filter(function(x){ return (x['проект']||'').toLowerCase()===title.toLowerCase(); })[0];
   if(!r) return null;
@@ -346,7 +358,7 @@ function cardHTML(p,map){
   var link=p['ссылка на проект']&&p['ссылка на проект']!=='–'?p['ссылка на проект']:null;
   var inner=img? '<img src="'+esc(img)+'" alt="'+esc(p['проект'])+'" loading="lazy" onerror="this.style.display=\'none\'">' : '';
   return '<article class="card"><div class="cover"><div class="cover-ph"><span>'+esc(p['жанр']||'')+' · '+esc(p['платформа']||'')+'</span><b>'+esc(p['проект'])+'</b></div>'+inner+'<span class="st" style="color:'+(STATUS[p['статус']]||'#8a8090')+';border-color:'+(STATUS[p['статус']]||'#8a8090')+'80">'+esc(p['статус']||'')+'</span></div>'+
-    '<div class="cbody"><h3>'+esc(p['проект'])+'</h3><div class="tags"><span class="gr">'+esc(p['должность']? (p['должность'].split(',')[0]):'')+'</span><span>'+esc(p['жанр']||'')+'</span><span>'+esc(p['компания']||'')+'</span></div>'+
+    '<div class="cbody"><h3>'+esc(p['проект'])+'</h3><div class="tags"><span class="gr">'+esc((p['должность']||'').split(',')[0])+'</span><span>'+esc(p['жанр']||'')+'</span><span>'+esc(p['компания']||'')+'</span></div>'+
     '<p>'+esc(p['достижения']||'')+'</p>'+(link?'<a class="clink" href="'+esc(link)+'" target="_blank" rel="noopener">Подробнее →</a>':'')+'</div></article>';
 }
 function render(sections){
@@ -363,7 +375,7 @@ function render(sections){
 
   statuses.forEach(function(s){ STATUS[s['статус']]=s['цвет']; });
 
-  document.title=(hero['brand']||'SARVAS')+' – '+ (hero['role']||'')+' '+(hero['name']||'');
+  document.title=(hero['brand']||'SARVAS')+' – '+(hero['role']||'')+' '+(hero['name']||'');
   $('#hBrand').textContent=hero['brand']||'SARVAS';
   $('#hRole').textContent=hero['role']||'';
   $('#hName').textContent=hero['name']||'';
@@ -372,35 +384,37 @@ function render(sections){
     return '<div class="stat"><span class="lb">'+esc(m['label'])+'</span><span class="num"><span data-to="'+esc(m['value'])+'">0</span> <em>'+esc(m['unit'])+'</em></span><div class="bar"><div class="fill" style="--w:'+esc(m['progress'])+'%"></div></div></div>';
   }).join('');
 
-  /* nav из заголовков */
-  var navIds=[['Проекты','#projects'],['Навыки и кейсы','#skills'],['Опыт','#exp'],['Образование','#edu'],['Контакты','#contacts']];
-  $('#nav').innerHTML=navIds.map(function(n){ return '<a href="'+n[1]+'">'+esc(n[0])+'</a>'; }).join('');
+  var names={projects:'Проекты',skills:'Навыки и кейсы',exp:'Опыт',edu:'Образование',contacts:'Контакты'};
+  Object.keys(names).forEach(function(k){
+    var s=sec(sections,names[k]);
+    if(s) names[k]=s.name;
+  });
+  $('#tProjects').textContent=names.projects;
+  $('#tSkills').textContent=names.skills;
+  $('#tExp').textContent=names.exp;
+  $('#tEdu').textContent=names.edu;
+  $('#nav').innerHTML=[['#projects',names.projects],['#skills',names.skills],['#exp',names.exp],['#edu',names.edu],['#contacts',names.contacts]]
+    .map(function(n){ return '<a href="'+n[0]+'">'+esc(n[1])+'</a>'; }).join('');
 
-  /* лента из навыков, якоря к строкам */
   var items=skills.filter(function(s){return s['skill'];}).map(function(s){ return '<a href="#skill-'+slug(s['skill'])+'">'+esc(s['skill'])+' <b>◆</b></a>'; }).join('');
   $('#ticker').innerHTML=items+items;
 
-  /* проекты: витрина 6 + слайдер остальных */
   $('#grid').innerHTML=projects.slice(0,6).map(function(p){return cardHTML(p,images);}).join('');
   var rest=projects.slice(6);
   if(rest.length){ $('#slider').innerHTML=rest.map(function(p){return cardHTML(p,images);}).join(''); }
   else { $('#sliderWrap').style.display='none'; }
 
-  /* таблица проектов */
   var rows=projects.map(function(p){
     var img=imgFor(images,p['проект']);
     var plink=p['ссылка на проект']&&p['ссылка на проект']!=='–'?'<a href="'+esc(p['ссылка на проект'])+'" target="_blank" rel="noopener">'+esc(p['проект'])+'</a>':esc(p['проект']);
-    var clink=p['ссылка на компанию']&&p['ссылка на компания']!=='–'?null:null;
-    var comp=p['ссылка на компанию']&&p['ссылка на компанию']!=='–'?'<a href="'+esc(p['ссылка на компания'])+'" target="_blank" rel="noopener">'+esc(p['компания'])+'</a>':esc(p['компания']||'');
-    return '<tr><td class="left"><div class="pcell">'+(img?'<img class="thumb" src="'+esc(img)+'" alt="" loading="lazy" onerror="this.style.display=\'none\'">':'')+'<div><span class="pn">'+plink+'</span><span class="meta">'+esc(p['жанр']||'')+' · '+esc(p['платформа']||'')+' · '+esc(p['монетизация']||'')+' · '+comp+'</span></div></div></td>'+
-      '<td>'+esc(p['период']||'')+'<br><span style="color:var(--dim)">'+esc(p['срок']||'')+'</span></td>'+
-      '<td>'+badge(p['статус']||'')+'</td>'+
+    var comp=p['ссылка на компанию']&&p['ссылка на компанию']!=='–'?'<a href="'+esc(p['ссылка на компанию'])+'" target="_blank" rel="noopener">'+esc(p['компания']||'')+'</a>':esc(p['компания']||'');
+    return '<tr><td class="left"><div class="pcell">'+(img?'<img class="thumb" src="'+esc(img)+'" alt="" loading="lazy" onerror="this.style.display=\'none\'">':'')+'<div><span class="pn">'+plink+'</span>'+badge(p['статус']||'')+'<span class="meta">'+esc(p['жанр']||'')+' · '+esc(p['платформа']||'')+' · '+esc(p['монетизация']||'')+'</span><span class="meta">'+comp+'</span></div></div></td>'+
+      '<td class="td-period"><span class="p-line">'+esc(p['период']||'')+'</span><span class="dim">'+esc(p['срок']||'')+'</span></td>'+
       '<td>'+esc(p['должность']||'')+'</td>'+
       '<td class="left">'+esc(p['достижения']||'')+'</td></tr>';
   }).join('');
-  $('#projTable').innerHTML='<table><thead><tr><th class="left">Проект</th><th>Период</th><th>Статус</th><th>Должность</th><th class="left">Достижения</th></tr></thead><tbody>'+rows+'</tbody></table>';
+  $('#projTable').innerHTML='<table><thead><tr><th class="left">Проект</th><th>Период</th><th>Должность</th><th class="left">Достижения</th></tr></thead><tbody>'+rows+'</tbody></table>';
 
-  /* навыки */
   var srows='', last='';
   skills.forEach(function(s){
     if(s['group']&&s['group']!==last){ last=s['group']; srows+='<tr class="grp"><td colspan="4">'+esc(s['group'])+'</td></tr>'; }
@@ -411,17 +425,14 @@ function render(sections){
   });
   $('#skillsTable').innerHTML='<table><thead><tr><th class="left">Навык</th><th>Уровень</th><th>Опыт</th><th class="left">Кейсы</th></tr></thead><tbody>'+srows+'</tbody></table>';
 
-  /* опыт */
   $('#expList').innerHTML=exp.map(function(e){
     return '<div class="tl"><div class="tl-dot"></div><div class="tl-head"><h3>'+esc(e['company'])+'</h3></div><span class="tl-date">'+esc(e['period'])+' · '+esc(e['grade'])+'</span><p class="tl-role">'+esc(e['role'])+' · '+esc(e['project'])+'</p><p class="res">'+esc(e['result'])+'</p></div>';
   }).join('');
 
-  /* образование */
   $('#eduList').innerHTML=edu.map(function(e){
     return '<div class="ecard"><span class="yr">'+esc(e['year'])+'</span><h3>'+esc(e['title'])+'</h3><p>'+esc(e['note'])+'</p></div>';
   }).join('');
 
-  /* контакты и футер */
   $('#fContacts').innerHTML=contacts.map(function(c){
     return '<a href="'+esc(c['value'])+'" target="_blank" rel="noopener">'+esc(c['label'])+'</a>';
   }).join('');
@@ -431,7 +442,7 @@ function render(sections){
 }
 function initSlider(){
   var el=$('#slider');
-  function step(){ var c=el.querySelector('.card'); return c? c.offsetWidth+22 : 360; }
+  function step(){ var c=el.querySelector('.card'); return c? c.offsetWidth+18 : 280; }
   $('#slNext').addEventListener('click',function(){
     var max=el.scrollWidth-el.clientWidth;
     el.scrollTo({left:(el.scrollLeft>=max-8)?0:el.scrollLeft+step(),behavior:RM?'auto':'smooth'});
