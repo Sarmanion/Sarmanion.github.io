@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SARVAS – геймдизайнер Василь Сарманаев</title>
-<!-- ID: Site_Build_Final_v3
+<!-- ID: Site_Build_Final_v4
      Файлы рядом: content.md, logo.png, photo.jpg, covers/echoes.png, covers/bs.png. -->
 <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/imperial">
 <style>
@@ -68,11 +68,10 @@ img{display:block;max-width:100%}
 .photo .ph-fb{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--imp);font-size:64px;color:var(--red2)}
 .photo img.img-missing{display:none}
 .photo::after{content:'';position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(115deg,transparent 32%,rgba(255,255,255,.09) 45%,rgba(255,59,92,.10) 52%,transparent 68%);
-  background-size:260% 100%;background-position:130% 0;
-  animation:glare 7.5s ease-in-out infinite}
-@keyframes glare{0%{background-position:130% 0}60%{background-position:-70% 0}100%{background-position:-70% 0}}
-.hlogo{height:44px;width:auto;margin:0 0 12px}
+  background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.09) 50%,rgba(255,59,92,.10) 55%,transparent 62%);
+  background-size:260% 100%;background-repeat:repeat-x;
+  animation:glare 9s linear infinite}
+@keyframes glare{from{background-position:0 0}to{background-position:-260% 0}}
 .kicker{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--red3)}
 .kicker::before{content:'';width:34px;height:2px;background:var(--red)}
 .brand{font-family:var(--imp);font-size:clamp(44px,7vw,84px);line-height:1;letter-spacing:.06em;margin:14px 0 6px;color:var(--text);text-shadow:0 0 34px rgba(216,26,58,.35)}
@@ -187,8 +186,12 @@ body[data-view="show"] .tbl-projects{display:none}
 /* FOOTER */
 footer{border-top:1px solid var(--line);background:var(--bg2);padding:64px 0 40px}
 .fgrid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
-.fbig{font-family:var(--imp);font-size:clamp(40px,7vw,84px);line-height:1;color:var(--text);text-shadow:0 0 40px rgba(216,26,58,.3);letter-spacing:.06em}
-.fbig small{display:block;font-family:var(--body);font-weight:600;font-size:12px;letter-spacing:.5em;color:var(--red3);margin-top:8px}
+.fbig{line-height:1}
+.flogo{height:clamp(80px,12vw,140px);width:auto;max-width:100%}
+.fbig-text{display:none;font-family:var(--imp);font-size:clamp(40px,7vw,84px);line-height:1;color:var(--text);text-shadow:0 0 40px rgba(216,26,58,.3);letter-spacing:.06em}
+.fbig-text small{display:block;font-family:var(--body);font-weight:600;font-size:12px;letter-spacing:.5em;color:var(--red3);margin-top:8px}
+.flogo.img-missing{display:none}
+.flogo.img-missing + .fbig-text{display:block}
 .fcontacts{display:grid;gap:12px;text-align:right}
 .fcontacts a{color:var(--muted);font-weight:600;transition:color .2s}
 .fcontacts a:hover{color:var(--red3)}
@@ -237,7 +240,6 @@ footer{border-top:1px solid var(--line);background:var(--bg2);padding:64px 0 40p
         </div>
       </div>
       <div>
-        <img class="hlogo" src="logo.png" alt="" onerror="this.style.display='none'">
         <span class="kicker" id="hRole"></span>
         <div class="brand" id="hBrand">SARVAS</div>
         <h1 id="hName"></h1>
@@ -298,7 +300,10 @@ footer{border-top:1px solid var(--line);background:var(--bg2);padding:64px 0 40p
 <footer id="contacts">
   <div class="wrap">
     <div class="fgrid">
-      <div class="fbig reveal">SARVAS<small>GAME DESIGN</small></div>
+      <div class="fbig reveal">
+        <img class="flogo" src="logo.png" alt="SARVAS GAME DESIGN" onerror="this.classList.add('img-missing')">
+        <span class="fbig-text">SARVAS<small>GAME DESIGN</small></span>
+      </div>
       <div class="fcontacts reveal" id="fContacts"></div>
     </div>
     <div class="copy" id="fCopy"></div>
@@ -339,7 +344,14 @@ function parseMD(src){
   return sections;
 }
 function sec(sections,name){ for(var i=0;i<sections.length;i++) if(sections[i].name.toLowerCase()===name.toLowerCase()) return sections[i]; return null; }
-function kv(rows){ var o={}; (rows||[]).forEach(function(r){ var k=Object.keys(r)[0]; o[k.toLowerCase()]=r[k]; }); return o; }
+function kv(rows){
+  var o={};
+  (rows||[]).forEach(function(r){
+    var k=Object.keys(r);
+    if(k.length>=2){ o[String(r[k[0]]).toLowerCase().trim()]=r[k[1]]; }
+  });
+  return o;
+}
 
 var STATUS={};
 function imgFor(map,title){
@@ -375,7 +387,12 @@ function render(sections){
 
   statuses.forEach(function(s){ STATUS[s['статус']]=s['цвет']; });
 
-  document.title=(hero['brand']||'SARVAS')+' – '+(hero['role']||'')+' '+(hero['name']||'');
+  var t=hero['title'];
+  if(!t){
+    var parts=[hero['brand'], ((hero['role']||'')+' '+(hero['name']||'')).trim()].filter(Boolean);
+    t=parts.join(' – ');
+  }
+  document.title=t||'SARVAS';
   $('#hBrand').textContent=hero['brand']||'SARVAS';
   $('#hRole').textContent=hero['role']||'';
   $('#hName').textContent=hero['name']||'';
