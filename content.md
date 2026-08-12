@@ -32,14 +32,14 @@
 | 14 | Iron Frontier | RTS | PC | Premium | В разработке | Bibamus | май 2024 – 2026 | 2 года | Фриланс | Миддл, Гейм-дизайнер | https://bibamus.ru | https://store.steampowered.com/app/2131290/Iron_Frontier | Перки, баланс, анимации, префабы, тесты | Система перков реализована в релизе | Перки, баланс, Unity (анимации, префабы) |
 | 11 | Battle Ships | Симулятор (PvP) | Мобильная | F2P | В разработке | Фриланс | июн 2023 – дек 2023 | 7 мес. | Полная | Миддл, Гейм-дизайнер | – | https://vk.com/battleship.mobilegame | Мета, прокачка, баланс, UX/UI, GDD | Готовая документация и интерактивный прототип | Мета-игра, прокачка, баланс, UX/UI-прототип в Figma |
 | 13 | Отзвуки серебряного ветра | Стратегия | Настольная игра | — | В разработке | Фриланс | май 2024 – окт 2025 | 2 года | Фриланс | Миддл, Гейм-дизайнер | – | – | Идея, рынок, системы, баланс, прототип, бюджет, курирование | Полная документация для прототипирования и финансирования | Идея, концепт, GDD, системы, баланс, прототип, курирование |
-| 8 | Girand: in lost city | Баттлер | Кроссплатформа | P2E | Закрыто | L2L Games | сен 2022 – дек 2022 | 4 мес. | Полная | Миддл, Гейм-дизайнер | https://l2lgames.com | https://girand.cheshiretail.ru | Мета, боевая система, баланс, мокапы, токеномика, GDD | Опыт в кроссплатформенном баттлере с токеномикой | Мета-игра, боевая система, баланс, мокапы, токеномика |
+| 8 | Girand: in lost city | Баттлер | Кроссплатформа | P2E | Закрыто | L2L Games | сен 2022 – дек 2022 | 4 мес. | Полная | Миддл, Гейм-дизайнер | https://l2lgames.com | https://playtoearn.com/blockchaingame/girand-in-the-lost-city | Мета, боевая система, баланс, мокапы, токеномика, GDD | Опыт в кроссплатформенном баттлере с токеномикой | Мета-игра, боевая система, баланс, мокапы, токеномика |
 | 7 | Enchained | Баттлер | Кроссплатформа | P2E | Закрыто | Dark Crystal Games | апр 2022 – май 2022 | 2 мес. | Полная | Джуниор, Гейм-дизайнер | https://darkcrystalgames.com | https://drive.google.com/file/d/1kWgNJxpJPQEVDXzSmcaRc9T6QwkntHNd/view | Боевая система, абилки | – | Боевая система, описание абилок |
 | 10 | Space Troopers TD | Tower Defence | Мобильная | F2P | Закрыто | Фриланс | мар 2023 – май 2023 | 3 мес. | Фриланс | Миддл, Гейм-дизайнер | – | https://www.figma.com/design/LX4cIfxOoTxcEBkOGlJK7y/TD?node-id=0-1&t=s5MAKppESIkrTz5R-1 | Концепт, GDD, карта интерфейсов | – | Концепт, GDD, карта интерфейсов |
 | 4 | Brain DOP | Головоломка | Мобильная | F2P | Вышла | Фриланс | май 2021 | – | Разовая | Джуниор, Левел-дизайнер | – | https://apps.apple.com/us/app/brain-dop-erase-one-part-game/id1567375619 | Левел-дизайн: ТЗ 10 головоломок | Сгенерировано ТЗ 10 уровней-головоломок | – |
 | 3 | Plutocracy | Экономический симулятор | PC | Premium | Вышла | Redwood Games | окт 2020 – ноя 2020 | 1 мес. | Стажировка | Стажёр, Гейм-дизайнер | https://redwood.games | https://store.steampowered.com/app/764420/Plutocracy/ | Аналитика, консультации | Сгенерировано 5 питчей политической системы | – |
 | 2 | Color Arena.io | Аркада | Мобильная | F2P | Софт-ланч, закрыто | Khangames | июн 2020 – июл 2020 | 1 мес. | Стажировка | Стажёр, Левел-дизайнер | http://khangames.online | https://play.google.com/store/apps/details?id=hero.scapes.match.color.master | Левел-дизайн | Собраны 20 уровней в Unity | – |
 | 12 | Chaffer | EdTech, бизнес-симулятор | Веб | — | Закрыто | Фриланс | май 2024 – ноя 2024 | 7 мес. | Фриланс | Миддл, Гейм-дизайнер | – | https://www.chaffer.me/ | Видение, задачи и бюджет, рынок, UX/UI, прототип | Интерактивный прототип для привлечения инвестиций | UX/UI (схемы, прототип в Figma), документация |
-| 9 | Mini-game Inlostcity | Раннер | Кроссплатформа | P2E | Прототип, закрыто | L2L Games | сен 2021 – дек 2022 | 4 мес. | Полная | Миддл, Гейм-дизайнер | https://l2lgames.com | https://mini-game.inlostcity.com | ГК-раннер для маркетинговой кампании | – | – |
+| 9 | Mini-game Inlostcity | Раннер | Кроссплатформа | P2E | Прототип, закрыто | L2L Games | сен 2021 – дек 2022 | 4 мес. | Полная | Миддл, Гейм-дизайнер | – | https://mini-game.inlostcity.com | ГК-раннер для маркетинговой кампании | – | – |
 | 1 | ZooSWAT | Тактическая | PC | — | Прототип | Геймджем | май 2020 – май 2021 | – | Геймджем | Стажёр, Левел-дизайнер | – | https://rockbee.itch.io/zooswat | Левел-дизайн | Собран уровень в Unity | – |
 
 # Изображения
@@ -50,10 +50,10 @@
 | Iron Frontier | https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2131290/641b3448ea73ff0aab925f96406391e2f2ab7b6d/header.jpg?t=1782156651 | Steam CDN |
 | Отзвуки серебряного ветра | covers/echoes.png | сгенерировано в чате |
 | Chaffer | — | страница 404 |
-| Battle Ships | covers/bs.png | сгенерировано в чате |
+| Battle Ships | https://prnt.sc/NEfN0j8WX1Pe | vk.ru |
 | Space Troopers TD | — | figma |
-| Mini-game Inlostcity | — | домен истёк |
-| Girand: in lost city | — | сайт приостановлен |
+| Mini-game Inlostcity | https://yt3.googleusercontent.com/VF01iDVt-4-YAOdJ9eayKgzfQy8cCdoAWCOujGYp_kEXwlbQXa-jk-bzPL2u6tagir4AFkpKieQ=s900-c-k-c0x00ffffff-no-rj | домен истёк |
+| Girand: in lost city | https://yt3.googleusercontent.com/VF01iDVt-4-YAOdJ9eayKgzfQy8cCdoAWCOujGYp_kEXwlbQXa-jk-bzPL2u6tagir4AFkpKieQ=s900-c-k-c0x00ffffff-no-rj | сайт приостановлен |
 | Enchained | — | drive |
 | Encased | https://cdn.akamai.steamstatic.com/steam/apps/921800/capsule_616x353.jpg | Steam CDN |
 | Stellar Wind Idle | https://pewpewgamers.com/wp-content/uploads/2024/05/maxresdefault-1_11zon-2.jpg | статья |
