@@ -4,8 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SARVAS – геймдизайнер Василь Сарманаев</title>
-<!-- ID: Site_Build_Final_v5
-     Файлы рядом: content.md, logo.png, photo.jpg, covers/echoes.png, covers/bs.png. -->
+<!-- ID: Site_Build_Final_v6 -->
 <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/imperial">
 <style>
 @font-face{font-family:'Russo One';font-style:normal;font-weight:400;font-display:swap;src:url('https://cdn.jsdelivr.net/fontsource/fonts/russo-one@latest/cyrillic-400-normal.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
@@ -64,18 +63,20 @@ img{display:block;max-width:100%}
 .frame i.c3{bottom:0;left:0;border-right:0;border-top:0}
 .frame i.c4{bottom:0;right:0;border-left:0;border-top:0}
 .photo{position:relative;overflow:hidden;background:var(--panel);height:100%;box-shadow:inset 0 0 70px rgba(0,0,0,.5)}
-.photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(15%) contrast(1.06)}
+.photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(15%) contrast(1.06);animation:breathe 16s ease-in-out infinite alternate}
+@keyframes breathe{from{transform:scale(1)}to{transform:scale(1.06)}}
 .photo .ph-fb{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--imp);font-size:64px;color:var(--red2)}
-.photo img.img-missing{display:none}
-.photo::after{content:'';position:absolute;top:0;bottom:0;left:-60%;width:60%;pointer-events:none;
-  background:linear-gradient(105deg,transparent 8%,rgba(255,255,255,.10) 45%,rgba(255,59,92,.12) 55%,transparent 92%);
-  animation:glare 7s linear infinite}
-@keyframes glare{from{transform:translateX(0)}to{transform:translateX(280%)}}
+.photo img.img-missing{display:none;animation:none}
+.photo::after{content:'';position:absolute;top:0;bottom:0;left:-45%;width:45%;pointer-events:none;
+  background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.05) 35%,rgba(255,255,255,.12) 50%,rgba(255,59,92,.08) 62%,transparent 100%);
+  filter:blur(14px);mix-blend-mode:screen;
+  animation:glare 9s linear infinite}
+@keyframes glare{from{transform:translateX(0)}to{transform:translateX(320%)}}
 .kicker{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--red3)}
 .kicker::before{content:'';width:34px;height:2px;background:var(--red)}
-.brand{font-family:var(--imp);font-size:clamp(44px,7vw,84px);line-height:1;letter-spacing:.06em;margin:14px 0 6px;color:var(--text);text-shadow:0 0 34px rgba(216,26,58,.35)}
-h1{font-family:var(--disp);font-size:clamp(20px,2.6vw,28px);color:var(--text);letter-spacing:.04em;margin-bottom:14px}
-.hlead{max-width:600px;color:var(--muted);font-size:17px}
+.brand{font-family:var(--imp);font-size:clamp(44px,7vw,84px);line-height:1;letter-spacing:.06em;margin:0 0 6px;color:var(--text);text-shadow:0 0 34px rgba(216,26,58,.35)}
+h1{font-family:var(--disp);font-size:clamp(20px,2.6vw,28px);color:var(--text);letter-spacing:.04em;margin:0 0 10px}
+.hlead{max-width:600px;color:var(--muted);font-size:17px;margin-top:12px}
 .stats{margin:30px 0 6px;display:grid;gap:16px;max-width:600px}
 .stat{display:grid;grid-template-columns:1fr auto;gap:4px 14px;align-items:end}
 .stat .lb{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
@@ -129,25 +130,25 @@ h2 .idx{font-size:.55em;color:var(--red);letter-spacing:.1em}
 /* TABLES */
 .tbl-wrap{overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
 table{width:100%;border-collapse:collapse;min-width:1180px;font-size:14px}
-th{font-family:var(--disp);font-weight:400;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--th);text-align:center;padding:14px 16px;border-bottom:1px solid var(--line2);background:var(--bg2);cursor:pointer;user-select:none;white-space:nowrap}
+th{font-family:var(--disp);font-weight:400;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--th);text-align:center;padding:14px 16px;border-bottom:1px solid var(--line2);background:var(--bg2);white-space:nowrap}
 th.left{text-align:left}
-th::after{content:'↕';margin-left:8px;opacity:.35;font-family:var(--body)}
-th.asc::after{content:'↑';opacity:1;color:var(--red3)}
-th.desc::after{content:'↓';opacity:1;color:var(--red3)}
+th[data-key]{cursor:pointer;user-select:none}
+th[data-key]::after{content:'↕';margin-left:8px;opacity:.35;font-family:var(--body)}
+th[data-key].asc::after{content:'↑';opacity:1;color:var(--red3)}
+th[data-key].desc::after{content:'↓';opacity:1;color:var(--red3)}
 td{padding:13px 16px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:middle;text-align:center}
-td,th{vertical-align:middle}
 td.left{text-align:left}
-td.pn{color:var(--text);font-weight:600}
-td.num{color:var(--dim);font-size:12.5px}
 tr:last-child td{border-bottom:0}
 tbody tr{transition:background .2s}
 tbody tr:hover{background:rgba(216,26,58,.06)}
 tr.grp td{background:var(--bg2);color:var(--red3);font-family:var(--disp);font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:10px 16px;text-align:left;cursor:default}
+.pn{color:var(--text);font-weight:800;font-size:15px}
+.pn a{color:var(--text);transition:color .2s}
+.pn a:hover{color:var(--red3)}
+.comp{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red3);opacity:.8;margin-top:4px}
+a.comp:hover{opacity:1;text-decoration:underline}
+.meta{display:block;font-size:12px;color:var(--dim);font-weight:400;margin-top:3px}
 .badge{display:inline-block;padding:4px 10px;font-family:var(--disp);font-size:10px;letter-spacing:.14em;text-transform:uppercase;border:1px solid;background:rgba(12,10,14,.5)}
-.thumb{width:110px;height:62px;object-fit:cover;border:1px solid var(--line2);flex:none;background:var(--panel2)}
-.pcell{display:flex;align-items:center;gap:14px;text-align:left}
-.pcell .meta{display:block;font-size:12px;color:var(--dim);font-weight:400;margin-top:3px}
-.pcell .comp{display:block;font-size:12.5px;font-weight:600;margin-top:3px;color:var(--red3);opacity:.85}
 .td-period .p-line{display:block;white-space:nowrap}
 .td-period .dim{display:block;margin-top:3px}
 .td-role .g{display:block;color:var(--red3);font-weight:700}
@@ -236,9 +237,9 @@ footer{border-top:1px solid var(--line);background:var(--bg2);padding:64px 0 40p
         </div>
       </div>
       <div>
-        <span class="kicker" id="hRole"></span>
         <div class="brand" id="hBrand">SARVAS</div>
         <h1 id="hName"></h1>
+        <span class="kicker" id="hRole"></span>
         <p class="hlead" id="hTag"></p>
         <div class="stats" id="hStats"></div>
         <div id="err">Не удалось загрузить content.md – проверьте, что файл лежит рядом с index.html.</div>
@@ -354,7 +355,16 @@ function periodKey(s){
   return y? (+y[1])*12 : 0;
 }
 
-var STATUS={}, DATA={};
+var STATUS={}, DEFSTATUS={'Вышла':'#45d08a','Софт-ланч':'#ffb454','В разработке':'#ffb454','Прототип':'#ff8a4a','Закрыто':'#8a8090'}, DATA={};
+function statusColor(st){
+  var s=String(st||'').toLowerCase(), best=null, bi=1e9;
+  var map=Object.keys(STATUS).length?STATUS:DEFSTATUS;
+  Object.keys(map).forEach(function(k){
+    var i=s.indexOf(k.toLowerCase());
+    if(i>-1 && i<bi){ bi=i; best=k; }
+  });
+  return (best?map[best]:null)||DEFSTATUS['Закрыто'];
+}
 function imgFor(map,title){
   var r=(map||[]).filter(function(x){ return (x['проект']||'').toLowerCase()===title.toLowerCase(); })[0];
   if(!r) return null;
@@ -363,7 +373,7 @@ function imgFor(map,title){
   return m? m[0] : (v.indexOf('http')===0? v : null);
 }
 function badge(st){
-  var c=STATUS[st]||'#8a8090';
+  var c=statusColor(st);
   return '<span class="badge" style="color:'+c+';border-color:'+c+'80">'+esc(st)+'</span>';
 }
 function gradeOf(p){ return (p['должность']||'').split(',')[0].trim(); }
@@ -373,7 +383,7 @@ function cardHTML(p,map){
   var link=p['ссылка на проект']&&p['ссылка на проект']!=='–'?p['ссылка на проект']:null;
   var inner=img? '<img src="'+esc(img)+'" alt="'+esc(p['проект'])+'" loading="lazy" onerror="this.style.display=\'none\'">' : '';
   var cl=link? '<a class="clink" href="'+esc(link)+'" target="_blank" rel="noopener">'+esc(host(link))+' →</a>' : '<a class="clink" href="#contacts">по запросу →</a>';
-  return '<article class="card"><div class="cover"><div class="cover-ph"><span>'+esc(p['жанр']||'')+' · '+esc(p['платформа']||'')+'</span><b>'+esc(p['проект'])+'</b></div>'+inner+'<span class="st" style="color:'+(STATUS[p['статус']]||'#8a8090')+';border-color:'+(STATUS[p['статус']]||'#8a8090')+'80">'+esc(p['статус']||'')+'</span></div>'+
+  return '<article class="card"><div class="cover"><div class="cover-ph"><span>'+esc(p['жанр']||'')+' · '+esc(p['платформа']||'')+'</span><b>'+esc(p['проект'])+'</b></div>'+inner+'<span class="st" style="color:'+statusColor(p['статус'])+';border-color:'+statusColor(p['статус'])+'80">'+esc(p['статус']||'')+'</span></div>'+
     '<div class="cbody"><h3>'+esc(p['проект'])+'</h3><span class="company">'+esc(p['компания']||'')+' · '+esc(gradeOf(p))+'</span>'+
     '<p>'+esc(p['достижения']||'')+'</p>'+cl+'</div></article>';
 }
@@ -399,8 +409,8 @@ function render(sections){
   }
   document.title=t||'SARVAS';
   $('#hBrand').textContent=hero['brand']||'SARVAS';
+  $('#hName').textContent=hero['nameview']||hero['name']||'';
   $('#hRole').textContent=hero['role']||'';
-  $('#hName').textContent=hero['name']||'';
   $('#hTag').textContent=hero['tagline']||'';
   $('#hStats').innerHTML=metrics.map(function(m){
     return '<div class="stat"><span class="lb">'+esc(m['label'])+'</span><span class="num"><span data-to="'+esc(m['value'])+'">0</span> <em>'+esc(m['unit'])+'</em></span><div class="bar"><div class="fill" style="--w:'+esc(m['progress'])+'%"></div></div></div>';
@@ -421,7 +431,6 @@ function render(sections){
   var items=skills.filter(function(s){return s['skill'];}).map(function(s){ return '<a href="#skill-'+slug(s['skill'])+'">'+esc(s['skill'])+' <b>◆</b></a>'; }).join('');
   $('#ticker').innerHTML=items+items;
 
-  /* витрина: страницы по 6 карточек (3×2) */
   var pagesHtml='';
   for(var i=0;i<projects.length;i+=6){
     pagesHtml+='<div class="page">'+projects.slice(i,i+6).map(function(p){return cardHTML(p,images);}).join('')+'</div>';
@@ -432,7 +441,7 @@ function render(sections){
 
   var srows='', last='';
   skills.forEach(function(s){
-    if(s['group']&&s['group']!==last){ last=s['group']; srows+='<tr class="grp"><td colspan="7">'+esc(s['group'])+'</td></tr>'; }
+    if(s['group']&&s['group']!==last){ last=s['group']; srows+='<tr class="grp"><td colspan="4">'+esc(s['group'])+'</td></tr>'; }
     if(!s['skill']) return;
     var pips='<span class="pips">'+[1,2,3,4,5].map(function(x){return '<i class="'+(x<=+s['level']?'f':'')+'"></i>';}).join('')+'</span>';
     var cases=parseLinks(s['cases']).map(function(l){return '<a href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.label)+'</a>';}).join('')||'–';
@@ -441,7 +450,9 @@ function render(sections){
   $('#skillsTable').innerHTML='<table><thead><tr><th class="left">Навык</th><th>Уровень</th><th>Опыт</th><th class="left">Кейсы</th></tr></thead><tbody>'+srows+'</tbody></table>';
 
   $('#expList').innerHTML=exp.map(function(e){
-    return '<div class="tl"><div class="tl-dot"></div><div class="tl-head"><h3>'+esc(e['company'])+'</h3></div><span class="tl-date">'+esc(e['period'])+' · '+esc(e['grade'])+'</span><p class="tl-role">'+esc(e['role'])+' · '+esc(e['project'])+'</p><p class="res">'+esc(e['result'])+'</p></div>';
+    var term=(e['period']||'')+(e['срок']? ' · '+e['срок']:'');
+    var role=((e['grade']||'')+' '+(e['role']||'')).trim()+' · '+(e['project']||'');
+    return '<div class="tl"><div class="tl-dot"></div><div class="tl-head"><h3>'+esc(e['company'])+'</h3></div><span class="tl-date">'+esc(term)+'</span><p class="tl-role">'+esc(role)+'</p><p class="res">'+esc(e['result'])+'</p></div>';
   }).join('');
 
   $('#eduList').innerHTML=edu.map(function(e){
@@ -455,7 +466,6 @@ function render(sections){
 
   initPages(); initViews(); initAnim(); initFlash(); initSort();
 }
-/* таблица проектов + сортировка */
 function sortVal(p,key){
   switch(key){
     case 'id': return +p['№']||0;
@@ -476,25 +486,26 @@ function renderTable(key,dir){
     return 0;
   });
   var html=rows.map(function(p){
-    var img=imgFor(DATA.images,p['проект']);
     var plink=p['ссылка на проект']&&p['ссылка на проект']!=='–'?'<a href="'+esc(p['ссылка на проект'])+'" target="_blank" rel="noopener">'+esc(p['проект'])+'</a>':esc(p['проект']);
     var comp=p['ссылка на компанию']&&p['ссылка на компанию']!=='–'?'<a class="comp" href="'+esc(p['ссылка на компанию'])+'" target="_blank" rel="noopener">'+esc(p['компания']||'')+'</a>':'<span class="comp">'+esc(p['компания']||'')+'</span>';
+    var term2=(p['срок']||'')+(p['занятость']? ' · '+p['занятость']:'');
     return '<tr><td class="num">'+esc(p['№']||'')+'</td>'+
-      '<td class="left"><div class="pcell">'+(img?'<img class="thumb" src="'+esc(img)+'" alt="" loading="lazy" onerror="this.style.display=\'none\'">':'')+'<div><span class="pn">'+plink+'</span><span class="meta">'+esc(p['жанр']||'')+' · '+esc(p['платформа']||'')+' · '+esc(p['монетизация']||'')+'</span>'+comp+'</div></div></td>'+
-      '<td class="td-period"><span class="p-line">'+esc(p['период']||'')+'</span><span class="dim">'+esc(p['срок']||'')+'</span></td>'+
+      '<td class="left"><span class="pn">'+plink+'</span>'+comp+'<span class="meta">'+esc(p['жанр']||'')+' · '+esc(p['платформа']||'')+' · '+esc(p['монетизация']||'')+'</span></td>'+
+      '<td class="td-period"><span class="p-line">'+esc(p['период']||'')+'</span><span class="dim">'+esc(term2)+'</span></td>'+
       '<td>'+badge(p['статус']||'')+'</td>'+
       '<td class="td-role"><span class="g">'+esc(gradeOf(p))+'</span><span class="r">'+esc(roleOf(p))+'</span></td>'+
       '<td class="left">'+esc(p['задачи']||'')+'</td>'+
       '<td class="left">'+esc(p['достижения']||'')+'</td></tr>';
   }).join('');
+  function cls(k,extra){ return (extra?extra+' ':'')+(key===k?(dir<0?'desc':'asc'):''); }
   $('#projTable').innerHTML='<table><thead><tr>'+
-    '<th data-key="id" class="'+(key==='id'?(dir<0?'desc':'asc'):'')+'">№</th>'+
-    '<th data-key="title" class="left '+((key==='title')?(dir<0?'desc':'asc'):'')+'">Проект</th>'+
-    '<th data-key="period" class="'+((key==='period')?(dir<0?'desc':'asc'):'')+'">Период</th>'+
-    '<th data-key="status" class="'+((key==='status')?(dir<0?'desc':'asc'):'')+'">Статус</th>'+
-    '<th data-key="grade" class="'+((key==='grade')?(dir<0?'desc':'asc'):'')+'">Должность</th>'+
-    '<th data-key="tasks" class="left '+((key==='tasks')?(dir<0?'desc':'asc'):'')+'">Задачи</th>'+
-    '<th data-key="result" class="left '+((key==='result')?(dir<0?'desc':'asc'):'')+'">Достижения</th>'+
+    '<th data-key="id" class="'+cls('id')+'">№</th>'+
+    '<th data-key="title" class="'+cls('title','left')+'">Проект</th>'+
+    '<th data-key="period" class="'+cls('period')+'">Период</th>'+
+    '<th data-key="status" class="'+cls('status')+'">Статус</th>'+
+    '<th data-key="grade" class="'+cls('grade')+'">Должность</th>'+
+    '<th data-key="tasks" class="'+cls('tasks','left')+'">Задачи</th>'+
+    '<th data-key="result" class="'+cls('result','left')+'">Достижения</th>'+
     '</tr></thead><tbody>'+html+'</tbody></table>';
 }
 function initSort(){
