@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head> <link rel="text" href="content.md">
+<html lang="ru" dir="ltr">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SARVAS – геймдизайнер Василь Сарманаев</title>
-<!-- ID: Site_Build_Final_v6 -->
+<!-- ID: Site_Build_Final_v7
+     Файлы рядом: content.md, covers/logo.png, covers/photo.jpg, covers/*.png.
+     Весь контент правится в content.md без изменения кода. -->
+<meta name="description" content="Портфолио гейм-дизайнера Василя Сарманаева (SARVAS). Игровые системы, мета-игра, баланс, UX/UI, документация и прототипы для баттлеров, RTS и мобильных игр.">
+<meta name="keywords" content="геймдизайнер, game designer, SARVAS, Василь Сарманаев, портфолио, баттлер, RTS, мобильные игры, геймдизайн">
+<meta property="og:title" content="SARVAS – Гейм-дизайнер Василь Сарманаев">
+<meta property="og:description" content="Портфолио гейм-дизайнера полного цикла. Игровые системы, мета-игра, баланс, UX/UI.">
+<meta property="og:url" content="https://sarmanion.github.io">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://sarmanion.github.io/covers/photo.jpg">
+<meta property="og:image:alt" content="Фото Василя Сарманаева – гейм-дизайнера SARVAS">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SARVAS – Гейм-дизайнер Василь Сарманаев">
+<meta name="twitter:description" content="Портфолио гейм-дизайнера полного цикла. Специализация: игровые системы, мета-игра, баланс, UX/UI.">
+<meta name="twitter:image" content="https://sarmanion.github.io/covers/photo.jpg">
+<link rel="icon" type="image/png" href="covers/logo.png">
+<meta name="theme-color" content="#0c0a0e">
+<link rel="preload" href="covers/photo.jpg" as="image">
+<link rel="preload" href="covers/logo.png" as="image">
+<link rel="preload" href="https://cdn.jsdelivr.net/fontsource/fonts/russo-one@latest/cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/imperial">
 <style>
 @font-face{font-family:'Russo One';font-style:normal;font-weight:400;font-display:swap;src:url('https://cdn.jsdelivr.net/fontsource/fonts/russo-one@latest/cyrillic-400-normal.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
@@ -38,7 +57,8 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:16
 a{color:var(--red3);text-decoration:none}
 img{display:block;max-width:100%}
 .dim{color:var(--dim)}
-#err{display:none;margin:18px 0;padding:14px 18px;border:1px solid var(--red3);color:var(--red3);font-weight:600}
+#err{display:none;margin:18px 0;padding:14px 18px;border:1px solid var(--red3);color:var(--red3);font-weight:600;background:rgba(216,26,58,.05)}
+#err a{color:var(--red3);text-decoration:underline}
 /* NAV */
 .nav{position:sticky;top:0;z-index:50;background:rgba(12,10,14,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav .wrap{display:flex;align-items:center;gap:28px;height:72px}
@@ -69,14 +89,13 @@ img{display:block;max-width:100%}
 .photo img.img-missing{display:none;animation:none}
 .photo::after{content:'';position:absolute;top:0;bottom:0;left:-45%;width:45%;pointer-events:none;
   background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.05) 35%,rgba(255,255,255,.12) 50%,rgba(255,59,92,.08) 62%,transparent 100%);
-  filter:blur(14px);mix-blend-mode:screen;
-  animation:glare 9s linear infinite}
+  filter:blur(14px);mix-blend-mode:screen;animation:glare 9s linear infinite}
 @keyframes glare{from{transform:translateX(0)}to{transform:translateX(320%)}}
-.kicker{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--red3)}
-.kicker::before{content:'';width:34px;height:2px;background:var(--red)}
-.brand{font-family:var(--imp);font-size:clamp(44px,7vw,84px);line-height:1;letter-spacing:.06em;margin:0 0 6px;color:var(--text);text-shadow:0 0 34px rgba(216,26,58,.35)}
-h1{font-family:var(--disp);font-size:clamp(20px,2.6vw,28px);color:var(--text);letter-spacing:.04em;margin:0 0 10px}
-.hlead{max-width:600px;color:var(--muted);font-size:17px;margin-top:12px}
+.lockup{width:fit-content;max-width:100%}
+.brand{font-family:var(--imp);font-size:clamp(44px,7vw,84px);line-height:1;letter-spacing:.06em;margin:0 0 8px;color:var(--text);text-shadow:0 0 34px rgba(216,26,58,.35)}
+.lockup h1{font-family:var(--disp);font-size:clamp(20px,2.6vw,28px);color:var(--text);letter-spacing:.04em;margin:0 0 8px;width:100%;text-align:justify;text-align-last:justify}
+.kicker{display:block;font-weight:600;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--red3);width:100%;text-align:justify;text-align-last:justify}
+.hlead{max-width:600px;color:var(--muted);font-size:17px;margin-top:14px}
 .stats{margin:30px 0 6px;display:grid;gap:16px;max-width:600px}
 .stat{display:grid;grid-template-columns:1fr auto;gap:4px 14px;align-items:end}
 .stat .lb{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
@@ -129,14 +148,15 @@ h2 .idx{font-size:.55em;color:var(--red);letter-spacing:.1em}
 .sl-btns button:hover{border-color:rgba(255,59,92,.5);color:var(--red3)}
 /* TABLES */
 .tbl-wrap{overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
-table{width:100%;border-collapse:collapse;min-width:1180px;font-size:14px}
+table{width:100%;border-collapse:collapse;min-width:1080px;font-size:14px}
 th{font-family:var(--disp);font-weight:400;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--th);text-align:center;padding:14px 16px;border-bottom:1px solid var(--line2);background:var(--bg2);white-space:nowrap}
 th.left{text-align:left}
-th[data-key]{cursor:pointer;user-select:none}
-th[data-key]::after{content:'↕';margin-left:8px;opacity:.35;font-family:var(--body)}
-th[data-key].asc::after{content:'↑';opacity:1;color:var(--red3)}
-th[data-key].desc::after{content:'↓';opacity:1;color:var(--red3)}
+#projTable th[data-key]{cursor:pointer;user-select:none}
+#projTable th[data-key]::after{content:'↕';margin-left:8px;opacity:.35;font-family:var(--body)}
+#projTable th[data-key].asc::after{content:'↑';opacity:1;color:var(--red3)}
+#projTable th[data-key].desc::after{content:'↓';opacity:1;color:var(--red3)}
 td{padding:13px 16px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:middle;text-align:center}
+td,th{vertical-align:middle}
 td.left{text-align:left}
 tr:last-child td{border-bottom:0}
 tbody tr{transition:background .2s}
@@ -193,6 +213,8 @@ footer{border-top:1px solid var(--line);background:var(--bg2);padding:64px 0 40p
 .fcontacts a{color:var(--muted);font-weight:600;transition:color .2s}
 .fcontacts a:hover{color:var(--red3)}
 .copy{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--dim);font-size:12.5px;letter-spacing:.06em}
+/* SCROLL TOP */
+#scrollToTop{position:fixed;bottom:20px;right:20px;width:44px;height:44px;background:var(--red);border:none;border-radius:50%;color:var(--text);font-size:20px;cursor:pointer;display:none;z-index:100;box-shadow:0 8px 24px rgba(216,26,58,.4)}
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
 .reveal.on{opacity:1;transform:none}
@@ -219,83 +241,92 @@ footer{border-top:1px solid var(--line);background:var(--bg2);padding:64px 0 40p
 <header class="nav">
   <div class="wrap">
     <a class="logo" href="#top" aria-label="SARVAS GAME DESIGN">
-      <img src="logo.png" alt="SARVAS GAME DESIGN" onerror="this.classList.add('img-missing')">
+      <img src="covers/logo.png" alt="SARVAS GAME DESIGN – логотип" onerror="this.classList.add('img-missing')">
       <span class="logo-text">SARVAS<small>GAME DESIGN</small></span>
     </a>
-    <nav id="nav"></nav>
+    <nav id="nav" aria-label="Основная навигация"></nav>
   </div>
 </header>
 
 <main id="top">
-  <section class="hero reveal" id="hero">
+  <section class="hero reveal" id="hero" aria-labelledby="hName">
     <div class="wrap">
       <div class="frame">
         <i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i>
         <div class="photo">
           <span class="ph-fb">SV</span>
-          <img src="photo.jpg" alt="" onerror="this.classList.add('img-missing')">
+          <img src="covers/photo.jpg" alt="Фото Василя Сарманаева – гейм-дизайнера SARVAS" onerror="this.classList.add('img-missing')">
         </div>
       </div>
       <div>
-        <div class="brand" id="hBrand">SARVAS</div>
-        <h1 id="hName"></h1>
-        <span class="kicker" id="hRole"></span>
+        <div class="lockup">
+          <div class="brand" id="hBrand">SARVAS</div>
+          <h1 id="hName"></h1>
+          <span class="kicker" id="hRole"></span>
+        </div>
         <p class="hlead" id="hTag"></p>
         <div class="stats" id="hStats"></div>
-        <div id="err">Не удалось загрузить content.md – проверьте, что файл лежит рядом с index.html.</div>
+        <div id="err">Не удалось загрузить данные. Портфолио доступно по прямой ссылке: <a href="https://tinyurl.com/Portfolio-SarvasGD">tinyurl.com/Portfolio-SarvasGD</a></div>
       </div>
     </div>
   </section>
 
   <div class="ticker"><div class="ticker-track" id="ticker"></div></div>
 
-  <section id="projects">
+  <section id="projects" aria-labelledby="tProjects">
     <div class="wrap">
       <div class="hrow">
         <h2 class="reveal"><span class="idx">01</span><span id="tProjects">Проекты</span></h2>
         <div class="vmode reveal">
-          <button id="vShow" class="active">Витрина</button>
-          <button id="vTable">Таблица</button>
+          <button id="vShow" class="active" aria-label="Показать проекты в виде витрины">Витрина</button>
+          <button id="vTable" aria-label="Показать проекты в виде таблицы">Таблица</button>
         </div>
       </div>
       <div class="show-wrap reveal">
         <div class="pages" id="pages"></div>
         <div class="sl-btns">
-          <button id="slPrev" aria-label="Назад">←</button>
-          <button id="slNext" aria-label="Вперёд">→</button>
+          <button id="slPrev" aria-label="Предыдущая страница проектов">←</button>
+          <button id="slNext" aria-label="Следующая страница проектов">→</button>
         </div>
       </div>
       <div class="tbl-wrap tbl-projects reveal" id="projTable"></div>
     </div>
   </section>
 
-  <section id="skills">
+  <section id="skills" aria-labelledby="tSkills">
     <div class="wrap">
       <h2 class="reveal"><span class="idx">02</span><span id="tSkills">Навыки и кейсы</span></h2>
       <div class="tbl-wrap reveal" id="skillsTable"></div>
     </div>
   </section>
 
-  <section id="exp">
+  <section id="project-results" aria-labelledby="tResults">
     <div class="wrap">
-      <h2 class="reveal"><span class="idx">03</span><span id="tExp">Опыт</span></h2>
+      <h2 class="reveal"><span class="idx">03</span><span id="tResults">Проекты-Результаты</span></h2>
+      <div class="tbl-wrap reveal" id="resultsTable"></div>
+    </div>
+  </section>
+
+  <section id="exp" aria-labelledby="tExp">
+    <div class="wrap">
+      <h2 class="reveal"><span class="idx">04</span><span id="tExp">Опыт</span></h2>
       <div class="tl-list reveal" id="expList"></div>
     </div>
   </section>
 
-  <section id="edu">
+  <section id="edu" aria-labelledby="tEdu">
     <div class="wrap">
-      <h2 class="reveal"><span class="idx">04</span><span id="tEdu">Образование</span></h2>
+      <h2 class="reveal"><span class="idx">05</span><span id="tEdu">Образование</span></h2>
       <div class="edu reveal" id="eduList"></div>
     </div>
   </section>
 </main>
 
-<footer id="contacts">
+<footer id="contacts" aria-label="Контакты и информация">
   <div class="wrap">
     <div class="fgrid">
       <div class="fbig reveal">
-        <img class="flogo" src="logo.png" alt="SARVAS GAME DESIGN" onerror="this.classList.add('img-missing')">
+        <img class="flogo" src="covers/logo.png" alt="SARVAS GAME DESIGN – логотип" onerror="this.classList.add('img-missing')">
         <span class="fbig-text">SARVAS<small>GAME DESIGN</small></span>
       </div>
       <div class="fcontacts reveal" id="fContacts"></div>
@@ -303,6 +334,8 @@ footer{border-top:1px solid var(--line);background:var(--bg2);padding:64px 0 40p
     <div class="copy" id="fCopy"></div>
   </div>
 </footer>
+
+<button id="scrollToTop" aria-label="Вернуться в начало страницы">↑</button>
 
 <script>
 (function(){
@@ -326,11 +359,11 @@ function parseMD(src){
     var line=raw.trim();
     if(!line) return;
     var h=line.match(/^(#{1,2})\s+(.*)$/);
-    if(h){ cur={name:h[2].trim(),rows:[]}; sections.push(cur); header=null; return; }
+    if(h){ cur={name:h[2].trim(),rows:[],header:null}; sections.push(cur); header=null; return; }
     if(line.indexOf('|')===0 && cur){
       var cells=splitRow(line);
       if(isSep(cells)) return;
-      if(!header){ header=cells; return; }
+      if(!header){ header=cells; cur.header=cells; return; }
       var obj={};
       header.forEach(function(k,i){ obj[k.toLowerCase()]=(cells[i]||'').trim(); });
       cur.rows.push(obj);
@@ -355,44 +388,38 @@ function periodKey(s){
   return y? (+y[1])*12 : 0;
 }
 
-var STATUS={}, DEFSTATUS={'Вышла':'#45d08a','Софт-ланч':'#ffb454','В разработке':'#ffb454','Прототип':'#ff8a4a','Закрыто':'#8a8090'}, DATA={};
+var STATUS={}, DATA={};
 function statusColor(st){
-  var s=String(st||'').toLowerCase(), best=null, bi=1e9;
-  var map=Object.keys(STATUS).length?STATUS:DEFSTATUS;
-  Object.keys(map).forEach(function(k){
-    var i=s.indexOf(k.toLowerCase());
-    if(i>-1 && i<bi){ bi=i; best=k; }
+  var s=String(st||'');
+  if(STATUS[s]) return STATUS[s];
+  var low=s.toLowerCase(), best=null, bi=1e9;
+  Object.keys(STATUS).forEach(function(k){
+    var i=low.indexOf(k.toLowerCase());
+    if(i>-1 && (i<bi || (i===bi && best && k.length>best.length))){ bi=i; best=k; }
   });
-  return (best?map[best]:null)||DEFSTATUS['Закрыто'];
-}
-function imgFor(map,title){
-  var r=(map||[]).filter(function(x){ return (x['проект']||'').toLowerCase()===title.toLowerCase(); })[0];
-  if(!r) return null;
-  var v=r['изображение']||'';
-  var m=v.match(/covers\/[\w.-]+/);
-  return m? m[0] : (v.indexOf('http')===0? v : null);
+  return best?STATUS[best]:'#8a8090';
 }
 function badge(st){
   var c=statusColor(st);
   return '<span class="badge" style="color:'+c+';border-color:'+c+'80">'+esc(st)+'</span>';
 }
+function imgFor(map,title){
+  var r=(map||[]).filter(function(x){ return (x['проект']||'').toLowerCase()===String(title).toLowerCase(); })[0];
+  if(!r) return null;
+  var v=r['изображение']||'';
+  if(v==='—'||v==='-'||!v) return null;
+  return v;
+}
 function gradeOf(p){ return (p['должность']||'').split(',')[0].trim(); }
 function roleOf(p){ var parts=(p['должность']||'').split(','); parts.shift(); return parts.join(',').trim(); }
-function cardHTML(p,map){
-  var img=imgFor(map,p['проект']);
-  var link=p['ссылка на проект']&&p['ссылка на проект']!=='–'?p['ссылка на проект']:null;
-  var inner=img? '<img src="'+esc(img)+'" alt="'+esc(p['проект'])+'" loading="lazy" onerror="this.style.display=\'none\'">' : '';
-  var cl=link? '<a class="clink" href="'+esc(link)+'" target="_blank" rel="noopener">'+esc(host(link))+' →</a>' : '<a class="clink" href="#contacts">по запросу →</a>';
-  return '<article class="card"><div class="cover"><div class="cover-ph"><span>'+esc(p['жанр']||'')+' · '+esc(p['платформа']||'')+'</span><b>'+esc(p['проект'])+'</b></div>'+inner+'<span class="st" style="color:'+statusColor(p['статус'])+';border-color:'+statusColor(p['статус'])+'80">'+esc(p['статус']||'')+'</span></div>'+
-    '<div class="cbody"><h3>'+esc(p['проект'])+'</h3><span class="company">'+esc(p['компания']||'')+' · '+esc(gradeOf(p))+'</span>'+
-    '<p>'+esc(p['достижения']||'')+'</p>'+cl+'</div></article>';
-}
+
 function render(sections){
   var hero=kv((sec(sections,'Hero')||{}).rows);
   var metrics=(sec(sections,'Метрики')||{}).rows||[];
   var projects=(sec(sections,'Проекты')||{}).rows||[];
   var images=(sec(sections,'Изображения')||{}).rows||[];
   var skills=(sec(sections,'Навыки и кейсы')||{}).rows||[];
+  var resultsSec=sec(sections,'Проекты-Результаты')||{rows:[],header:null};
   var exp=(sec(sections,'Опыт')||{}).rows||[];
   var edu=(sec(sections,'Образование')||{}).rows||[];
   var contacts=(sec(sections,'Контакты')||{}).rows||[];
@@ -400,7 +427,11 @@ function render(sections){
   var footer=kv((sec(sections,'Футер')||{}).rows);
   DATA.projects=projects; DATA.images=images;
 
-  statuses.forEach(function(s){ STATUS[s['статус']]=s['цвет']; });
+  statuses.forEach(function(s){ if(s['статус']&&s['цвет']) STATUS[s['статус']]=s['цвет']; });
+
+  /* карта результатов по проекту */
+  var RES={};
+  (resultsSec.rows||[]).forEach(function(r){ if(r['проект']) RES[r['проект'].toLowerCase()]=r; });
 
   var t=hero['title'];
   if(!t){
@@ -412,33 +443,51 @@ function render(sections){
   $('#hName').textContent=hero['nameview']||hero['name']||'';
   $('#hRole').textContent=hero['role']||'';
   $('#hTag').textContent=hero['tagline']||'';
+
+  /* метрики: прогресс = value/max */
   $('#hStats').innerHTML=metrics.map(function(m){
-    return '<div class="stat"><span class="lb">'+esc(m['label'])+'</span><span class="num"><span data-to="'+esc(m['value'])+'">0</span> <em>'+esc(m['unit'])+'</em></span><div class="bar"><div class="fill" style="--w:'+esc(m['progress'])+'%"></div></div></div>';
+    var val=parseFloat(m['value'])||0, max=parseFloat(m['max'])||0;
+    var w=max>0? Math.round(val/max*100) : 0;
+    return '<div class="stat"><span class="lb">'+esc(m['label'])+'</span><span class="num"><span data-to="'+esc(m['value'])+'">0</span> <em>'+esc(m['unit'])+'</em></span><div class="bar"><div class="fill" style="--w:'+w+'%"></div></div></div>';
   }).join('');
 
-  var names={projects:'Проекты',skills:'Навыки и кейсы',exp:'Опыт',edu:'Образование',contacts:'Контакты'};
+  var names={projects:'Проекты',skills:'Навыки и кейсы',results:'Проекты-Результаты',exp:'Опыт',edu:'Образование',contacts:'Контакты'};
   Object.keys(names).forEach(function(k){
-    var s=sec(sections,names[k]);
+    var map={projects:'Проекты',skills:'Навыки и кейсы',results:'Проекты-Результаты',exp:'Опыт',edu:'Образование',contacts:'Контакты'};
+    var s=sec(sections,map[k]);
     if(s) names[k]=s.name;
   });
   $('#tProjects').textContent=names.projects;
   $('#tSkills').textContent=names.skills;
+  $('#tResults').textContent=names.results;
   $('#tExp').textContent=names.exp;
   $('#tEdu').textContent=names.edu;
-  $('#nav').innerHTML=[['#projects',names.projects],['#skills',names.skills],['#exp',names.exp],['#edu',names.edu],['#contacts',names.contacts]]
+  $('#nav').innerHTML=[['#projects',names.projects],['#skills',names.skills],['#project-results',names.results],['#exp',names.exp],['#edu',names.edu],['#contacts',names.contacts]]
     .map(function(n){ return '<a href="'+n[0]+'">'+esc(n[1])+'</a>'; }).join('');
 
   var items=skills.filter(function(s){return s['skill'];}).map(function(s){ return '<a href="#skill-'+slug(s['skill'])+'">'+esc(s['skill'])+' <b>◆</b></a>'; }).join('');
   $('#ticker').innerHTML=items+items;
 
+  /* витрина: страницы по 6 карточек; результат – из «Проекты-Результаты» */
+  function cardHTML(p){
+    var img=imgFor(images,p['проект']);
+    var link=p['ссылка на проект']&&p['ссылка на проект']!=='–'?p['ссылка на проект']:null;
+    var inner=img? '<img src="'+esc(img)+'" alt="Обложка: '+esc(p['проект'])+' – '+esc(p['жанр']||'')+'" loading="lazy" onerror="this.style.display=\'none\'">' : '';
+    var res=(RES[(p['проект']||'').toLowerCase()]||{})['результат']||'';
+    var cl=link? '<a class="clink" href="'+esc(link)+'" target="_blank" rel="noopener">'+esc(host(link))+' →</a>' : '<a class="clink" href="#contacts">по запросу →</a>';
+    return '<article class="card"><div class="cover"><div class="cover-ph"><span>'+esc(p['жанр']||'')+' · '+esc(p['платформа']||'')+'</span><b>'+esc(p['проект'])+'</b></div>'+inner+'<span class="st" style="color:'+statusColor(p['статус'])+';border-color:'+statusColor(p['статус'])+'80">'+esc(p['статус']||'')+'</span></div>'+
+      '<div class="cbody"><h3>'+esc(p['проект'])+'</h3><span class="company">'+esc(p['компания']||'')+' · '+esc(gradeOf(p))+'</span>'+
+      '<p>'+esc(res)+'</p>'+cl+'</div></article>';
+  }
   var pagesHtml='';
   for(var i=0;i<projects.length;i+=6){
-    pagesHtml+='<div class="page">'+projects.slice(i,i+6).map(function(p){return cardHTML(p,images);}).join('')+'</div>';
+    pagesHtml+='<div class="page">'+projects.slice(i,i+6).map(cardHTML).join('')+'</div>';
   }
   $('#pages').innerHTML=pagesHtml;
 
   renderTable('id',-1);
 
+  /* навыки */
   var srows='', last='';
   skills.forEach(function(s){
     if(s['group']&&s['group']!==last){ last=s['group']; srows+='<tr class="grp"><td colspan="4">'+esc(s['group'])+'</td></tr>'; }
@@ -449,23 +498,44 @@ function render(sections){
   });
   $('#skillsTable').innerHTML='<table><thead><tr><th class="left">Навык</th><th>Уровень</th><th>Опыт</th><th class="left">Кейсы</th></tr></thead><tbody>'+srows+'</tbody></table>';
 
+  /* проекты-результаты: рендер из шапки таблицы; скрыть, если пусто */
+  var rrows=resultsSec.rows||[], rhead=resultsSec.header||[];
+  var hasData=rrows.some(function(r){ return Object.keys(r).some(function(k){ return k!=='проект' && r[k] && r[k]!=='–' && r[k].trim()!==''; }); });
+  var rsec=$('#project-results');
+  if(hasData && rhead.length){
+    var th='<tr>'+rhead.map(function(h,idx){ return '<th class="'+((idx===0||idx===rhead.length-1)?'left':'')+'">'+esc(h)+'</th>'; }).join('')+'</tr>';
+    var body=rrows.map(function(r){
+      return '<tr>'+rhead.map(function(h,idx){
+        var v=r[h.toLowerCase()]||'';
+        var cls=idx===0?'left pn':(idx===rhead.length-1?'left':'');
+        return '<td class="'+cls+'">'+(v?esc(v):'–')+'</td>';
+      }).join('')+'</tr>';
+    }).join('');
+    $('#resultsTable').innerHTML='<table><thead>'+th+'</thead><tbody>'+body+'</tbody></table>';
+  } else { rsec.style.display='none'; }
+
+  /* опыт */
   $('#expList').innerHTML=exp.map(function(e){
     var term=(e['period']||'')+(e['срок']? ' · '+e['срок']:'');
     var role=((e['grade']||'')+' '+(e['role']||'')).trim()+' · '+(e['project']||'');
     return '<div class="tl"><div class="tl-dot"></div><div class="tl-head"><h3>'+esc(e['company'])+'</h3></div><span class="tl-date">'+esc(term)+'</span><p class="tl-role">'+esc(role)+'</p><p class="res">'+esc(e['result'])+'</p></div>';
   }).join('');
 
+  /* образование */
   $('#eduList').innerHTML=edu.map(function(e){
     return '<div class="ecard"><span class="yr">'+esc(e['year'])+'</span><h3>'+esc(e['title'])+'</h3><p>'+esc(e['note'])+'</p></div>';
   }).join('');
 
+  /* контакты и футер */
   $('#fContacts').innerHTML=contacts.map(function(c){
     return '<a href="'+esc(c['value'])+'" target="_blank" rel="noopener">'+esc(c['label'])+'</a>';
   }).join('');
   $('#fCopy').innerHTML='<span>'+esc(footer['copy']||'')+'</span><span>'+esc(footer['geo']||'')+'</span>';
 
-  initPages(); initViews(); initAnim(); initFlash(); initSort();
+  initPages(); initViews(); initAnim(); initFlash(); initSort(); initTop();
 }
+
+/* таблица проектов: сортировка, дефолт – № по убыванию */
 function sortVal(p,key){
   switch(key){
     case 'id': return +p['№']||0;
@@ -473,8 +543,6 @@ function sortVal(p,key){
     case 'period': return periodKey(p['период']||'');
     case 'status': return p['статус']||'';
     case 'grade': return gradeOf(p).toLowerCase();
-    case 'tasks': return p['задачи']||'';
-    case 'result': return p['достижения']||'';
   }
   return 0;
 }
@@ -489,13 +557,11 @@ function renderTable(key,dir){
     var plink=p['ссылка на проект']&&p['ссылка на проект']!=='–'?'<a href="'+esc(p['ссылка на проект'])+'" target="_blank" rel="noopener">'+esc(p['проект'])+'</a>':esc(p['проект']);
     var comp=p['ссылка на компанию']&&p['ссылка на компанию']!=='–'?'<a class="comp" href="'+esc(p['ссылка на компанию'])+'" target="_blank" rel="noopener">'+esc(p['компания']||'')+'</a>':'<span class="comp">'+esc(p['компания']||'')+'</span>';
     var term2=(p['срок']||'')+(p['занятость']? ' · '+p['занятость']:'');
-    return '<tr><td class="num">'+esc(p['№']||'')+'</td>'+
+    return '<tr><td class="dim">'+esc(p['№']||'')+'</td>'+
       '<td class="left"><span class="pn">'+plink+'</span>'+comp+'<span class="meta">'+esc(p['жанр']||'')+' · '+esc(p['платформа']||'')+' · '+esc(p['монетизация']||'')+'</span></td>'+
       '<td class="td-period"><span class="p-line">'+esc(p['период']||'')+'</span><span class="dim">'+esc(term2)+'</span></td>'+
       '<td>'+badge(p['статус']||'')+'</td>'+
-      '<td class="td-role"><span class="g">'+esc(gradeOf(p))+'</span><span class="r">'+esc(roleOf(p))+'</span></td>'+
-      '<td class="left">'+esc(p['задачи']||'')+'</td>'+
-      '<td class="left">'+esc(p['достижения']||'')+'</td></tr>';
+      '<td class="td-role"><span class="g">'+esc(gradeOf(p))+'</span><span class="r">'+esc(roleOf(p))+'</span></td></tr>';
   }).join('');
   function cls(k,extra){ return (extra?extra+' ':'')+(key===k?(dir<0?'desc':'asc'):''); }
   $('#projTable').innerHTML='<table><thead><tr>'+
@@ -504,8 +570,6 @@ function renderTable(key,dir){
     '<th data-key="period" class="'+cls('period')+'">Период</th>'+
     '<th data-key="status" class="'+cls('status')+'">Статус</th>'+
     '<th data-key="grade" class="'+cls('grade')+'">Должность</th>'+
-    '<th data-key="tasks" class="'+cls('tasks','left')+'">Задачи</th>'+
-    '<th data-key="result" class="'+cls('result','left')+'">Достижения</th>'+
     '</tr></thead><tbody>'+html+'</tbody></table>';
 }
 function initSort(){
@@ -543,6 +607,15 @@ function initFlash(){
     if(!a) return;
     var t=document.querySelector(a.getAttribute('href'));
     if(t){ t.classList.remove('flash'); void t.offsetWidth; t.classList.add('flash'); }
+  });
+}
+function initTop(){
+  var b=$('#scrollToTop');
+  window.addEventListener('scroll',function(){
+    b.style.display=window.scrollY>300?'block':'none';
+  });
+  b.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:RM?'auto':'smooth'});
   });
 }
 function runCount(el){
