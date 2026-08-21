@@ -4,21 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SARVAS – геймдизайнер Василь Сарманаев</title>
-<!-- ID: Site_Build_Final_v7
-     Файлы рядом: content.md, covers/logo.png, covers/photo.jpg, covers/*.png.
-     Весь контент правится в content.md без изменения кода. -->
+<!-- ID: Site_Build_Final_v9 -->
 <meta name="description" content="Портфолио гейм-дизайнера Василя Сарманаева (SARVAS). Игровые системы, мета-игра, баланс, UX/UI, документация и прототипы для баттлеров, RTS и мобильных игр.">
-<meta name="keywords" content="геймдизайнер, game designer, SARVAS, Василь Сарманаев, портфолио, баттлер, RTS, мобильные игры, геймдизайн">
 <meta property="og:title" content="SARVAS – Гейм-дизайнер Василь Сарманаев">
 <meta property="og:description" content="Портфолио гейм-дизайнера полного цикла. Игровые системы, мета-игра, баланс, UX/UI.">
 <meta property="og:url" content="https://sarmanion.github.io">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://sarmanion.github.io/covers/photo.jpg">
-<meta property="og:image:alt" content="Фото Василя Сарманаева – гейм-дизайнера SARVAS">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SARVAS – Гейм-дизайнер Василь Сарманаев">
-<meta name="twitter:description" content="Портфолио гейм-дизайнера полного цикла. Специализация: игровые системы, мета-игра, баланс, UX/UI.">
-<meta name="twitter:image" content="https://sarmanion.github.io/covers/photo.jpg">
 <link rel="icon" type="image/png" href="covers/logo.png">
 <meta name="theme-color" content="#0c0a0e">
 <link rel="preload" href="covers/photo.jpg" as="image">
@@ -32,8 +25,6 @@
 @font-face{font-family:'Manrope';font-style:normal;font-weight:400;font-display:swap;src:url('https://cdn.jsdelivr.net/fontsource/fonts/manrope@latest/latin-400-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+2122,U+FEFF,U+FFFD}
 @font-face{font-family:'Manrope';font-style:normal;font-weight:600;font-display:swap;src:url('https://cdn.jsdelivr.net/fontsource/fonts/manrope@latest/cyrillic-600-normal.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
 @font-face{font-family:'Manrope';font-style:normal;font-weight:600;font-display:swap;src:url('https://cdn.jsdelivr.net/fontsource/fonts/manrope@latest/latin-600-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+2122,U+FEFF,U+FFFD}
-@font-face{font-family:'Manrope';font-style:normal;font-weight:800;font-display:swap;src:url('https://cdn.jsdelivr.net/fontsource/fonts/manrope@latest/cyrillic-800-normal.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
-@font-face{font-family:'Manrope';font-style:normal;font-weight:800;font-display:swap;src:url('https://cdn.jsdelivr.net/fontsource/fonts/manrope@latest/latin-800-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+2122,U+FEFF,U+FFFD}
 :root{
   --bg:#0c0a0e; --bg2:#120d16; --panel:#17111c; --panel2:#1d1524;
   --line:#2b2132; --line2:#3a2c44;
@@ -59,7 +50,6 @@ img{display:block;max-width:100%}
 .dim{color:var(--dim)}
 #err{display:none;margin:18px 0;padding:14px 18px;border:1px solid var(--red3);color:var(--red3);font-weight:600;background:rgba(216,26,58,.05)}
 #err a{color:var(--red3);text-decoration:underline}
-/* NAV */
 .nav{position:sticky;top:0;z-index:50;background:rgba(12,10,14,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav .wrap{display:flex;align-items:center;gap:28px;height:72px}
 .logo{display:grid;place-items:center;margin-right:auto}
@@ -73,7 +63,6 @@ img{display:block;max-width:100%}
 .nav nav::-webkit-scrollbar{display:none}
 .nav nav a{font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap;transition:color .2s}
 .nav nav a:hover{color:var(--red3)}
-/* HERO */
 .hero{padding:72px 0 64px}
 .hero .wrap{display:grid;grid-template-columns:400px 1fr;gap:56px;align-items:stretch}
 .frame{position:relative;padding:16px;height:100%}
@@ -92,9 +81,9 @@ img{display:block;max-width:100%}
   filter:blur(14px);mix-blend-mode:screen;animation:glare 9s linear infinite}
 @keyframes glare{from{transform:translateX(0)}to{transform:translateX(320%)}}
 .lockup{width:fit-content;max-width:100%}
-.brand{font-family:var(--imp);font-size:clamp(44px,7vw,84px);line-height:1;letter-spacing:.06em;margin:0 0 8px;color:var(--text);text-shadow:0 0 34px rgba(216,26,58,.35)}
-.lockup h1{font-family:var(--disp);font-size:clamp(20px,2.6vw,28px);color:var(--text);letter-spacing:.04em;margin:0 0 8px;width:100%;text-align:justify;text-align-last:justify}
-.kicker{display:block;font-weight:600;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--red3);width:100%;text-align:justify;text-align-last:justify}
+.brand{font-family:var(--imp);font-size:clamp(44px,7vw,84px);line-height:1;letter-spacing:.06em;margin:0 0 10px;color:var(--text);text-shadow:0 0 34px rgba(216,26,58,.35)}
+.lockup h1{font-family:var(--disp);font-size:clamp(20px,2.6vw,28px);color:var(--text);margin:0 0 8px;white-space:nowrap}
+.kicker{display:block;font-family:var(--disp);font-weight:400;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--red3);white-space:nowrap}
 .hlead{max-width:600px;color:var(--muted);font-size:17px;margin-top:14px}
 .stats{margin:30px 0 6px;display:grid;gap:16px;max-width:600px}
 .stat{display:grid;grid-template-columns:1fr auto;gap:4px 14px;align-items:end}
@@ -104,7 +93,6 @@ img{display:block;max-width:100%}
 .bar{grid-column:1/-1;height:6px;background:var(--panel2);border:1px solid var(--line);position:relative;overflow:hidden}
 .bar .fill{position:absolute;inset:0 auto 0 0;width:0;background:linear-gradient(90deg,var(--red2),var(--red) 70%,var(--red3));transition:width 1.3s cubic-bezier(.2,.7,.2,1)}
 .on .bar .fill{width:var(--w)}
-/* TICKER */
 .ticker{overflow:hidden;border-block:1px solid var(--line);background:var(--bg2)}
 .ticker-track{display:flex;width:max-content;animation:tick 30s linear infinite}
 .ticker:hover .ticker-track{animation-play-state:paused}
@@ -112,7 +100,6 @@ img{display:block;max-width:100%}
 .ticker a:hover{color:var(--red3)}
 .ticker b{color:var(--red);font-weight:400}
 @keyframes tick{to{transform:translateX(-50%)}}
-/* SECTIONS */
 section{padding:78px 0}
 h2{font-family:var(--disp);font-size:clamp(26px,3.6vw,40px);letter-spacing:.03em;margin-bottom:26px;display:flex;align-items:baseline;gap:18px}
 h2 .idx{font-size:.55em;color:var(--red);letter-spacing:.1em}
@@ -121,7 +108,6 @@ h2 .idx{font-size:.55em;color:var(--red);letter-spacing:.1em}
 .vmode{margin-left:auto;display:flex;gap:8px}
 .vmode button{font-family:var(--disp);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);background:var(--panel);border:1px solid var(--line2);padding:8px 14px;cursor:pointer;transition:color .2s,border-color .2s}
 .vmode button.active{color:var(--red3);border-color:rgba(255,59,92,.5)}
-/* CARDS / PAGES */
 .pages{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
 .pages::-webkit-scrollbar{display:none}
 .page{min-width:100%;display:grid;grid-template-columns:repeat(3,1fr);gap:26px;scroll-snap-align:start;align-content:start}
@@ -146,9 +132,8 @@ h2 .idx{font-size:.55em;color:var(--red);letter-spacing:.1em}
 .sl-btns{display:flex;gap:10px;margin-top:18px}
 .sl-btns button{font-family:var(--disp);font-size:14px;color:var(--text);background:var(--panel);border:1px solid var(--line2);width:46px;height:40px;cursor:pointer;transition:border-color .2s,color .2s}
 .sl-btns button:hover{border-color:rgba(255,59,92,.5);color:var(--red3)}
-/* TABLES */
 .tbl-wrap{overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
-table{width:100%;border-collapse:collapse;min-width:1080px;font-size:14px}
+table{width:100%;border-collapse:collapse;min-width:1400px;font-size:14px}
 th{font-family:var(--disp);font-weight:400;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--th);text-align:center;padding:14px 16px;border-bottom:1px solid var(--line2);background:var(--bg2);white-space:nowrap}
 th.left{text-align:left}
 #projTable th[data-key]{cursor:pointer;user-select:none}
@@ -156,7 +141,6 @@ th.left{text-align:left}
 #projTable th[data-key].asc::after{content:'↑';opacity:1;color:var(--red3)}
 #projTable th[data-key].desc::after{content:'↓';opacity:1;color:var(--red3)}
 td{padding:13px 16px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:middle;text-align:center}
-td,th{vertical-align:middle}
 td.left{text-align:left}
 tr:last-child td{border-bottom:0}
 tbody tr{transition:background .2s}
@@ -173,6 +157,9 @@ a.comp:hover{opacity:1;text-decoration:underline}
 .td-period .dim{display:block;margin-top:3px}
 .td-role .g{display:block;color:var(--red3);font-weight:700}
 .td-role .r{display:block;margin-top:2px}
+td.res-cell{font-size:12.5px;max-width:220px}
+.cellink{display:inline-block;margin-left:6px;font-size:11px;font-weight:600;border:1px solid var(--line2);padding:2px 8px;color:var(--muted)}
+.cellink:hover{color:var(--red3);border-color:rgba(255,59,92,.5)}
 .pips{display:inline-flex;gap:5px;justify-content:center}
 .pips i{width:14px;height:6px;background:var(--line2);transform:skewX(-16deg)}
 .pips i.f{background:linear-gradient(90deg,var(--red2),var(--red3))}
@@ -180,11 +167,9 @@ td.case a{display:inline-block;margin:0 6px 6px 0;font-size:12.5px;font-weight:6
 td.case a:hover{color:var(--red3);border-color:rgba(255,59,92,.5)}
 tr.flash{animation:flash 1.2s ease}
 @keyframes flash{0%,60%{background:rgba(216,26,58,.22)}100%{background:transparent}}
-/* VIEW SWITCH */
 body[data-view="table"] .show-wrap{display:none}
 body[data-view="show"] .tbl-projects{display:none}
-/* TIMELINE */
-.tl-list{position:relative;padding-left:34px}
+.tl-list{position:relative;padding-left:34px;max-width:860px}
 .tl-list::before{content:'';position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--red),var(--red2) 60%,transparent)}
 .tl{position:relative;padding-bottom:38px}
 .tl:last-child{padding-bottom:0}
@@ -192,15 +177,13 @@ body[data-view="show"] .tbl-projects{display:none}
 .tl-head h3{font-family:var(--disp);font-size:19px;letter-spacing:.04em}
 .tl-date{display:block;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:4px 0}
 .tl-role{color:var(--red3);font-weight:600;font-size:14px;margin:0 0 8px}
-.tl p.res{color:var(--muted);font-size:14.5px;max-width:820px}
-/* EDU */
+.tl p.res{color:var(--muted);font-size:14.5px}
 .edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
 .ecard{border:1px solid var(--line);background:var(--panel);padding:22px;transition:border-color .3s}
 .ecard:hover{border-color:var(--red2)}
 .ecard .yr{font-family:var(--disp);color:var(--red);font-size:13px;letter-spacing:.14em}
 .ecard h3{font-size:16px;margin:8px 0 4px}
 .ecard p{color:var(--muted);font-size:13.5px}
-/* FOOTER */
 footer{border-top:1px solid var(--line);background:var(--bg2);padding:64px 0 40px}
 .fgrid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
 .fbig{line-height:1}
@@ -213,9 +196,7 @@ footer{border-top:1px solid var(--line);background:var(--bg2);padding:64px 0 40p
 .fcontacts a{color:var(--muted);font-weight:600;transition:color .2s}
 .fcontacts a:hover{color:var(--red3)}
 .copy{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--dim);font-size:12.5px;letter-spacing:.06em}
-/* SCROLL TOP */
 #scrollToTop{position:fixed;bottom:20px;right:20px;width:44px;height:44px;background:var(--red);border:none;border-radius:50%;color:var(--text);font-size:20px;cursor:pointer;display:none;z-index:100;box-shadow:0 8px 24px rgba(216,26,58,.4)}
-/* REVEAL */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
 .reveal.on{opacity:1;transform:none}
 @media (max-width:980px){
@@ -225,6 +206,7 @@ footer{border-top:1px solid var(--line);background:var(--bg2);padding:64px 0 40p
   .page{grid-template-columns:1fr 1fr}
   .fgrid{grid-template-columns:1fr}
   .fcontacts{text-align:left}
+  .lockup h1,.kicker{white-space:normal}
 }
 @media (max-width:640px){.page{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){
@@ -300,23 +282,16 @@ footer{border-top:1px solid var(--line);background:var(--bg2);padding:64px 0 40p
     </div>
   </section>
 
-  <section id="project-results" aria-labelledby="tResults">
-    <div class="wrap">
-      <h2 class="reveal"><span class="idx">03</span><span id="tResults">Проекты-Результаты</span></h2>
-      <div class="tbl-wrap reveal" id="resultsTable"></div>
-    </div>
-  </section>
-
   <section id="exp" aria-labelledby="tExp">
     <div class="wrap">
-      <h2 class="reveal"><span class="idx">04</span><span id="tExp">Опыт</span></h2>
+      <h2 class="reveal"><span class="idx">03</span><span id="tExp">Опыт</span></h2>
       <div class="tl-list reveal" id="expList"></div>
     </div>
   </section>
 
   <section id="edu" aria-labelledby="tEdu">
     <div class="wrap">
-      <h2 class="reveal"><span class="idx">05</span><span id="tEdu">Образование</span></h2>
+      <h2 class="reveal"><span class="idx">04</span><span id="tEdu">Образование</span></h2>
       <div class="edu reveal" id="eduList"></div>
     </div>
   </section>
@@ -351,6 +326,14 @@ function parseLinks(cell){
   while((m=re.exec(cell||''))) out.push({label:m[1],url:m[2]});
   return out;
 }
+function richCell(v){
+  if(!v || v==='–' || !v.trim()) return '–';
+  var links=parseLinks(v);
+  var txt=v.replace(/\[([^\]]+)\]\([^)]*\)/g,'').replace(/\s+/g,' ').trim();
+  var out=esc(txt);
+  links.forEach(function(l){ out+=' <a class="cellink" href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.label)+'</a>'; });
+  return out;
+}
 function splitRow(line){ return line.replace(/^\|/,'').replace(/\|$/,'').split('|').map(function(s){return s.trim();}); }
 function isSep(cells){ return cells.every(function(c){ return /^:?-{2,}:?$/.test(c); }); }
 function parseMD(src){
@@ -359,7 +342,7 @@ function parseMD(src){
     var line=raw.trim();
     if(!line) return;
     var h=line.match(/^(#{1,2})\s+(.*)$/);
-    if(h){ cur={name:h[2].trim(),rows:[],header:null}; sections.push(cur); header=null; return; }
+    if(h){ cur={name:h[2].trim(),rows:[],header:null,lines:[]}; sections.push(cur); header=null; return; }
     if(line.indexOf('|')===0 && cur){
       var cells=splitRow(line);
       if(isSep(cells)) return;
@@ -367,7 +350,8 @@ function parseMD(src){
       var obj={};
       header.forEach(function(k,i){ obj[k.toLowerCase()]=(cells[i]||'').trim(); });
       cur.rows.push(obj);
-    } else { header=null; }
+    } else if(cur){ cur.lines.push(line); header=null; }
+    else { header=null; }
   });
   return sections;
 }
@@ -380,14 +364,13 @@ function kv(rows){
   });
   return o;
 }
-var MON={'янв':1,'фев':2,'мар':3,'апр':4,'май':5,'июн':6,'июл':7,'авг':8,'сен':9,'окт':10,'ноя':11,'дек':12,'jan':1,'feb':2,'mar':3,'apr':4,'may':5,'jun':6,'jul':7,'aug':8,'sep':9,'oct':10,'nov':11,'dec':12};
+var MON={'янв':1,'фев':2,'мар':3,'апр':4,'май':5,'июн':6,'июл':7,'авг':8,'сен':9,'окт':10,'ноя':11,'дек':12};
 function periodKey(s){
   var m=String(s).match(/([a-zа-я]+)[^\d]*(\d{4})/i);
   if(m){ var mm=MON[m[1].toLowerCase()]||0; return (+m[2])*12+mm; }
   var y=String(s).match(/(\d{4})/);
   return y? (+y[1])*12 : 0;
 }
-
 var STATUS={}, DATA={};
 function statusColor(st){
   var s=String(st||'');
@@ -419,7 +402,8 @@ function render(sections){
   var projects=(sec(sections,'Проекты')||{}).rows||[];
   var images=(sec(sections,'Изображения')||{}).rows||[];
   var skills=(sec(sections,'Навыки и кейсы')||{}).rows||[];
-  var resultsSec=sec(sections,'Проекты-Результаты')||{rows:[],header:null};
+  var resultsSec=sec(sections,'Проекты-Результаты')||{rows:[]};
+  var orderSec=sec(sections,'Порядок витрины');
   var exp=(sec(sections,'Опыт')||{}).rows||[];
   var edu=(sec(sections,'Образование')||{}).rows||[];
   var contacts=(sec(sections,'Контакты')||{}).rows||[];
@@ -429,7 +413,6 @@ function render(sections){
 
   statuses.forEach(function(s){ if(s['статус']&&s['цвет']) STATUS[s['статус']]=s['цвет']; });
 
-  /* карта результатов по проекту */
   var RES={};
   (resultsSec.rows||[]).forEach(function(r){ if(r['проект']) RES[r['проект'].toLowerCase()]=r; });
 
@@ -444,31 +427,35 @@ function render(sections){
   $('#hRole').textContent=hero['role']||'';
   $('#hTag').textContent=hero['tagline']||'';
 
-  /* метрики: прогресс = value/max */
   $('#hStats').innerHTML=metrics.map(function(m){
     var val=parseFloat(m['value'])||0, max=parseFloat(m['max'])||0;
     var w=max>0? Math.round(val/max*100) : 0;
     return '<div class="stat"><span class="lb">'+esc(m['label'])+'</span><span class="num"><span data-to="'+esc(m['value'])+'">0</span> <em>'+esc(m['unit'])+'</em></span><div class="bar"><div class="fill" style="--w:'+w+'%"></div></div></div>';
   }).join('');
 
-  var names={projects:'Проекты',skills:'Навыки и кейсы',results:'Проекты-Результаты',exp:'Опыт',edu:'Образование',contacts:'Контакты'};
-  Object.keys(names).forEach(function(k){
-    var map={projects:'Проекты',skills:'Навыки и кейсы',results:'Проекты-Результаты',exp:'Опыт',edu:'Образование',contacts:'Контакты'};
-    var s=sec(sections,map[k]);
-    if(s) names[k]=s.name;
-  });
+  var names={projects:'Проекты',skills:'Навыки и кейсы',exp:'Опыт',edu:'Образование',contacts:'Контакты'};
+  var map={projects:'Проекты',skills:'Навыки и кейсы',exp:'Опыт',edu:'Образование',contacts:'Контакты'};
+  Object.keys(map).forEach(function(k){ var s=sec(sections,map[k]); if(s) names[k]=s.name; });
   $('#tProjects').textContent=names.projects;
   $('#tSkills').textContent=names.skills;
-  $('#tResults').textContent=names.results;
   $('#tExp').textContent=names.exp;
   $('#tEdu').textContent=names.edu;
-  $('#nav').innerHTML=[['#projects',names.projects],['#skills',names.skills],['#project-results',names.results],['#exp',names.exp],['#edu',names.edu],['#contacts',names.contacts]]
+  $('#nav').innerHTML=[['#projects',names.projects],['#skills',names.skills],['#exp',names.exp],['#edu',names.edu],['#contacts',names.contacts]]
     .map(function(n){ return '<a href="'+n[0]+'">'+esc(n[1])+'</a>'; }).join('');
 
   var items=skills.filter(function(s){return s['skill'];}).map(function(s){ return '<a href="#skill-'+slug(s['skill'])+'">'+esc(s['skill'])+' <b>◆</b></a>'; }).join('');
   $('#ticker').innerHTML=items+items;
 
-  /* витрина: страницы по 6 карточек; результат – из «Проекты-Результаты» */
+  /* порядок витрины: цифры через запятую из секции «Порядок витрины» */
+  var orderText=((orderSec&&orderSec.lines)||[]).join(' ');
+  var orderNums=orderText.match(/\d+/g)||[];
+  var ordered=[];
+  orderNums.forEach(function(n){
+    var p=projects.filter(function(x){ return (+x['№'])===+n; })[0];
+    if(p&&ordered.indexOf(p)<0) ordered.push(p);
+  });
+  projects.forEach(function(p){ if(ordered.indexOf(p)<0) ordered.push(p); });
+
   function cardHTML(p){
     var img=imgFor(images,p['проект']);
     var link=p['ссылка на проект']&&p['ссылка на проект']!=='–'?p['ссылка на проект']:null;
@@ -480,14 +467,13 @@ function render(sections){
       '<p>'+esc(res)+'</p>'+cl+'</div></article>';
   }
   var pagesHtml='';
-  for(var i=0;i<projects.length;i+=6){
-    pagesHtml+='<div class="page">'+projects.slice(i,i+6).map(cardHTML).join('')+'</div>';
+  for(var i=0;i<ordered.length;i+=6){
+    pagesHtml+='<div class="page">'+ordered.slice(i,i+6).map(cardHTML).join('')+'</div>';
   }
   $('#pages').innerHTML=pagesHtml;
 
   renderTable('id',-1);
 
-  /* навыки */
   var srows='', last='';
   skills.forEach(function(s){
     if(s['group']&&s['group']!==last){ last=s['group']; srows+='<tr class="grp"><td colspan="4">'+esc(s['group'])+'</td></tr>'; }
@@ -498,44 +484,45 @@ function render(sections){
   });
   $('#skillsTable').innerHTML='<table><thead><tr><th class="left">Навык</th><th>Уровень</th><th>Опыт</th><th class="left">Кейсы</th></tr></thead><tbody>'+srows+'</tbody></table>';
 
-  /* проекты-результаты: рендер из шапки таблицы; скрыть, если пусто */
-  var rrows=resultsSec.rows||[], rhead=resultsSec.header||[];
-  var hasData=rrows.some(function(r){ return Object.keys(r).some(function(k){ return k!=='проект' && r[k] && r[k]!=='–' && r[k].trim()!==''; }); });
-  var rsec=$('#project-results');
-  if(hasData && rhead.length){
-    var th='<tr>'+rhead.map(function(h,idx){ return '<th class="'+((idx===0||idx===rhead.length-1)?'left':'')+'">'+esc(h)+'</th>'; }).join('')+'</tr>';
-    var body=rrows.map(function(r){
-      return '<tr>'+rhead.map(function(h,idx){
-        var v=r[h.toLowerCase()]||'';
-        var cls=idx===0?'left pn':(idx===rhead.length-1?'left':'');
-        return '<td class="'+cls+'">'+(v?esc(v):'–')+'</td>';
-      }).join('')+'</tr>';
-    }).join('');
-    $('#resultsTable').innerHTML='<table><thead>'+th+'</thead><tbody>'+body+'</tbody></table>';
-  } else { rsec.style.display='none'; }
-
-  /* опыт */
   $('#expList').innerHTML=exp.map(function(e){
     var term=(e['period']||'')+(e['срок']? ' · '+e['срок']:'');
     var role=((e['grade']||'')+' '+(e['role']||'')).trim()+' · '+(e['project']||'');
     return '<div class="tl"><div class="tl-dot"></div><div class="tl-head"><h3>'+esc(e['company'])+'</h3></div><span class="tl-date">'+esc(term)+'</span><p class="tl-role">'+esc(role)+'</p><p class="res">'+esc(e['result'])+'</p></div>';
   }).join('');
 
-  /* образование */
   $('#eduList').innerHTML=edu.map(function(e){
     return '<div class="ecard"><span class="yr">'+esc(e['year'])+'</span><h3>'+esc(e['title'])+'</h3><p>'+esc(e['note'])+'</p></div>';
   }).join('');
 
-  /* контакты и футер */
   $('#fContacts').innerHTML=contacts.map(function(c){
     return '<a href="'+esc(c['value'])+'" target="_blank" rel="noopener">'+esc(c['label'])+'</a>';
   }).join('');
   $('#fCopy').innerHTML='<span>'+esc(footer['copy']||'')+'</span><span>'+esc(footer['geo']||'')+'</span>';
 
+  fitLines();
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(fitLines); }
   initPages(); initViews(); initAnim(); initFlash(); initSort(); initTop();
 }
 
-/* таблица проектов: сортировка, дефолт – № по убыванию */
+/* растяжка имени и роли под ширину SARVAS (letter-spacing, не слова) */
+function fitLines(){
+  var brand=$('#hBrand'); if(!brand) return;
+  var target=brand.getBoundingClientRect().width;
+  ['#hName','#hRole'].forEach(function(sel){
+    var el=$(sel); if(!el || !el.textContent) return;
+    el.style.letterSpacing='0px';
+    var w=el.getBoundingClientRect().width;
+    var len=el.textContent.length;
+    if(len>1 && w>0 && target>w){
+      var ls=(target-w)/(len-1);
+      ls=Math.max(0,Math.min(ls,18));
+      el.style.letterSpacing=ls.toFixed(2)+'px';
+    }
+  });
+}
+var rzT;
+window.addEventListener('resize',function(){ clearTimeout(rzT); rzT=setTimeout(fitLines,150); });
+
 function sortVal(p,key){
   switch(key){
     case 'id': return +p['№']||0;
@@ -554,22 +541,34 @@ function renderTable(key,dir){
     return 0;
   });
   var html=rows.map(function(p){
+    var r=RES[(p['проект']||'').toLowerCase()]||{};
     var plink=p['ссылка на проект']&&p['ссылка на проект']!=='–'?'<a href="'+esc(p['ссылка на проект'])+'" target="_blank" rel="noopener">'+esc(p['проект'])+'</a>':esc(p['проект']);
     var comp=p['ссылка на компанию']&&p['ссылка на компанию']!=='–'?'<a class="comp" href="'+esc(p['ссылка на компанию'])+'" target="_blank" rel="noopener">'+esc(p['компания']||'')+'</a>':'<span class="comp">'+esc(p['компания']||'')+'</span>';
     var term2=(p['срок']||'')+(p['занятость']? ' · '+p['занятость']:'');
-    return '<tr><td class="dim">'+esc(p['№']||'')+'</td>'+
+    return '<tr>'+
       '<td class="left"><span class="pn">'+plink+'</span>'+comp+'<span class="meta">'+esc(p['жанр']||'')+' · '+esc(p['платформа']||'')+' · '+esc(p['монетизация']||'')+'</span></td>'+
       '<td class="td-period"><span class="p-line">'+esc(p['период']||'')+'</span><span class="dim">'+esc(term2)+'</span></td>'+
       '<td>'+badge(p['статус']||'')+'</td>'+
-      '<td class="td-role"><span class="g">'+esc(gradeOf(p))+'</span><span class="r">'+esc(roleOf(p))+'</span></td></tr>';
+      '<td class="td-role"><span class="g">'+esc(gradeOf(p))+'</span><span class="r">'+esc(roleOf(p))+'</span></td>'+
+      '<td class="left res-cell">'+richCell(r['продакт-менеджмент'])+'</td>'+
+      '<td class="left res-cell">'+richCell(r['игровые системы'])+'</td>'+
+      '<td class="left res-cell">'+richCell(r['баланс'])+'</td>'+
+      '<td class="left res-cell">'+richCell(r['ux/ui-дизайн'])+'</td>'+
+      '<td class="left res-cell">'+richCell(r['мета-гейм'])+'</td>'+
+      '<td class="left res-cell">'+richCell(r['результат'])+'</td></tr>';
   }).join('');
   function cls(k,extra){ return (extra?extra+' ':'')+(key===k?(dir<0?'desc':'asc'):''); }
   $('#projTable').innerHTML='<table><thead><tr>'+
-    '<th data-key="id" class="'+cls('id')+'">№</th>'+
     '<th data-key="title" class="'+cls('title','left')+'">Проект</th>'+
     '<th data-key="period" class="'+cls('period')+'">Период</th>'+
     '<th data-key="status" class="'+cls('status')+'">Статус</th>'+
     '<th data-key="grade" class="'+cls('grade')+'">Должность</th>'+
+    '<th class="left">Продакт-менеджмент</th>'+
+    '<th class="left">Игровые системы</th>'+
+    '<th class="left">Баланс</th>'+
+    '<th class="left">UX/UI-Дизайн</th>'+
+    '<th class="left">Мета-гейм</th>'+
+    '<th class="left">Результат</th>'+
     '</tr></thead><tbody>'+html+'</tbody></table>';
 }
 function initSort(){

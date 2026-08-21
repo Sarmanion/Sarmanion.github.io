@@ -22,6 +22,10 @@
 | Проектов в портфолио | 15 |  | 15 |
 | Прототипов | 4 |  | 15 |
 
+# Порядок витрины
+
+15, 14, 13, 11, 5, 6, 7, 8, 9, 10, 12, 3, 4, 2, 1
+
 # Проекты
 
 | № | Проект | Жанр | Платформа | Монетизация | Статус | Компания | Период | Срок | Занятость | Должность | Ссылка на компанию | Ссылка на проект |
@@ -46,55 +50,55 @@
 
 | Проект | Продакт-менеджмент | Игровые системы | Баланс | UX/UI-Дизайн | Мета-гейм | Результат |
 |---|---|---|---|---|---|---|
-| Трон Мидгарда | Видение, роадмап, GDD | Боевая система: хар-ки, архетипы, скиллы, прокачка | Боёвка, экономика, монетизация | Корректировка визуала UI и окон | Новая мета-игра | Проект дошёл до софт-ланча |
-| Stellar Wind Idle | Новое видение, документация | Игровые системы, кор-геймплей | Экономика, монетизация | Полный UX/UI | Выстроил мета-игру | Релиз расширенной версии: 20 кораблей, 9 режимов; рост retention и монетизации; $20 000/мес |
-| Encased | – | Игровые системы | Экономика и боёвка | UX/UI-дизайн | – | Выявлены системные проблемы баланса, предложены решения |
-| Iron Frontier | – | Система перков | Настройка баланса | – | – | Перки реализованы в релизе; анимации, префабы, тесты в Unity |
-| Battle Ships | GDD | Прокачка и боёвка | Экономика и боёвка | Схема, ТЗ художникам, окна, прототип | Версия мета-игры | Готовая документация и интерактивный прототип |
-| Отзвуки серебряного ветра | Идея, роадмап, вижн, концепт, бюджет, курирование | Игровые системы | Баланс | Визуальный стиль | – | Полная документация для прототипирования и финансирования |
-| Girand: in lost city | GDD | Боевая система | Начальный баланс, токеномика | Мокапы, визуальный стиль | Версия мета-игры | Опыт в кроссплатформенном баттлере с токеномикой |
-| Enchained | – | Боевая система, описание абилок | – | – | – | – |
-| Space Troopers TD | Концепт, GDD | – | – | Карта интерфейсов | – | – |
-| Brain DOP | – | – | – | – | – | Сгенерировано ТЗ 10 уровней-головоломок |
-| Plutocracy | – | – | – | – | – | Сгенерировано 5 питчей политической системы |
-| Color Arena.io | – | – | – | – | – | Собраны 20 уровней в Unity |
-| Chaffer | Вижн, задачи и бюджет | – | – | Схемы, окна, прототип | – | Интерактивный прототип для привлечения инвестиций |
-| Mini-game Inlostcity | – | – | – | – | – | ГК-раннер для маркетинговой кампании |
-| ZooSWAT | – | – | – | – | – | Собран уровень в Unity |
+| Трон Мидгарда | 80% – видение, роадмап, GDD; без бюджета | 100% – боевая система: хар-ки, архетипы, скиллы, прокачка | 100% – боёвка, экономика, монетизация [ТБ боёвки баттлера](https://docs.google.com/spreadsheets/d/1TDaeLwWF_zTeBqmLzl_BixGIUNL6d7mShKdQSEJP4OY/edit?gid=1174329650#gid=1174329650) | 60% – корректировка визуала UI и окон [UX/UI-портфолио](https://www.figma.com/file/wFV5xlcf2VG2R50TWFyihZ/Portfolio-Sarmanaev-Vasil?node-id=0%3A1&t=9p6TxK4JX5fHMfeJ-1) | 100% – новая мета-игра | 88% – полный цикл; проект дошёл до софт-ланча |
+| Stellar Wind Idle | 70% – видение, документация; без бюджета | 100% – системы, кор-геймплей | 100% – экономика, монетизация [ТБ экономики баттлера](https://docs.google.com/spreadsheets/d/1kZrqMvpWRvIr1O7gqy8HTFdLVk96R7GqLNkB1iiw-Kk/edit?gid=1373348878#gid=1373348878) | 90% – полный UX/UI [UX/UI-портфолио](https://www.figma.com/file/wFV5xlcf2VG2R50TWFyihZ/Portfolio-Sarmanaev-Vasil?node-id=0%3A1&t=9p6TxK4JX5fHMfeJ-1) | 100% – выстроил мета-игру | 92% – релиз расширенной версии; $20 000/мес; lifetime 1→2 |
+| Encased | – | 80% – игровые системы | 80% – экономика и боёвка | 60% – UX/UI-дизайн | – | 44% – частичный скоуп; выявлены проблемы баланса, предложены решения |
+| Iron Frontier | – | 100% – система перков | 60% – помощь в настройке | – | – | 32% – точечные задачи; перки в релизе; контент в Unity |
+| Battle Ships | 60% – GDD | 100% – прокачка и боёвка | 90% – экономика и боёвка [ТБ боёвки баттлера](https://docs.google.com/spreadsheets/d/1TDaeLwWF_zTeBqmLzl_BixGIUNL6d7mShKdQSEJP4OY/edit?gid=1174329650#gid=1174329650) | 100% – схема, ТЗ, окна, прототип [Прототип интерфейса Battle Ships](https://www.figma.com/proto/lHhPrSld4tLQQhTOUat8iV/Прототип-интерфейса-Battle-Ships?type=design&node-id=1-6182&t=g0c4RyBkexSct289-0&scaling=scale-down&starting-point-node-id=1%3A6182) | 90% – версия мета-игры | 88% – готовая документация и интерактивный прототип |
+| Отзвуки серебряного ветра | 90% – идея, роадмап, вижн, концепт, бюджет, курирование | 100% – игровые системы | 100% – баланс | 50% – визуальный стиль | – | 68% – полная документация для прототипирования и финансирования |
+| Girand: in lost city | 60% – GDD | 90% – боевая система [Боевая система Girand](https://drive.google.com/file/d/1v7ErxV6YvlEvgGiaF6QUzkdbBl4fiRsq/view?usp=sharing) | 80% – начальный баланс, токеномика [Токеномика Girand](https://drive.google.com/file/d/1mUx9g2nEG5x2lGBQTjb8Zf-Y31bUC0B6/view?usp=sharing) | 60% – мокапы, стиль | 90% – версия мета-игры | 76% – мета, боевая система, баланс, токеномика |
+| Enchained | – | 80% – боевая система, абилки [Описание абилок Enchained](https://drive.google.com/file/d/12Rmv98v3yuC3oXEx-ORR0nucNX1YBp0c/view?usp=sharing) | – | – | – | 16% – узкий скоуп |
+| Space Troopers TD | 50% – концепт, GDD [Концепт TD](https://docs.google.com/document/d/1VXB_CSk9pX4kH3MNsXvesLedxv2Vi4UkAuqtZI-u5CI/edit?usp=sharing) | – | – | 60% – карта интерфейсов | – | 22% – концепт и интерфейсы |
+| Brain DOP | – | – | – | – | – | 0% – левел-дизайн вне направлений; ТЗ 10 уровней |
+| Plutocracy | – | – | – | – | – | 0% – аналитика и консультации вне направлений |
+| Color Arena.io | – | – | – | – | – | 0% – левел-дизайн вне направлений; 20 уровней в Unity |
+| Chaffer | 80% – вижн, задачи и бюджет | – | – | 100% – схемы, окна, прототип [UX/UI-портфолио](https://www.figma.com/file/wFV5xlcf2VG2R50TWFyihZ/Portfolio-Sarmanaev-Vasil?node-id=0%3A1&t=9p6TxK4JX5fHMfeJ-1) | – | 36% – интерактивный прототип для привлечения инвестиций |
+| Mini-game Inlostcity | – | – | – | – | – | 0% – ГК-раннер вне направлений |
+| ZooSWAT | – | – | – | – | – | 0% – уровень вне направлений |
 
 # Изображения
 
 | Проект | Изображение | Источник |
 |---|---|---|
-| Трон Мидгарда | https://i.okcdn.ru/i?r=CID0QJv1RQZIqEhgaodS9yccDS-rYcy4Tl-9KXHwTM1BNk7ZfXSllfk-N6m2mBjNBD4h5CLn4RLqAy3atQUOjwd9QmPgsSpWAmNEZAikMDcn9b5GSj0NDsmswZfwOwCk3xU_AcsrhWW6LFDJkdZG2XYNTBg4q vun20jMt9giI1oA2zRx88TeC0L9VocHx0mGRql6FYJo6FlSA4v0xX_cd4e8gaH0_m65Ua7clqeAdLCwQqw2pCMuSq14iHgiGnQ-zk4LMVNiLdsmlCslEubypmVrp7s9e0g58cYd7JbY__1i47pp-dlJwGqm94DKofZ_YXd6dqLqAAAAKQ | ok.ru, og:image |
+| Трон Мидгарда | https://i.okcdn.ru/i?r=CID0QJv1RQZIqEhgaodS9yccDS-rYcy4Tl-9KXHwTM1BNk7ZfXSllfk-N6m2mBjNBD4h5CLn4RLqAy3atQUOjwd9QmPgsSpWAmNEZAikMDcn9b5GSj0NDsmswZfwOwCk3xU_AcsrhWW6LFDJkdZG2XYNTBg4qvun20jMt9giI1oA2zRx88TeC0L9VocHx0mGRql6FYJo6FlSA4v0xX_cd4e8gaH0_m65Ua7clqeAdLCwQqw2pCMuSq14iHgiGnQ-zk4LMVNiLdsmlCslEubypmVrp7s9e0g58cYd7JbY__1i47pp-dlJwGqm94DKofZ_YXd6dqLqAAAAKQ | ok.ru, og:image |
 | Iron Frontier | https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2131290/641b3448ea73ff0aab925f96406391e2f2ab7b6d/header.jpg?t=1782156651 | Steam CDN |
 | Отзвуки серебряного ветра | covers/echoes.png | сгенерировано в чате |
 | Chaffer | covers/chaffer.png | генерация |
-| Battle Ships | https://prnt.sc/NEfN0j8WX1Pe | vk.ru |
+| Battle Ships | https://prnt.sc/NEfN0j8WX1Pe | vk.ru; prnt.sc – страница, не картинка: на сайте плашка, для рендера прямой i.prnt.sc или covers/bs.png |
 | Space Troopers TD | covers/td.png | генерация |
 | Mini-game Inlostcity | https://yt3.googleusercontent.com/VF01iDVt-4-YAOdJ9eayKgzfQy8cCdoAWCOujGYp_kEXwlbQXa-jk-bzPL2u6tagir4AFkpKieQ=s900-c-k-c0x00ffffff-no-rj | домен истёк |
 | Girand: in lost city | https://yt3.googleusercontent.com/VF01iDVt-4-YAOdJ9eayKgzfQy8cCdoAWCOujGYp_kEXwlbQXa-jk-bzPL2u6tagir4AFkpKieQ=s900-c-k-c0x00ffffff-no-rj | сайт приостановлен |
 | Enchained | covers/enchained.png | генерация |
 | Encased | https://cdn.akamai.steamstatic.com/steam/apps/921800/capsule_616x353.jpg | Steam CDN |
 | Stellar Wind Idle | https://pewpewgamers.com/wp-content/uploads/2024/05/maxresdefault-1_11zon-2.jpg | статья |
-| Brain DOP | covers/braindop.png | генерация |
+| Brain DOP | https://is1-ssl.mzstatic.com/image/thumb/Purple112/v4/e1/3b/c2/e13bc2b3-5b01-22ba-15d7-c854f3e2eef9/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/200x200ia-75.webp | App Store, webp – открывается |
 | Plutocracy | https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/754500/capsule_616x353.jpg?t=1757592206 | Steam CDN |
-| Color Arena.io | covers/colorarena.png | генерация |
-| ZooSWAT | covers/zooswat.png | генерация |
+| Color Arena.io | https://play-lh.googleusercontent.com/g82aQod_7TR6mcC_vVknKb-G5_YThCymsIVP6yzibhM7HgvA1ZnrGBNpJOuw-8d0p0IjFc6hkorsuTfstrg5zQ=w240-h480-rw | Google Play, прямая – открывается |
+| ZooSWAT | https://prnt.sc/1IMVyVo95QVF | prnt.sc – страница, не картинка: на сайте плашка, для рендера прямой i.prnt.sc или covers/zooswat.png |
 
 # Навыки и кейсы
 
 | group | skill | level | experience | cases |
 |---|---|---|---|---|
-| Геймдизайн | System Design | 5 | 4 баттлера, RTS, cRPG, PvP-симулятор, настольная стратегия | [Боевая система Girand](https://drive.google.com/file/d/1v7ErxV6YvlEvgGiaF6QUzkdbBl4fiRsq/view?usp=sharing) ;  [Описание абилок Enchained](https://drive.google.com/file/d/12Rmv98v3yuC3oXEx-ORR0nucNX1YBp0c/view?usp=sharing) |
+| Геймдизайн | System Design | 5 | 4 баттлера, RTS, cRPG, PvP, настолка | [Боевая система Girand](https://drive.google.com/file/d/1v7ErxV6YvlEvgGiaF6QUzkdbBl4fiRsq/view?usp=sharing) ;  [Описание абилок Enchained](https://drive.google.com/file/d/12Rmv98v3yuC3oXEx-ORR0nucNX1YBp0c/view?usp=sharing) |
 | Геймдизайн | Combat Design | 5 | 4 баттлера, cRPG, RTS | [Боевая система Girand](https://drive.google.com/file/d/1v7ErxV6YvlEvgGiaF6QUzkdbBl4fiRsq/view?usp=sharing) |
-| Геймдизайн | Мета-игра и прогрессии | 4 | 3 баттлера и PvP-симулятор | [Система прокачки Encased](https://drive.google.com/file/d/1YaKlxUCmWEYLx_lkdDb87SyFfQbWkguJ/view?usp=sharing) ;  [Деконструкция системы апгрейда AFK Arena](https://docs.google.com/document/d/1q2Ct3weAO7MqmMpOM5SZSUf2jHCt64_W-qqPR0ZEr0c/edit?usp=sharing) |
-| Геймдизайн | Проектная документация | 5 | Полный стек от вижна и роадмапа до ГДД и ТЗ – 15 проектов | [Концепт TD](https://docs.google.com/document/d/1VXB_CSk9pX4kH3MNsXvesLedxv2Vi4UkAuqtZI-u5CI/edit?usp=sharing) ;  [ТЗ на арт и результаты](https://docs.google.com/document/d/1iUi0kTV6uxR8Hb5FPT65c-xbXXhXHn2NqJzkySq1CiY/edit?usp=sharing) |
-| Баланс и экономика | Баланс боёвки | 5 | 4 баттлера, cRPG, PvP-симулятор, RTS | [ТБ боёвки баттлера](https://docs.google.com/spreadsheets/d/1TDaeLwWF_zTeBqmLzl_BixGIUNL6d7mShKdQSEJP4OY/edit?gid=1174329650#gid=1174329650) |
-| Баланс и экономика | Экономика | 5 | 4 баттлера, cRPG, PvP-симулятор | [ТБ экономики баттлера](https://docs.google.com/spreadsheets/d/1kZrqMvpWRvIr1O7gqy8HTFdLVk96R7GqLNkB1iiw-Kk/edit?gid=1373348878#gid=1373348878) ;  [Деконструкция экономики AFK Arena](https://docs.google.com/spreadsheets/d/1eyWMsiWFB-jm31GXGA1YSv5FQwaroTGr4KYCDSD7FbA/edit?usp=sharing) |
-| Баланс и экономика | Монетизация и токеномика | 4 | 3 баттлера, включая токеномику p2e | [Токеномика Girand](https://drive.google.com/file/d/1mUx9g2nEG5x2lGBQTjb8Zf-Y31bUC0B6/view?usp=sharing) ;  [Деконструкция баланса Warriors Age](https://docs.google.com/spreadsheets/d/1P3q191JAwopIPCKiD84eKdE6gTIgUkRSR0eY8hGxk9A/edit?gid=1646801749#gid=1646801749) |
+| Геймдизайн | Мета-игра и прогрессии | 4 | 3 баттлера, PvP-симулятор | [Система прокачки Encased](https://drive.google.com/file/d/1YaKlxUCmWEYLx_lkdDb87SyFfQbWkguJ/view?usp=sharing) ;  [Деконструкция системы апгрейда AFK Arena](https://docs.google.com/document/d/1q2Ct3weAO7MqmMpOM5SZSUf2jHCt64_W-qqPR0ZEr0c/edit?usp=sharing) |
+| Геймдизайн | Проектная документация | 5 | 15 проектов | [Концепт TD](https://docs.google.com/document/d/1VXB_CSk9pX4kH3MNsXvesLedxv2Vi4UkAuqtZI-u5CI/edit?usp=sharing) ;  [ТЗ на арт и результаты](https://docs.google.com/document/d/1iUi0kTV6uxR8Hb5FPT65c-xbXXhXHn2NqJzkySq1CiY/edit?usp=sharing) |
+| Баланс и экономика | Баланс боёвки | 5 | 4 баттлера, cRPG, PvP, RTS | [ТБ боёвки баттлера](https://docs.google.com/spreadsheets/d/1TDaeLwWF_zTeBqmLzl_BixGIUNL6d7mShKdQSEJP4OY/edit?gid=1174329650#gid=1174329650) |
+| Баланс и экономика | Экономика | 5 | 4 баттлера, cRPG, PvP | [ТБ экономики баттлера](https://docs.google.com/spreadsheets/d/1kZrqMvpWRvIr1O7gqy8HTFdLVk96R7GqLNkB1iiw-Kk/edit?gid=1373348878#gid=1373348878) ;  [Деконструкция экономики AFK Arena](https://docs.google.com/spreadsheets/d/1eyWMsiWFB-jm31GXGA1YSv5FQwaroTGr4KYCDSD7FbA/edit?usp=sharing) |
+| Баланс и экономика | Монетизация и токеномика | 4 | 3 баттлера, включая p2e | [Токеномика Girand](https://drive.google.com/file/d/1mUx9g2nEG5x2lGBQTjb8Zf-Y31bUC0B6/view?usp=sharing) ;  [Деконструкция баланса Warriors Age](https://docs.google.com/spreadsheets/d/1P3q191JAwopIPCKiD84eKdE6gTIgUkRSR0eY8hGxk9A/edit?gid=1646801749#gid=1646801749) |
 | Аналитика | Деконструкция и анализ рынка | 4 | 20+ разборов | [Алгоритм бонусов Raid SL](https://drive.google.com/file/d/1TaI7m2OOO_h5Cw6GTibCYSJxBTh1PTp_/view?usp=sharing) ;  [Деконструкция Towerlands](https://docs.google.com/document/d/1dx6YGGJw-h8lwnipLNnKCJUEg7KBsW1naU2GXVKrIqI/edit#heading=h.6fk7ezmauxze) |
-| UX/UI | UX/UI-дизайн | 4 | 8 проектов: баттлеры, PvP-симулятор, бизнес-симулятор, cRPG, настольная стратегия | [UX/UI-портфолио](https://www.figma.com/file/wFV5xlcf2VG2R50TWFyihZ/Portfolio-Sarmanaev-Vasil?node-id=0%3A1&t=9p6TxK4JX5fHMfeJ-1) ;  [Прототип интерфейса Battle Ships](https://www.figma.com/proto/lHhPrSld4tLQQhTOUat8iV/Прототип-интерфейса-Battle-Ships?type=design&node-id=1-6182&t=g0c4RyBkexSct289-0&scaling=scale-down&starting-point-node-id=1%3A6182) |
+| UX/UI | UX/UI-дизайн | 4 | 4 баттлера, PvP, бизнес-сим, cRPG, настолка | [UX/UI-портфолио](https://www.figma.com/file/wFV5xlcf2VG2R50TWFyihZ/Portfolio-Sarmanaev-Vasil?node-id=0%3A1&t=9p6TxK4JX5fHMfeJ-1) ;  [Прототип интерфейса Battle Ships](https://www.figma.com/proto/lHhPrSld4tLQQhTOUat8iV/Прототип-интерфейса-Battle-Ships?type=design&node-id=1-6182&t=g0c4RyBkexSct289-0&scaling=scale-down&starting-point-node-id=1%3A6182) |
 | Инструменты | Figma | 4 | 8 проектов | [UX/UI-портфолио](https://www.figma.com/file/wFV5xlcf2VG2R50TWFyihZ/Portfolio-Sarmanaev-Vasil?node-id=0%3A1&t=9p6TxK4JX5fHMfeJ-1) |
 | Инструменты | Unity | 3 | 4 проекта | – |
 | Инструменты | Adobe Photoshop | 3 | 5 проектов | – |
