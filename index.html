@@ -4,19 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SARVAS – геймдизайнер Василь Сарманаев</title>
-<!-- ID: Site_Build_Final_v10 -->
+<!-- ID: Site_Build_Final_v11
+     Фиксы v11: RES вынесен в глобал (ReferenceError устранён); #err вне .reveal и виден;
+     кейсы: ссылки → чипы со ссылками, plain-текст → чипы без ссылок; лого/фото берутся из content.
+     Файлы рядом: content.md + то, что указано в нём (photo.jpg/logo.png или covers/...). -->
 <meta name="description" content="Портфолио гейм-дизайнера Василя Сарманаева (SARVAS). Игровые системы, мета-игра, баланс, UX/UI, документация и прототипы для баттлеров, RTS и мобильных игр.">
 <meta property="og:title" content="SARVAS – Гейм-дизайнер Василь Сарманаев">
 <meta property="og:description" content="Портфолио гейм-дизайнера полного цикла. Игровые системы, мета-игра, баланс, UX/UI.">
 <meta property="og:url" content="https://sarmanion.github.io">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://sarmanion.github.io/covers/photo.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="covers/logo.png">
 <meta name="theme-color" content="#0c0a0e">
-<link rel="preload" href="covers/photo.jpg" as="image">
-<link rel="preload" href="covers/logo.png" as="image">
-<link rel="preload" href="https://cdn.jsdelivr.net/fontsource/fonts/russo-one@latest/cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/imperial">
 <style>
 @font-face{font-family:'Russo One';font-style:normal;font-weight:400;font-display:swap;src:url('https://cdn.jsdelivr.net/fontsource/fonts/russo-one@latest/cyrillic-400-normal.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
@@ -48,8 +47,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:16
 a{color:var(--red3);text-decoration:none}
 img{display:block;max-width:100%}
 .dim{color:var(--dim)}
-#err{display:none;margin:18px 0;padding:14px 18px;border:1px solid var(--red3);color:var(--red3);font-weight:600;background:rgba(216,26,58,.05)}
-#err a{color:var(--red3);text-decoration:underline}
+#err{display:none;margin:14px auto;padding:14px 18px;border:1px solid var(--red3);color:var(--red3);font-weight:600;background:rgba(216,26,58,.08);max-width:1240px}
 .nav{position:sticky;top:0;z-index:50;background:rgba(12,10,14,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav .wrap{display:flex;align-items:center;gap:28px;height:72px}
 .logo{display:grid;place-items:center;margin-right:auto}
@@ -134,7 +132,7 @@ h2 .idx{font-size:.55em;color:var(--red);letter-spacing:.1em}
 .sl-btns button:hover{border-color:rgba(255,59,92,.5);color:var(--red3)}
 .tbl-wrap{overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
 table{width:100%;border-collapse:collapse;min-width:1080px;font-size:14px}
-table.wide{min-width:1400px}
+table.wide{min-width:1500px}
 th{font-family:var(--disp);font-weight:400;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--th);text-align:center;padding:14px 16px;border-bottom:1px solid var(--line2);background:var(--bg2);white-space:nowrap}
 th.left{text-align:left}
 #projTable th[data-key]{cursor:pointer;user-select:none}
@@ -158,13 +156,13 @@ a.comp:hover{opacity:1;text-decoration:underline}
 .td-period .dim{display:block;margin-top:3px}
 .td-role .g{display:block;color:var(--red3);font-weight:700}
 .td-role .r{display:block;margin-top:2px}
-td.res-cell{font-size:12.5px;max-width:220px}
+td.res-cell{font-size:12.5px;max-width:230px}
 .cellink{display:inline-block;margin-left:6px;font-size:11px;font-weight:600;border:1px solid var(--line2);padding:2px 8px;color:var(--muted)}
 .cellink:hover{color:var(--red3);border-color:rgba(255,59,92,.5)}
 .pips{display:inline-flex;gap:5px;justify-content:center}
 .pips i{width:14px;height:6px;background:var(--line2);transform:skewX(-16deg)}
 .pips i.f{background:linear-gradient(90deg,var(--red2),var(--red3))}
-td.case a{display:inline-block;margin:0 6px 6px 0;font-size:12.5px;font-weight:600;border:1px solid var(--line2);padding:4px 10px;color:var(--muted);transition:color .2s,border-color .2s}
+td.case a,td.case .casechip{display:inline-block;margin:0 6px 6px 0;font-size:12.5px;font-weight:600;border:1px solid var(--line2);padding:4px 10px;color:var(--muted)}
 td.case a:hover{color:var(--red3);border-color:rgba(255,59,92,.5)}
 tr.flash{animation:flash 1.2s ease}
 @keyframes flash{0%,60%{background:rgba(216,26,58,.22)}100%{background:transparent}}
@@ -224,12 +222,14 @@ footer{border-top:1px solid var(--line);background:var(--bg2);padding:64px 0 40p
 <header class="nav">
   <div class="wrap">
     <a class="logo" href="#top" aria-label="SARVAS GAME DESIGN">
-      <img src="covers/logo.png" alt="SARVAS GAME DESIGN – логотип" onerror="this.classList.add('img-missing')">
+      <img data-role="logo" src="covers/logo.png" alt="SARVAS GAME DESIGN – логотип" onerror="this.classList.add('img-missing')">
       <span class="logo-text">SARVAS<small>GAME DESIGN</small></span>
     </a>
     <nav id="nav" aria-label="Основная навигация"></nav>
   </div>
 </header>
+
+<div class="wrap"><div id="err">Не удалось загрузить данные. Портфолио доступно по прямой ссылке: <a href="https://tinyurl.com/Portfolio-SarvasGD">tinyurl.com/Portfolio-SarvasGD</a></div></div>
 
 <main id="top">
   <section class="hero reveal" id="hero" aria-labelledby="hName">
@@ -238,7 +238,7 @@ footer{border-top:1px solid var(--line);background:var(--bg2);padding:64px 0 40p
         <i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i>
         <div class="photo">
           <span class="ph-fb">SV</span>
-          <img src="covers/photo.jpg" alt="Фото Василя Сарманаева – гейм-дизайнера SARVAS" onerror="this.classList.add('img-missing')">
+          <img data-role="photo" src="covers/photo.jpg" alt="Фото Василя Сарманаева – гейм-дизайнера SARVAS" onerror="this.classList.add('img-missing')">
         </div>
       </div>
       <div>
@@ -249,7 +249,6 @@ footer{border-top:1px solid var(--line);background:var(--bg2);padding:64px 0 40p
         </div>
         <p class="hlead" id="hTag"></p>
         <div class="stats" id="hStats"></div>
-        <div id="err">Не удалось загрузить данные. Портфолио доступно по прямой ссылке: <a href="https://tinyurl.com/Portfolio-SarvasGD">tinyurl.com/Portfolio-SarvasGD</a></div>
       </div>
     </div>
   </section>
@@ -302,7 +301,7 @@ footer{border-top:1px solid var(--line);background:var(--bg2);padding:64px 0 40p
   <div class="wrap">
     <div class="fgrid">
       <div class="fbig reveal">
-        <img class="flogo" src="covers/logo.png" alt="SARVAS GAME DESIGN – логотип" onerror="this.classList.add('img-missing')">
+        <img class="flogo" data-role="logo" src="covers/logo.png" alt="SARVAS GAME DESIGN – логотип" onerror="this.classList.add('img-missing')">
         <span class="fbig-text">SARVAS<small>GAME DESIGN</small></span>
       </div>
       <div class="fcontacts reveal" id="fContacts"></div>
@@ -318,6 +317,7 @@ footer{border-top:1px solid var(--line);background:var(--bg2);padding:64px 0 40p
 'use strict';
 var RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var $ = function(s){ return document.querySelector(s); };
+var $$ = function(s){ return Array.prototype.slice.call(document.querySelectorAll(s)); };
 function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 var TR={'а':'a','б':'b','в':'v','г':'g','д':'d','е':'e','ё':'e','ж':'zh','з':'z','и':'i','й':'y','к':'k','л':'l','м':'m','н':'n','о':'o','п':'p','р':'r','с':'s','т':'t','у':'u','ф':'f','х':'h','ц':'c','ч':'ch','ш':'sh','щ':'sch','ъ':'','ы':'y','ь':'','э':'e','ю':'yu','я':'ya'};
 function slug(s){ return String(s).toLowerCase().split('').map(function(ch){ return TR[ch]!==undefined?TR[ch]:ch; }).join('').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''); }
@@ -326,6 +326,14 @@ function parseLinks(cell){
   var out=[], re=/\[([^\]]+)\]\(([^)]+)\)/g, m;
   while((m=re.exec(cell||''))) out.push({label:m[1],url:m[2]});
   return out;
+}
+/* кейсы: ссылки → чипы-ссылки; plain-текст → чипы без ссылок; пусто → – */
+function caseChips(cell){
+  var links=parseLinks(cell);
+  if(links.length) return links.map(function(l){ return '<a href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.label)+'</a>'; }).join('');
+  var txt=String(cell||'').trim();
+  if(!txt || txt==='–') return '–';
+  return txt.split(';').map(function(s){ s=s.trim(); return s? '<span class="casechip">'+esc(s)+'</span>' : ''; }).join('');
 }
 function richCell(v){
   if(!v || v==='–' || !String(v).trim()) return '–';
@@ -374,7 +382,8 @@ function periodKey(s){
   var y=String(s).match(/(\d{4})/);
   return y? (+y[1])*12 : 0;
 }
-var STATUS={}, DATA={};
+/* глобалы: фикс ReferenceError из v10 */
+var STATUS={}, DATA={projects:[],images:[]}, RES={}, HAS_RESULTS=false;
 function statusColor(st){
   var s=String(st||'');
   if(STATUS[s]) return STATUS[s];
@@ -416,11 +425,17 @@ function render(sections){
 
   statuses.forEach(function(s){ if(s['статус']&&s['цвет']) STATUS[s['статус']]=s['цвет']; });
 
-  var RES={};
+  RES={};
   (resultsSec.rows||[]).forEach(function(r){ if(r['проект']) RES[r['проект'].toLowerCase()]=r; });
-  var hasResults=(resultsSec.rows||[]).some(function(r){
+  HAS_RESULTS=(resultsSec.rows||[]).some(function(r){
     return Object.keys(r).some(function(k){ var v=(r[k]||'').trim(); return k!=='проект' && v && v!=='–'; });
   });
+
+  /* пути лого/фото из контента */
+  var logoPath=hero['logo']||'covers/logo.png';
+  var photoPath=hero['photo']||'covers/photo.jpg';
+  $$('img[data-role="logo"]').forEach(function(img){ img.src=logoPath; });
+  $$('img[data-role="photo"]').forEach(function(img){ img.src=photoPath; });
 
   var t=hero['title'];
   if(!t){
@@ -453,6 +468,7 @@ function render(sections){
   var items=skills.filter(function(s){return s['skill'];}).map(function(s){ return '<a href="#skill-'+slug(s['skill'])+'">'+esc(s['skill'])+' <b>◆</b></a>'; }).join('');
   $('#ticker').innerHTML=items+items;
 
+  /* порядок витрины: строка цифр через запятую */
   var orderText=((orderSec&&orderSec.lines)||[]).join(' ');
   var orderNums=orderText.match(/\d+/g)||[];
   var ordered=[];
@@ -466,7 +482,7 @@ function render(sections){
     var img=imgFor(images,p['проект']);
     var link=p['ссылка на проект']&&p['ссылка на проект']!=='–'?p['ссылка на проект']:null;
     var inner=img? '<img src="'+esc(img)+'" alt="Обложка: '+esc(p['проект'])+' – '+esc(p['жанр']||'')+'" loading="lazy" onerror="this.style.display=\'none\'">' : '';
-    var res=hasResults? ((RES[(p['проект']||'').toLowerCase()]||{})['результат']||'') : (p['достижения']||'');
+    var res=HAS_RESULTS? ((RES[(p['проект']||'').toLowerCase()]||{})['результат']||'') : (p['достижения']||'');
     var ptag=res? '<p>'+esc(res)+'</p>' : '';
     var cl=link? '<a class="clink" href="'+esc(link)+'" target="_blank" rel="noopener">'+esc(host(link))+' →</a>' : '<a class="clink" href="#contacts">по запросу →</a>';
     return '<article class="card"><div class="cover"><div class="cover-ph"><span>'+esc(p['жанр']||'')+' · '+esc(p['платформа']||'')+'</span><b>'+esc(p['проект'])+'</b></div>'+inner+'<span class="st" style="color:'+statusColor(p['статус'])+';border-color:'+statusColor(p['статус'])+'80">'+esc(p['статус']||'')+'</span></div>'+
@@ -479,15 +495,14 @@ function render(sections){
   }
   $('#pages').innerHTML=pagesHtml;
 
-  renderTable('id',-1,hasResults);
+  renderTable('id',-1);
 
   var srows='', last='';
   skills.forEach(function(s){
     if(s['group']&&s['group']!==last){ last=s['group']; srows+='<tr class="grp"><td colspan="4">'+esc(s['group'])+'</td></tr>'; }
     if(!s['skill']) return;
     var pips='<span class="pips">'+[1,2,3,4,5].map(function(x){return '<i class="'+(x<=+s['level']?'f':'')+'"></i>';}).join('')+'</span>';
-    var cases=parseLinks(s['cases']).map(function(l){return '<a href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.label)+'</a>';}).join('')||'–';
-    srows+='<tr id="skill-'+slug(s['skill'])+'"><td class="left pn">'+esc(s['skill'])+'</td><td>'+pips+'</td><td>'+esc(s['experience']||'')+'</td><td class="left case">'+cases+'</td></tr>';
+    srows+='<tr id="skill-'+slug(s['skill'])+'"><td class="left pn">'+esc(s['skill'])+'</td><td>'+pips+'</td><td>'+esc(s['experience']||'')+'</td><td class="left case">'+caseChips(s['cases'])+'</td></tr>';
   });
   $('#skillsTable').innerHTML='<table><thead><tr><th class="left">Навык</th><th>Уровень</th><th>Опыт</th><th class="left">Кейсы</th></tr></thead><tbody>'+srows+'</tbody></table>';
 
@@ -539,7 +554,7 @@ function sortVal(p,key){
   }
   return 0;
 }
-function renderTable(key,dir,hasResults){
+function renderTable(key,dir){
   var rows=DATA.projects.slice().sort(function(a,b){
     var va=sortVal(a,key), vb=sortVal(b,key);
     if(va<vb) return -1*dir;
@@ -551,7 +566,7 @@ function renderTable(key,dir,hasResults){
     var plink=p['ссылка на проект']&&p['ссылка на проект']!=='–'?'<a href="'+esc(p['ссылка на проект'])+'" target="_blank" rel="noopener">'+esc(p['проект'])+'</a>':esc(p['проект']);
     var comp=p['ссылка на компанию']&&p['ссылка на компанию']!=='–'?'<a class="comp" href="'+esc(p['ссылка на компанию'])+'" target="_blank" rel="noopener">'+esc(p['компания']||'')+'</a>':'<span class="comp">'+esc(p['компания']||'')+'</span>';
     var term2=(p['срок']||'')+(p['занятость']? ' · '+p['занятость']:'');
-    var resCols=hasResults? (
+    var resCols=HAS_RESULTS? (
       '<td class="left res-cell">'+richCell(r['продакт-менеджмент'])+'</td>'+
       '<td class="left res-cell">'+richCell(r['игровые системы'])+'</td>'+
       '<td class="left res-cell">'+richCell(r['баланс'])+'</td>'+
@@ -566,14 +581,14 @@ function renderTable(key,dir,hasResults){
       resCols+'</tr>';
   }).join('');
   function cls(k,extra){ return (extra?extra+' ':'')+(key===k?(dir<0?'desc':'asc'):''); }
-  var resHead=hasResults? (
+  var resHead=HAS_RESULTS? (
     '<th class="left">Продакт-менеджмент</th>'+
     '<th class="left">Игровые системы</th>'+
     '<th class="left">Баланс</th>'+
     '<th class="left">UX/UI-Дизайн</th>'+
     '<th class="left">Мета-гейм</th>'+
     '<th class="left">Результат</th>') : '';
-  $('#projTable').innerHTML='<table class="'+(hasResults?'wide':'')+'"><thead><tr>'+
+  $('#projTable').innerHTML='<table class="'+(HAS_RESULTS?'wide':'')+'"><thead><tr>'+
     '<th data-key="title" class="'+cls('title','left')+'">Проект</th>'+
     '<th data-key="period" class="'+cls('period')+'">Период</th>'+
     '<th data-key="status" class="'+cls('status')+'">Статус</th>'+
@@ -582,23 +597,24 @@ function renderTable(key,dir,hasResults){
     '</tr></thead><tbody>'+html+'</tbody></table>';
 }
 function initSort(){
-  $('#projTable').addEventListener('click',function(e){
+  var el=$('#projTable'); if(!el) return;
+  el.addEventListener('click',function(e){
     var th=e.target.closest('th[data-key]');
     if(!th) return;
     var key=th.dataset.key;
     var dir=th.classList.contains('desc')?1:-1;
-    var hasResults=!!$('#projTable table.wide');
-    renderTable(key,dir,hasResults);
+    renderTable(key,dir);
   });
 }
 function initPages(){
-  var el=$('#pages');
+  var el=$('#pages'); if(!el) return;
   function step(){ return el.clientWidth; }
-  $('#slNext').addEventListener('click',function(){
+  var nx=$('#slNext'), pv=$('#slPrev');
+  if(nx) nx.addEventListener('click',function(){
     var max=el.scrollWidth-el.clientWidth;
     el.scrollTo({left:(el.scrollLeft>=max-8)?0:el.scrollLeft+step(),behavior:RM?'auto':'smooth'});
   });
-  $('#slPrev').addEventListener('click',function(){
+  if(pv) pv.addEventListener('click',function(){
     var max=el.scrollWidth-el.clientWidth;
     el.scrollTo({left:(el.scrollLeft<=8)?max:el.scrollLeft-step(),behavior:RM?'auto':'smooth'});
   });
@@ -606,9 +622,12 @@ function initPages(){
 function initViews(){
   var v=localStorage.getItem('sarvasView')||'show';
   function set(x){ document.body.dataset.view=x; localStorage.setItem('sarvasView',x);
-    $('#vShow').classList.toggle('active',x==='show'); $('#vTable').classList.toggle('active',x==='table'); }
-  $('#vShow').addEventListener('click',function(){set('show');});
-  $('#vTable').addEventListener('click',function(){set('table');});
+    var a=$('#vShow'), b=$('#vTable');
+    if(a) a.classList.toggle('active',x==='show');
+    if(b) b.classList.toggle('active',x==='table'); }
+  var a=$('#vShow'), b=$('#vTable');
+  if(a) a.addEventListener('click',function(){set('show');});
+  if(b) b.addEventListener('click',function(){set('table');});
   set(v);
 }
 function initFlash(){
@@ -620,7 +639,7 @@ function initFlash(){
   });
 }
 function initTop(){
-  var b=$('#scrollToTop');
+  var b=$('#scrollToTop'); if(!b) return;
   window.addEventListener('scroll',function(){
     b.style.display=window.scrollY>300?'block':'none';
   });
@@ -648,15 +667,15 @@ function initAnim(){
       io.unobserve(e.target);
     });
   },{threshold:.18});
-  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  $$('.reveal').forEach(function(el){ io.observe(el); });
 }
 fetch('content.md?v='+Date.now())
   .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.text(); })
   .then(function(t){
     try{ render(parseMD(t)); }
-    catch(err){ var e=$('#err'); e.style.display='block'; e.appendChild(document.createTextNode(' Ошибка рендера: '+err.message)); }
+    catch(err){ var e=$('#err'); if(e){ e.style.display='block'; e.appendChild(document.createTextNode(' Ошибка рендера: '+err.message)); } if(window.console) console.error(err); }
   })
-  .catch(function(err){ var e=$('#err'); e.style.display='block'; e.appendChild(document.createTextNode(' Ошибка загрузки: '+(err&&err.message?err.message:err))); });
+  .catch(function(err){ var e=$('#err'); if(e){ e.style.display='block'; e.appendChild(document.createTextNode(' Ошибка загрузки content.md: '+(err&&err.message?err.message:err))); } });
 })();
 </script>
 </body>
