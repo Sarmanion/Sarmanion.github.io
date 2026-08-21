@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SARVAS – геймдизайнер Василь Сарманаев</title>
-<!-- ID: Site_Build_Final_v9 -->
+<!-- ID: Site_Build_Final_v10 -->
 <meta name="description" content="Портфолио гейм-дизайнера Василя Сарманаева (SARVAS). Игровые системы, мета-игра, баланс, UX/UI, документация и прототипы для баттлеров, RTS и мобильных игр.">
 <meta property="og:title" content="SARVAS – Гейм-дизайнер Василь Сарманаев">
 <meta property="og:description" content="Портфолио гейм-дизайнера полного цикла. Игровые системы, мета-игра, баланс, UX/UI.">
@@ -133,7 +133,8 @@ h2 .idx{font-size:.55em;color:var(--red);letter-spacing:.1em}
 .sl-btns button{font-family:var(--disp);font-size:14px;color:var(--text);background:var(--panel);border:1px solid var(--line2);width:46px;height:40px;cursor:pointer;transition:border-color .2s,color .2s}
 .sl-btns button:hover{border-color:rgba(255,59,92,.5);color:var(--red3)}
 .tbl-wrap{overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
-table{width:100%;border-collapse:collapse;min-width:1400px;font-size:14px}
+table{width:100%;border-collapse:collapse;min-width:1080px;font-size:14px}
+table.wide{min-width:1400px}
 th{font-family:var(--disp);font-weight:400;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--th);text-align:center;padding:14px 16px;border-bottom:1px solid var(--line2);background:var(--bg2);white-space:nowrap}
 th.left{text-align:left}
 #projTable th[data-key]{cursor:pointer;user-select:none}
@@ -327,22 +328,24 @@ function parseLinks(cell){
   return out;
 }
 function richCell(v){
-  if(!v || v==='–' || !v.trim()) return '–';
+  if(!v || v==='–' || !String(v).trim()) return '–';
   var links=parseLinks(v);
-  var txt=v.replace(/\[([^\]]+)\]\([^)]*\)/g,'').replace(/\s+/g,' ').trim();
+  var txt=String(v).replace(/\[([^\]]+)\]\([^)]*\)/g,'').replace(/\s+/g,' ').trim();
   var out=esc(txt);
   links.forEach(function(l){ out+=' <a class="cellink" href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.label)+'</a>'; });
   return out;
 }
 function splitRow(line){ return line.replace(/^\|/,'').replace(/\|$/,'').split('|').map(function(s){return s.trim();}); }
 function isSep(cells){ return cells.every(function(c){ return /^:?-{2,}:?$/.test(c); }); }
+var KNOWN={'hero':1,'метрики':1,'проекты':1,'проекты-результаты':1,'изображения':1,'навыки и кейсы':1,'опыт':1,'образование':1,'контакты':1,'статусы':1,'футер':1,'порядок витрины':1};
 function parseMD(src){
   var lines=src.split(/\r?\n/), sections=[], cur=null, header=null;
   lines.forEach(function(raw){
     var line=raw.trim();
     if(!line) return;
-    var h=line.match(/^(#{1,2})\s+(.*)$/);
-    if(h){ cur={name:h[2].trim(),rows:[],header:null,lines:[]}; sections.push(cur); header=null; return; }
+    var hm=line.match(/^#{1,2}\s+(.+)$/);
+    var name=hm? hm[1].trim() : line;
+    if(KNOWN[name.toLowerCase()]){ cur={name:name,rows:[],header:null,lines:[]}; sections.push(cur); header=null; return; }
     if(line.indexOf('|')===0 && cur){
       var cells=splitRow(line);
       if(isSep(cells)) return;
@@ -415,6 +418,9 @@ function render(sections){
 
   var RES={};
   (resultsSec.rows||[]).forEach(function(r){ if(r['проект']) RES[r['проект'].toLowerCase()]=r; });
+  var hasResults=(resultsSec.rows||[]).some(function(r){
+    return Object.keys(r).some(function(k){ var v=(r[k]||'').trim(); return k!=='проект' && v && v!=='–'; });
+  });
 
   var t=hero['title'];
   if(!t){
@@ -428,8 +434,9 @@ function render(sections){
   $('#hTag').textContent=hero['tagline']||'';
 
   $('#hStats').innerHTML=metrics.map(function(m){
-    var val=parseFloat(m['value'])||0, max=parseFloat(m['max'])||0;
-    var w=max>0? Math.round(val/max*100) : 0;
+    var val=parseFloat(m['value'])||0;
+    var max=parseFloat(m['max'])||0;
+    var w=max>0? Math.round(val/max*100) : (parseFloat(m['progress'])||0);
     return '<div class="stat"><span class="lb">'+esc(m['label'])+'</span><span class="num"><span data-to="'+esc(m['value'])+'">0</span> <em>'+esc(m['unit'])+'</em></span><div class="bar"><div class="fill" style="--w:'+w+'%"></div></div></div>';
   }).join('');
 
@@ -446,7 +453,6 @@ function render(sections){
   var items=skills.filter(function(s){return s['skill'];}).map(function(s){ return '<a href="#skill-'+slug(s['skill'])+'">'+esc(s['skill'])+' <b>◆</b></a>'; }).join('');
   $('#ticker').innerHTML=items+items;
 
-  /* порядок витрины: цифры через запятую из секции «Порядок витрины» */
   var orderText=((orderSec&&orderSec.lines)||[]).join(' ');
   var orderNums=orderText.match(/\d+/g)||[];
   var ordered=[];
@@ -460,11 +466,12 @@ function render(sections){
     var img=imgFor(images,p['проект']);
     var link=p['ссылка на проект']&&p['ссылка на проект']!=='–'?p['ссылка на проект']:null;
     var inner=img? '<img src="'+esc(img)+'" alt="Обложка: '+esc(p['проект'])+' – '+esc(p['жанр']||'')+'" loading="lazy" onerror="this.style.display=\'none\'">' : '';
-    var res=(RES[(p['проект']||'').toLowerCase()]||{})['результат']||'';
+    var res=hasResults? ((RES[(p['проект']||'').toLowerCase()]||{})['результат']||'') : (p['достижения']||'');
+    var ptag=res? '<p>'+esc(res)+'</p>' : '';
     var cl=link? '<a class="clink" href="'+esc(link)+'" target="_blank" rel="noopener">'+esc(host(link))+' →</a>' : '<a class="clink" href="#contacts">по запросу →</a>';
     return '<article class="card"><div class="cover"><div class="cover-ph"><span>'+esc(p['жанр']||'')+' · '+esc(p['платформа']||'')+'</span><b>'+esc(p['проект'])+'</b></div>'+inner+'<span class="st" style="color:'+statusColor(p['статус'])+';border-color:'+statusColor(p['статус'])+'80">'+esc(p['статус']||'')+'</span></div>'+
       '<div class="cbody"><h3>'+esc(p['проект'])+'</h3><span class="company">'+esc(p['компания']||'')+' · '+esc(gradeOf(p))+'</span>'+
-      '<p>'+esc(res)+'</p>'+cl+'</div></article>';
+      ptag+cl+'</div></article>';
   }
   var pagesHtml='';
   for(var i=0;i<ordered.length;i+=6){
@@ -472,7 +479,7 @@ function render(sections){
   }
   $('#pages').innerHTML=pagesHtml;
 
-  renderTable('id',-1);
+  renderTable('id',-1,hasResults);
 
   var srows='', last='';
   skills.forEach(function(s){
@@ -504,7 +511,6 @@ function render(sections){
   initPages(); initViews(); initAnim(); initFlash(); initSort(); initTop();
 }
 
-/* растяжка имени и роли под ширину SARVAS (letter-spacing, не слова) */
 function fitLines(){
   var brand=$('#hBrand'); if(!brand) return;
   var target=brand.getBoundingClientRect().width;
@@ -533,7 +539,7 @@ function sortVal(p,key){
   }
   return 0;
 }
-function renderTable(key,dir){
+function renderTable(key,dir,hasResults){
   var rows=DATA.projects.slice().sort(function(a,b){
     var va=sortVal(a,key), vb=sortVal(b,key);
     if(va<vb) return -1*dir;
@@ -545,30 +551,34 @@ function renderTable(key,dir){
     var plink=p['ссылка на проект']&&p['ссылка на проект']!=='–'?'<a href="'+esc(p['ссылка на проект'])+'" target="_blank" rel="noopener">'+esc(p['проект'])+'</a>':esc(p['проект']);
     var comp=p['ссылка на компанию']&&p['ссылка на компанию']!=='–'?'<a class="comp" href="'+esc(p['ссылка на компанию'])+'" target="_blank" rel="noopener">'+esc(p['компания']||'')+'</a>':'<span class="comp">'+esc(p['компания']||'')+'</span>';
     var term2=(p['срок']||'')+(p['занятость']? ' · '+p['занятость']:'');
-    return '<tr>'+
-      '<td class="left"><span class="pn">'+plink+'</span>'+comp+'<span class="meta">'+esc(p['жанр']||'')+' · '+esc(p['платформа']||'')+' · '+esc(p['монетизация']||'')+'</span></td>'+
-      '<td class="td-period"><span class="p-line">'+esc(p['период']||'')+'</span><span class="dim">'+esc(term2)+'</span></td>'+
-      '<td>'+badge(p['статус']||'')+'</td>'+
-      '<td class="td-role"><span class="g">'+esc(gradeOf(p))+'</span><span class="r">'+esc(roleOf(p))+'</span></td>'+
+    var resCols=hasResults? (
       '<td class="left res-cell">'+richCell(r['продакт-менеджмент'])+'</td>'+
       '<td class="left res-cell">'+richCell(r['игровые системы'])+'</td>'+
       '<td class="left res-cell">'+richCell(r['баланс'])+'</td>'+
       '<td class="left res-cell">'+richCell(r['ux/ui-дизайн'])+'</td>'+
       '<td class="left res-cell">'+richCell(r['мета-гейм'])+'</td>'+
-      '<td class="left res-cell">'+richCell(r['результат'])+'</td></tr>';
+      '<td class="left res-cell">'+richCell(r['результат'])+'</td>') : '';
+    return '<tr>'+
+      '<td class="left"><span class="pn">'+plink+'</span>'+comp+'<span class="meta">'+esc(p['жанр']||'')+' · '+esc(p['платформа']||'')+' · '+esc(p['монетизация']||'')+'</span></td>'+
+      '<td class="td-period"><span class="p-line">'+esc(p['период']||'')+'</span><span class="dim">'+esc(term2)+'</span></td>'+
+      '<td>'+badge(p['статус']||'')+'</td>'+
+      '<td class="td-role"><span class="g">'+esc(gradeOf(p))+'</span><span class="r">'+esc(roleOf(p))+'</span></td>'+
+      resCols+'</tr>';
   }).join('');
   function cls(k,extra){ return (extra?extra+' ':'')+(key===k?(dir<0?'desc':'asc'):''); }
-  $('#projTable').innerHTML='<table><thead><tr>'+
-    '<th data-key="title" class="'+cls('title','left')+'">Проект</th>'+
-    '<th data-key="period" class="'+cls('period')+'">Период</th>'+
-    '<th data-key="status" class="'+cls('status')+'">Статус</th>'+
-    '<th data-key="grade" class="'+cls('grade')+'">Должность</th>'+
+  var resHead=hasResults? (
     '<th class="left">Продакт-менеджмент</th>'+
     '<th class="left">Игровые системы</th>'+
     '<th class="left">Баланс</th>'+
     '<th class="left">UX/UI-Дизайн</th>'+
     '<th class="left">Мета-гейм</th>'+
-    '<th class="left">Результат</th>'+
+    '<th class="left">Результат</th>') : '';
+  $('#projTable').innerHTML='<table class="'+(hasResults?'wide':'')+'"><thead><tr>'+
+    '<th data-key="title" class="'+cls('title','left')+'">Проект</th>'+
+    '<th data-key="period" class="'+cls('period')+'">Период</th>'+
+    '<th data-key="status" class="'+cls('status')+'">Статус</th>'+
+    '<th data-key="grade" class="'+cls('grade')+'">Должность</th>'+
+    resHead+
     '</tr></thead><tbody>'+html+'</tbody></table>';
 }
 function initSort(){
@@ -577,7 +587,8 @@ function initSort(){
     if(!th) return;
     var key=th.dataset.key;
     var dir=th.classList.contains('desc')?1:-1;
-    renderTable(key,dir);
+    var hasResults=!!$('#projTable table.wide');
+    renderTable(key,dir,hasResults);
   });
 }
 function initPages(){
@@ -640,9 +651,12 @@ function initAnim(){
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 }
 fetch('content.md?v='+Date.now())
-  .then(function(r){ if(!r.ok) throw 0; return r.text(); })
-  .then(function(t){ render(parseMD(t)); })
-  .catch(function(){ $('#err').style.display='block'; });
+  .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.text(); })
+  .then(function(t){
+    try{ render(parseMD(t)); }
+    catch(err){ var e=$('#err'); e.style.display='block'; e.appendChild(document.createTextNode(' Ошибка рендера: '+err.message)); }
+  })
+  .catch(function(err){ var e=$('#err'); e.style.display='block'; e.appendChild(document.createTextNode(' Ошибка загрузки: '+(err&&err.message?err.message:err))); });
 })();
 </script>
 </body>
