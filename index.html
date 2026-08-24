@@ -406,6 +406,7 @@ function periodKey(s){
 }
 /* глобалы: фикс ReferenceError из v10 */
 var STATUS={}, DATA={projects:[],images:[]}, RES={}, HAS_RESULTS=false;
+var RESULT_CATS=[], RESULT_LABELS={};
 function statusColor(st){
   var s=String(st||'');
   if(STATUS[s]){
@@ -432,6 +433,26 @@ function imgFor(map,title){
 }
 function gradeOf(p){ return (p['должность']||'').split(',')[0].trim(); }
 function roleOf(p){ var parts=(p['должность']||'').split(','); parts.shift(); return parts.join(',').trim(); }
+/* Проекты-Результаты: % в столбце "Результат" больше не хранится руками в content.md —
+   код вытаскивает ведущий NN% из каждой ячейки-категории (формат "NN% – текст") и считает сам.
+   Если во всех категориях строки стоит "–" (проект вне направлений ГД) — делитель обнуляется,
+   вместо числа показывается только текст пояснения из колонки "Результат". */
+function pctOf(cell){
+  var s=String(cell||'').trim();
+  if(!s || s==='–' || s==='-') return null;
+  var m=s.match(/^(\d{1,3})\s*%/);
+  return m ? Math.max(0,Math.min(100,parseInt(m[1],10))) : null;
+}
+function computeResult(r){
+  r=r||{};
+  var vals=RESULT_CATS.map(function(k){ return pctOf(r[k]); });
+  var filled=vals.filter(function(v){ return v!==null; });
+  var body=richCell(r['результат']);
+  if(!filled.length) return body;
+  var sum=vals.reduce(function(a,v){ return a+(v||0); },0);
+  var pct=Math.round(sum/5);
+  return '<b>'+pct+'%</b> '+body;
+}
 
 function render(sections){
   var hero=kv((sec(sections,'Hero')||{}).rows);
@@ -439,7 +460,7 @@ function render(sections){
   var projects=(sec(sections,'Проекты')||{}).rows||[];
   var images=(sec(sections,'Изображения')||{}).rows||[];
   var skills=(sec(sections,'Навыки и кейсы')||{}).rows||[];
-  var resultsSec=sec(sections,'Проекты-Результаты')||{rows:[]};
+  var resultsSec=sec(sections,'Проекты-Результаты')||{rows:[],header:[]};
   var orderSec=sec(sections,'Порядок витрины');
   var exp=(sec(sections,'Опыт')||{}).rows||[];
   var edu=(sec(sections,'Образование')||{}).rows||[];
@@ -457,6 +478,15 @@ function render(sections){
   (resultsSec.rows||[]).forEach(function(r){ if(r['проект']) RES[r['проект'].toLowerCase()]=r; });
   HAS_RESULTS=(resultsSec.rows||[]).some(function(r){
     return Object.keys(r).some(function(k){ var v=(r[k]||'').trim(); return k!=='проект' && v && v!=='–'; });
+  });
+
+  /* порядок и подписи столбцов категорий берём напрямую из шапки таблицы в content.md —
+     переставить/переименовать колонку теперь можно, не трогая код */
+  RESULT_CATS=[]; RESULT_LABELS={};
+  (resultsSec.header||[]).forEach(function(h){
+    var key=h.toLowerCase().trim();
+    if(!key || key==='проект' || key==='результат') return;
+    RESULT_CATS.push(key); RESULT_LABELS[key]=h.trim();
   });
 
   /* пути лого/фото из контента */
@@ -511,8 +541,8 @@ function render(sections){
     var link=safeUrl(p['ссылка на проект']);
     var imagePath=safeAssetPath(img,'');
     var inner=imagePath ? '<img src="'+esc(imagePath)+'" alt="Обложка: '+esc(p['проект'])+' – '+esc(p['жанр']||'')+'" loading="lazy" decoding="async" onerror="this.style.display=\'none\'">' : '';
-    var res=HAS_RESULTS? ((RES[(p['проект']||'').toLowerCase()]||{})['результат']||'') : (p['достижения']||'');
-    var ptag=res? '<p>'+esc(res)+'</p>' : '';
+    var res=HAS_RESULTS? computeResult(RES[(p['проект']||'').toLowerCase()]) : esc(p['достижения']||'');
+    var ptag=(res && res!=='–')? '<p>'+res+'</p>' : '';
     var cl=link? '<a class="clink" href="'+esc(link)+'" target="_blank" rel="noopener noreferrer">'+esc(host(link))+' →</a>' : '<a class="clink" href="#contacts">по запросу →</a>';
     return '<article class="card"><div class="cover"><div class="cover-ph"><span>'+esc(p['жанр']||'')+' · '+esc(p['платформа']||'')+'</span><b>'+esc(p['проект'])+'</b></div>'+inner+'<span class="st" style="color:'+statusColor(p['статус'])+';border-color:'+statusColor(p['статус'])+'80">'+esc(p['статус']||'')+'</span></div>'+
       '<div class="cbody"><h3>'+esc(p['проект'])+'</h3><span class="company">'+esc(p['компания']||'')+' · '+esc(gradeOf(p))+'</span>'+
@@ -599,12 +629,8 @@ function renderTable(key,dir){
     var comp=curl?'<a class="comp" href="'+esc(curl)+'" target="_blank" rel="noopener noreferrer">'+esc(p['компания']||'')+'</a>':'<span class="comp">'+esc(p['компания']||'')+'</span>';
     var term2=(p['срок']||'')+(p['занятость']? ' · '+p['занятость']:'');
     var resCols=HAS_RESULTS? (
-      '<td class="left res-cell">'+richCell(r['продакт-менеджмент'])+'</td>'+
-      '<td class="left res-cell">'+richCell(r['игровые системы'])+'</td>'+
-      '<td class="left res-cell">'+richCell(r['баланс'])+'</td>'+
-      '<td class="left res-cell">'+richCell(r['ux/ui-дизайн'])+'</td>'+
-      '<td class="left res-cell">'+richCell(r['мета-гейм'])+'</td>'+
-      '<td class="left res-cell">'+richCell(r['результат'])+'</td>') : '';
+      RESULT_CATS.map(function(k){ return '<td class="left res-cell">'+richCell(r[k])+'</td>'; }).join('')+
+      '<td class="left res-cell">'+computeResult(r)+'</td>') : '';
     return '<tr>'+
       '<td class="left"><span class="pn">'+plink+'</span>'+comp+'<span class="meta">'+esc(p['жанр']||'')+' · '+esc(p['платформа']||'')+' · '+esc(p['монетизация']||'')+'</span></td>'+
       '<td class="td-period"><span class="p-line">'+esc(p['период']||'')+'</span><span class="dim">'+esc(term2)+'</span></td>'+
@@ -614,11 +640,7 @@ function renderTable(key,dir){
   }).join('');
   function cls(k,extra){ return (extra?extra+' ':'')+(key===k?(dir<0?'desc':'asc'):''); }
   var resHead=HAS_RESULTS? (
-    '<th class="left">Продакт-менеджмент</th>'+
-    '<th class="left">Игровые системы</th>'+
-    '<th class="left">Баланс</th>'+
-    '<th class="left">UX/UI-Дизайн</th>'+
-    '<th class="left">Мета-гейм</th>'+
+    RESULT_CATS.map(function(k){ return '<th class="left">'+esc(RESULT_LABELS[k])+'</th>'; }).join('')+
     '<th class="left">Результат</th>') : '';
   $('#projTable').innerHTML='<table class="'+(HAS_RESULTS?'wide':'')+'"><thead><tr>'+
     '<th data-key="title" class="'+cls('title','left')+'">Проект</th>'+

@@ -48,23 +48,23 @@
 
 # Проекты-Результаты
 
-| Проект | Продакт-менеджмент | Игровые системы | Баланс | UX/UI-Дизайн | Мета-гейм | Результат |
+| Проект | Продакт-менеджмент | Игровые системы | Мета-гейм | Баланс | UX/UI-Дизайн | Результат |
 |---|---|---|---|---|---|---|
-| Трон Мидгарда | 80% – видение, роадмап, GDD; без бюджета | 100% – боевая система: хар-ки, архетипы, скиллы, прокачка | 100% – боёвка, экономика, монетизация [ТБ боёвки баттлера](https://docs.google.com/spreadsheets/d/1TDaeLwWF_zTeBqmLzl_BixGIUNL6d7mShKdQSEJP4OY/edit?gid=1174329650#gid=1174329650) | 60% – корректировка визуала UI и окон [UX/UI-портфолио](https://www.figma.com/file/wFV5xlcf2VG2R50TWFyihZ/Portfolio-Sarmanaev-Vasil?node-id=0%3A1&t=9p6TxK4JX5fHMfeJ-1) | 100% – новая мета-игра | 88% – полный цикл; проект дошёл до софт-ланча |
-| Stellar Wind Idle | 70% – видение, документация; без бюджета | 100% – системы, кор-геймплей | 100% – экономика, монетизация [ТБ экономики баттлера](https://docs.google.com/spreadsheets/d/1kZrqMvpWRvIr1O7gqy8HTFdLVk96R7GqLNkB1iiw-Kk/edit?gid=1373348878#gid=1373348878) | 90% – полный UX/UI [UX/UI-портфолио](https://www.figma.com/file/wFV5xlcf2VG2R50TWFyihZ/Portfolio-Sarmanaev-Vasil?node-id=0%3A1&t=9p6TxK4JX5fHMfeJ-1) | 100% – выстроил мета-игру | 92% – релиз расширенной версии; $20 000/мес; lifetime 1→2 |
-| Encased | – | 80% – игровые системы | 80% – экономика и боёвка | 60% – UX/UI-дизайн | – | 44% – частичный скоуп; выявлены проблемы баланса, предложены решения |
-| Iron Frontier | – | 100% – система перков | 60% – помощь в настройке | – | – | 32% – точечные задачи; перки в релизе; контент в Unity |
-| Battle Ships | 60% – GDD | 100% – прокачка и боёвка | 90% – экономика и боёвка [ТБ боёвки баттлера](https://docs.google.com/spreadsheets/d/1TDaeLwWF_zTeBqmLzl_BixGIUNL6d7mShKdQSEJP4OY/edit?gid=1174329650#gid=1174329650) | 100% – схема, ТЗ, окна, прототип [Прототип интерфейса Battle Ships](https://www.figma.com/proto/lHhPrSld4tLQQhTOUat8iV/Прототип-интерфейса-Battle-Ships?type=design&node-id=1-6182&t=g0c4RyBkexSct289-0&scaling=scale-down&starting-point-node-id=1%3A6182) | 90% – версия мета-игры | 88% – готовая документация и интерактивный прототип |
-| Отзвуки серебряного ветра | 90% – идея, роадмап, вижн, концепт, бюджет, курирование | 100% – игровые системы | 100% – баланс | 50% – визуальный стиль | – | 68% – полная документация для прототипирования и финансирования |
-| Girand: in lost city | 60% – GDD | 90% – боевая система [Боевая система Girand](https://drive.google.com/file/d/1v7ErxV6YvlEvgGiaF6QUzkdbBl4fiRsq/view?usp=sharing) | 80% – начальный баланс, токеномика [Токеномика Girand](https://drive.google.com/file/d/1mUx9g2nEG5x2lGBQTjb8Zf-Y31bUC0B6/view?usp=sharing) | 60% – мокапы, стиль | 90% – версия мета-игры | 76% – мета, боевая система, баланс, токеномика |
-| Enchained | – | 80% – боевая система, абилки [Описание абилок Enchained](https://drive.google.com/file/d/12Rmv98v3yuC3oXEx-ORR0nucNX1YBp0c/view?usp=sharing) | – | – | – | 16% – узкий скоуп |
-| Space Troopers TD | 50% – концепт, GDD [Концепт TD](https://docs.google.com/document/d/1VXB_CSk9pX4kH3MNsXvesLedxv2Vi4UkAuqtZI-u5CI/edit?usp=sharing) | – | – | 60% – карта интерфейсов | – | 22% – концепт и интерфейсы |
-| Brain DOP | – | – | – | – | – | 0% – левел-дизайн вне направлений; ТЗ 10 уровней |
-| Plutocracy | – | – | – | – | – | 0% – аналитика и консультации вне направлений |
-| Color Arena.io | – | – | – | – | – | 0% – левел-дизайн вне направлений; 20 уровней в Unity |
-| Chaffer | 80% – вижн, задачи и бюджет | – | – | 100% – схемы, окна, прототип [UX/UI-портфолио](https://www.figma.com/file/wFV5xlcf2VG2R50TWFyihZ/Portfolio-Sarmanaev-Vasil?node-id=0%3A1&t=9p6TxK4JX5fHMfeJ-1) | – | 36% – интерактивный прототип для привлечения инвестиций |
-| Mini-game Inlostcity | – | – | – | – | – | 0% – ГК-раннер вне направлений |
-| ZooSWAT | – | – | – | – | – | 0% – уровень вне направлений |
+| Трон Мидгарда | 80% – видение, роадмап, GDD; без бюджета | 100% – боевая система: хар-ки, архетипы, скиллы, прокачка | 100% – новая мета-игра | 100% – боёвка, экономика, монетизация [ТБ боёвки баттлера](https://docs.google.com/spreadsheets/d/1TDaeLwWF_zTeBqmLzl_BixGIUNL6d7mShKdQSEJP4OY/edit?gid=1174329650#gid=1174329650) | 60% – корректировка визуала UI и окон [UX/UI-портфолио](https://www.figma.com/file/wFV5xlcf2VG2R50TWFyihZ/Portfolio-Sarmanaev-Vasil?node-id=0%3A1&t=9p6TxK4JX5fHMfeJ-1) | – полный цикл; проект дошёл до софт-ланча |
+| Stellar Wind Idle | 70% – видение, документация; без бюджета | 100% – системы, кор-геймплей | 100% – выстроил мета-игру | 100% – экономика, монетизация [ТБ экономики баттлера](https://docs.google.com/spreadsheets/d/1kZrqMvpWRvIr1O7gqy8HTFdLVk96R7GqLNkB1iiw-Kk/edit?gid=1373348878#gid=1373348878) | 90% – полный UX/UI [UX/UI-портфолио](https://www.figma.com/file/wFV5xlcf2VG2R50TWFyihZ/Portfolio-Sarmanaev-Vasil?node-id=0%3A1&t=9p6TxK4JX5fHMfeJ-1) | – релиз расширенной версии; $20 000/мес; lifetime 1→2 |
+| Encased | – | 80% – игровые системы | – | 80% – экономика и боёвка | 60% – UX/UI-дизайн | – частичный скоуп; выявлены проблемы баланса, предложены решения |
+| Iron Frontier | – | 100% – система перков | – | 60% – помощь в настройке | – | – точечные задачи; перки в релизе; контент в Unity |
+| Battle Ships | 60% – GDD | 100% – прокачка и боёвка | 90% – версия мета-игры | 90% – экономика и боёвка [ТБ боёвки баттлера](https://docs.google.com/spreadsheets/d/1TDaeLwWF_zTeBqmLzl_BixGIUNL6d7mShKdQSEJP4OY/edit?gid=1174329650#gid=1174329650) | 100% – схема, ТЗ, окна, прототип [Прототип интерфейса Battle Ships](https://www.figma.com/proto/lHhPrSld4tLQQhTOUat8iV/Прототип-интерфейса-Battle-Ships?type=design&node-id=1-6182&t=g0c4RyBkexSct289-0&scaling=scale-down&starting-point-node-id=1%3A6182) | – готовая документация и интерактивный прототип |
+| Отзвуки серебряного ветра | 90% – идея, роадмап, вижн, концепт, бюджет, курирование | 100% – игровые системы | – | 100% – баланс | 50% – визуальный стиль | – полная документация для прототипирования и финансирования |
+| Girand: in lost city | 60% – GDD | 90% – боевая система [Боевая система Girand](https://drive.google.com/file/d/1v7ErxV6YvlEvgGiaF6QUzkdbBl4fiRsq/view?usp=sharing) | 90% – версия мета-игры | 80% – начальный баланс, токеномика [Токеномика Girand](https://drive.google.com/file/d/1mUx9g2nEG5x2lGBQTjb8Zf-Y31bUC0B6/view?usp=sharing) | 60% – мокапы, стиль | – мета, боевая система, баланс, токеномика |
+| Enchained | – | 80% – боевая система, абилки [Описание абилок Enchained](https://drive.google.com/file/d/12Rmv98v3yuC3oXEx-ORR0nucNX1YBp0c/view?usp=sharing) | – | – | – | – узкий скоуп |
+| Space Troopers TD | 50% – концепт, GDD [Концепт TD](https://docs.google.com/document/d/1VXB_CSk9pX4kH3MNsXvesLedxv2Vi4UkAuqtZI-u5CI/edit?usp=sharing) | – | – | – | 60% – карта интерфейсов | – концепт и интерфейсы |
+| Brain DOP | – | – | – | – | – | – левел-дизайн вне направлений; ТЗ 10 уровней |
+| Plutocracy | – | – | – | – | – | – аналитика и консультации вне направлений |
+| Color Arena.io | – | – | – | – | – | – левел-дизайн вне направлений; 20 уровней в Unity |
+| Chaffer | 80% – вижн, задачи и бюджет | – | – | – | 100% – схемы, окна, прототип [UX/UI-портфолио](https://www.figma.com/file/wFV5xlcf2VG2R50TWFyihZ/Portfolio-Sarmanaev-Vasil?node-id=0%3A1&t=9p6TxK4JX5fHMfeJ-1) | – интерактивный прототип для привлечения инвестиций |
+| Mini-game Inlostcity | – | – | – | – | – | – ГК-раннер вне направлений |
+| ZooSWAT | – | – | – | – | – | – уровень вне направлений |
 
 # Изображения
 
