@@ -1,4 +1,4 @@
-<!-- content.md: весь контент сайта. Правится без изменения кода. -->
+
 
 # Hero
 
@@ -44,7 +44,7 @@
 | 2   | Color Arena.io            | Аркада                   | Мобильная       | F2P         | Софт-ланч, закрыто      | Khangames          | июн 2020 – июл 2020 | 1 мес. | Стажировка | Стажёр, Левел-дизайнер           | http://khangames.online      | https://play.google.com/store/apps/details?id=hero.scapes.match.color.master             |
 | 12  | Chaffer                   | EdTech, бизнес-симулятор | Веб             | —           | Закрыто                 | Фриланс            | май 2024 – ноя 2024 | 7 мес. | Фриланс    | Миддл, Гейм-дизайнер             | –                            | https://www.chaffer.me/                                                                  |
 | 9   | Mini-game Inlostcity      | Раннер                   | Кроссплатформа  | P2E         | Прототип, закрыто       | L2L Games          | сен 2021 – дек 2022 | 4 мес. | Полная     | Миддл, Гейм-дизайнер             | –                            | https://mini-game.inlostcity.com                                                         |
-| 1   | ZooSWAT                   | Тактическая              | PC              | —           | Прототип                | Геймджем           | май 2020 – май 2021 | –      | Геймджем   | Стажёр, Левел-дизайнер           | –                            | https://rockbee.itch.io/zooswat                                                          |
+| 1   | Zoo SWAT                  | Тактическая              | PC              | —           | Прототип                | Геймджем           | май 2020 – май 2021 | –      | Геймджем   | Стажёр, Левел-дизайнер           | –                            | https://rockbee.itch.io/zooswat                                                          |
 
 # Проекты-Результаты
 
