@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SARVAS – геймдизайнер Василь Сарманаев</title>
-<!-- ID: Site_Build_Final_v12 · ТЗ: index.html по content.md + РЕГЛАМЕНТ v14 -->
+<!-- ID: Site_Build_Final_v13 · ТЗ: вливание «Проекты-Результаты» в таблицу «Проекты» + унификация чипов -->
 <meta name="description" content="Портфолио гейм-дизайнера Василя Сарманаева (SARVAS). Игровые системы, мета-игра, баланс, UX/UI, документация и прототипы – от концепта до релиза.">
 <meta property="og:title" content="SARVAS – Гейм-дизайнер Василь Сарманаев">
 <meta property="og:description" content="Портфолио гейм-дизайнера полного цикла. Игровые системы, мета-игра, баланс, UX/UI.">
@@ -139,7 +139,7 @@ h2 .idx{font-size:.55em;color:var(--red);letter-spacing:.1em}
 /* TABLES */
 .tbl-wrap{overflow-x:auto;border:1px solid var(--line);background:var(--panel);margin-bottom:26px}
 table{width:100%;border-collapse:collapse;min-width:1080px;font-size:14px}
-table.wide{min-width:1500px}
+.tbl-projects table{min-width:2200px}
 th{font-family:var(--disp);font-weight:400;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--th);text-align:center;padding:14px 16px;border-bottom:1px solid var(--line2);background:var(--bg2);white-space:nowrap}
 th.left{text-align:left}
 #projTable th[data-key]{cursor:pointer;user-select:none}
@@ -164,12 +164,13 @@ a.comp:hover{opacity:1;text-decoration:underline}
 .td-period .dim{display:block;margin-top:3px}
 .td-role .g{display:block;color:var(--red3);font-weight:700}
 .td-role .r{display:block;margin-top:2px}
-td.res-cell{font-size:12.5px;max-width:260px;vertical-align:top}
-td.rn{text-align:center;font-weight:800;color:var(--text);font-family:var(--disp);font-size:13px}
+/* ячейки результатов */
+td.res-cell{font-size:12.5px;max-width:280px;vertical-align:top}
+td.res-cell .cellink{font-size:12.5px;padding:4px 10px;margin:0 6px 6px 0}
+.cellink{display:inline-block;font-size:12.5px;font-weight:600;border:1px solid var(--line2);padding:4px 10px;color:var(--muted)}
+a.cellink:hover{color:var(--red3);border-color:rgba(255,59,92,.5)}
 .rl-pct{text-align:center;font-family:var(--disp);font-weight:800;font-size:15px;color:var(--red3);margin:2px 0 6px}
 .rl-chip{text-align:center;margin:2px 0 8px}
-.cellink{display:inline-block;font-size:11px;font-weight:600;border:1px solid var(--line2);padding:2px 8px;color:var(--muted)}
-a.cellink:hover{color:var(--red3);border-color:rgba(255,59,92,.5)}
 .rl-compact{text-align:left;font-size:12.5px;color:var(--text);font-weight:600;margin:2px 0}
 td.res-final .rl-compact{font-weight:800}
 .rl-li{text-align:left;font-size:12.5px;color:var(--muted);margin:2px 0}
@@ -291,8 +292,6 @@ footer{border-top:1px solid var(--line);background:var(--bg2);padding:64px 0 40p
         </div>
       </div>
       <div class="tbl-wrap tbl-projects reveal" id="projTable"></div>
-      <h2 class="reveal" style="margin-top:40px"><span class="idx">01.1</span><span>Проекты-Результаты</span></h2>
-      <div class="tbl-wrap reveal" id="resultsTable"></div>
     </div>
   </section>
 
@@ -380,7 +379,7 @@ function kv(rows){
   });
   return o;
 }
-/* ячейки результатов: переносы <br> любых вариантов, маркеры ⦁→• */
+/* ячейки: переносы <br> любых вариантов, ⦁→• */
 function splitCell(cell){
   var lines=String(cell==null?'':cell).split(/<br\s*\/?>/i).map(function(s){ return s.replace(/^⦁\s*/,'• ').trim(); });
   while(lines.length && lines[lines.length-1]==='') lines.pop();
@@ -415,11 +414,12 @@ function resRow(name){
   var key=String(name).toLowerCase();
   return RES[key] || RES[ALIAS[key]] || null;
 }
-/* richLines: % центр-жирный; чип отдельной строкой; компакт (с «:») лево; в Результат компакт жирный; «•» лево; «–» центр */
+/* richLines: % центр-жирный; чип отдельной строкой; компакт лево (в Результат – жирный); «•» лево; «–» центр */
 function richLines(lines,isResult,catName){
   var out=[];
   lines.forEach(function(line){
     if(!line) return;
+    if(catName && line.toLowerCase()===String(catName).toLowerCase()) return; /* дубль заголовка категории */
     if(/^\d+(?:[.,]\d+)?\s?%$/.test(line)){ out.push('<div class="rl-pct">'+esc(line)+'</div>'); return; }
     if(line.indexOf('•')===0){ out.push('<div class="rl-li">'+esc(line)+'</div>'); return; }
     if(line==='–'||line==='-'){ out.push('<div class="rl-dash">–</div>'); return; }
@@ -450,6 +450,17 @@ function cardResult(name){
   }
   return '';
 }
+/* колонки результатов: порядок регламента v14 §1, поддержка «мета-игра»/«мета-гейм» */
+var RES_COLS=[
+  {key:'продакт-менеджмент',label:'Продакт-менеджмент'},
+  {key:'игровые системы',label:'Игровые системы'},
+  {key:'мета-игра',alt:'мета-гейм',label:'Мета-игра'},
+  {key:'баланс',label:'Баланс'},
+  {key:'ux/ui-дизайн',label:'UX/UI-Дизайн'},
+  {key:'результат',label:'Результат'}
+];
+function resVal(r,c){ if(!r) return ''; return (r[c.key]|| (c.alt? r[c.alt]:'') ||'').trim(); }
+
 function render(sections){
   var hero=kv((sec(sections,'Hero')||{}).rows);
   var metrics=(sec(sections,'Метрики')||{}).rows||[];
@@ -498,7 +509,7 @@ function render(sections){
   var items=skills.filter(function(s){return s['skill'];}).map(function(s){ return '<a href="#skill-'+slug(s['skill'])+'">'+esc(s['skill'])+' <b>◆</b></a>'; }).join('');
   $('#ticker').innerHTML=items+items;
 
-  /* витрина: порядок из «Порядок витрины», страницы по 6 */
+  /* витрина: страницы по 6, порядок из «Порядок витрины» */
   var orderText=((orderSec&&orderSec.lines)||[]).join(' ');
   var orderNums=orderText.match(/\d+/g)||[];
   var ordered=[];
@@ -525,24 +536,6 @@ function render(sections){
   $('#pages').innerHTML=pagesHtml;
 
   renderTable('id',-1);
-
-  /* таблица результатов: как в контенте, без пересчётов */
-  if(resultsSec && resultsSec.header){
-    var head=resultsSec.header;
-    var thHtml='<tr>'+head.map(function(h,idx){ return '<th class="'+(idx===0?'':'')+'">'+esc(h)+'</th>'; }).join('')+'</tr>';
-    var body=(resultsSec.rows||[]).map(function(r){
-      return '<tr>'+head.map(function(h,idx){
-        var key=h.toLowerCase();
-        var cell=r[key]||'';
-        if(idx===0) return '<td class="rn">'+esc(cell)+'</td>';
-        var lines=splitCell(cell);
-        if(!lines.length) return '<td class="res-cell"><div class="rl-dash">–</div></td>';
-        var isRes=key==='результат';
-        return '<td class="res-cell'+(isRes?' res-final':'')+'">'+richLines(lines,isRes,h)+'</td>';
-      }).join('')+'</tr>';
-    }).join('');
-    $('#resultsTable').innerHTML='<table class="wide"><thead>'+thHtml+'</thead><tbody>'+body+'</tbody></table>';
-  }
 
   /* навыки */
   var srows='', last='';
@@ -602,6 +595,13 @@ function fitLines(){
 var rzT;
 window.addEventListener('resize',function(){ clearTimeout(rzT); rzT=setTimeout(fitLines,150); });
 
+var MON={'янв':1,'фев':2,'мар':3,'апр':4,'май':5,'июн':6,'июл':7,'авг':8,'сен':9,'окт':10,'ноя':11,'дек':12};
+function periodKey(s){
+  var m=String(s).match(/([a-zа-я]+)[^\d]*(\d{4})/i);
+  if(m){ var mm=MON[m[1].toLowerCase()]||0; return (+m[2])*12+mm; }
+  var y=String(s).match(/(\d{4})/);
+  return y? (+y[1])*12 : 0;
+}
 function sortVal(p,key){
   switch(key){
     case 'id': return +p['№']||0;
@@ -612,13 +612,7 @@ function sortVal(p,key){
   }
   return 0;
 }
-var MON={'янв':1,'фев':2,'мар':3,'апр':4,'май':5,'июн':6,'июл':7,'авг':8,'сен':9,'окт':10,'ноя':11,'дек':12};
-function periodKey(s){
-  var m=String(s).match(/([a-zа-я]+)[^\d]*(\d{4})/i);
-  if(m){ var mm=MON[m[1].toLowerCase()]||0; return (+m[2])*12+mm; }
-  var y=String(s).match(/(\d{4})/);
-  return y? (+y[1])*12 : 0;
-}
+/* таблица «Проекты»: 4 базовых колонки + 6 колонок результатов (джойн по имени, алиас TD→Hero Defence) */
 function renderTable(key,dir){
   var rows=DATA.projects.slice().sort(function(a,b){
     var va=sortVal(a,key), vb=sortVal(b,key);
@@ -627,21 +621,33 @@ function renderTable(key,dir){
     return 0;
   });
   var html=rows.map(function(p){
+    var r=resRow(p['проект']);
+    var allDash=!r || RES_COLS.every(function(c){ var v=resVal(r,c); return !v||v==='–'; });
     var plink=p['ссылка на проект']&&p['ссылка на проект']!=='–'?'<a href="'+esc(p['ссылка на проект'])+'" target="_blank" rel="noopener">'+esc(p['проект'])+'</a>':esc(p['проект']);
     var comp=p['ссылка на компанию']&&p['ссылка на компанию']!=='–'?'<a class="comp" href="'+esc(p['ссылка на компанию'])+'" target="_blank" rel="noopener">'+esc(p['компания']||'')+'</a>':'<span class="comp">'+esc(p['компания']||'')+'</span>';
     var term2=(p['срок']||'')+(p['занятость']? ' · '+p['занятость']:'');
+    var resCols=RES_COLS.map(function(c){
+      if(allDash) return '<td class="res-cell"><div class="rl-dash">–</div></td>';
+      var v=resVal(r,c);
+      if(!v||v==='–') return '<td class="res-cell"><div class="rl-dash">–</div></td>';
+      var isRes=c.key==='результат';
+      return '<td class="res-cell'+(isRes?' res-final':'')+'">'+richLines(splitCell(v),isRes,c.label)+'</td>';
+    }).join('');
     return '<tr>'+
       '<td class="left"><span class="pn">'+plink+'</span>'+comp+'<span class="meta">'+esc(p['жанр']||'')+' · '+esc(p['платформа']||'')+' · '+esc(p['монетизация']||'')+'</span></td>'+
       '<td class="td-period"><span class="p-line">'+esc(p['период']||'')+'</span><span class="dim">'+esc(term2)+'</span></td>'+
       '<td>'+badge(p['статус']||'')+'</td>'+
-      '<td class="td-role"><span class="g">'+esc(gradeOf(p))+'</span><span class="r">'+esc(roleOf(p))+'</span></td></tr>';
+      '<td class="td-role"><span class="g">'+esc(gradeOf(p))+'</span><span class="r">'+esc(roleOf(p))+'</span></td>'+
+      resCols+'</tr>';
   }).join('');
   function cls(k,extra){ return (extra?extra+' ':'')+(key===k?(dir<0?'desc':'asc'):''); }
+  var resHead=RES_COLS.map(function(c){ return '<th>'+esc(c.label)+'</th>'; }).join('');
   $('#projTable').innerHTML='<table><thead><tr>'+
     '<th data-key="title" class="'+cls('title','left')+'">Проект</th>'+
     '<th data-key="period" class="'+cls('period')+'">Период</th>'+
     '<th data-key="status" class="'+cls('status')+'">Статус</th>'+
     '<th data-key="grade" class="'+cls('grade')+'">Должность</th>'+
+    resHead+
     '</tr></thead><tbody>'+html+'</tbody></table>';
 }
 function initSort(){
