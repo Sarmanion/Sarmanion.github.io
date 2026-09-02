@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SARVAS – геймдизайнер Василь Сарманаев</title>
-<!-- ID: Site_Build_Final_v18 · OG-превью = covers/logo2.png (лого, не фото) -->
+<!-- ID: Site_Build_Final_v20 -->
 <meta name="description" content="Портфолио гейм-дизайнера Василя Сарманаева (SARVAS). Игровые системы, мета-игра, баланс, UX/UI, документация и прототипы – от концепта до релиза.">
 <meta property="og:title" content="SARVAS – Гейм-дизайнер Василь Сарманаев">
 <meta property="og:description" content="Портфолио гейм-дизайнера полного цикла. Игровые системы, мета-игра, баланс, UX/UI.">
@@ -28,6 +28,8 @@
 @font-face{font-family:'Manrope';font-style:normal;font-weight:400;font-display:swap;src:url('https://cdn.jsdelivr.net/fontsource/fonts/manrope@latest/latin-400-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+2122,U+FEFF,U+FFFD}
 @font-face{font-family:'Manrope';font-style:normal;font-weight:600;font-display:swap;src:url('https://cdn.jsdelivr.net/fontsource/fonts/manrope@latest/cyrillic-600-normal.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
 @font-face{font-family:'Manrope';font-style:normal;font-weight:600;font-display:swap;src:url('https://cdn.jsdelivr.net/fontsource/fonts/manrope@latest/latin-600-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+2122,U+FEFF,U+FFFD}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;font-display:swap;src:url('https://cdn.jsdelivr.net/fontsource/fonts/montserrat@latest/cyrillic-600-normal.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;font-display:swap;src:url('https://cdn.jsdelivr.net/fontsource/fonts/montserrat@latest/latin-600-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+2122,U+FEFF,U+FFFD}
 :root{
   --bg:#0c0a0e; --bg2:#120d16; --panel:#17111c; --panel2:#1d1524;
   --line:#2b2132; --line2:#3a2c44;
@@ -89,11 +91,11 @@ section{content-visibility:auto}
   background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.05) 35%,rgba(255,255,255,.12) 50%,rgba(255,59,92,.08) 62%,transparent 100%);
   filter:blur(14px);mix-blend-mode:screen;animation:glare 9s linear infinite}
 @keyframes glare{from{transform:translateX(0)}to{transform:translateX(320%)}}
-/* ЛОК-АП: SARVAS – эталон ширины; имя и роль тянутся к нему трекингом */
+/* ЛОК-АП: SARVAS – эталон ширины; имя и роль дотягиваются трекингом */
 .lockup-svg{width:min(640px,100%);height:auto;display:block;overflow:visible}
 .lk-brand{font-family:var(--imp);font-size:84px;fill:var(--text)}
-.lk-name{font-family:var(--disp);font-size:34px;fill:var(--text)}
-.lk-role{font-family:var(--disp);font-size:17px;fill:var(--red3)}
+.lk-name{font-family:var(--disp);font-size:36px;fill:var(--text)}
+.lk-role{font-family:'Montserrat',var(--disp);font-size:26px;font-weight:600;fill:var(--red3)}
 .hlead{max-width:640px;color:var(--muted);font-size:17px;margin-top:18px}
 .stats{margin:30px 0 6px;display:grid;gap:16px;max-width:640px}
 .stat{display:grid;grid-template-columns:1fr auto;gap:4px 14px;align-items:end}
@@ -144,7 +146,7 @@ h2 .idx{font-size:.55em;color:var(--red);letter-spacing:.1em}
 .cbody p{color:var(--muted);font-size:14.5px;margin-bottom:16px}
 .clink{font-family:var(--disp);font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-top:auto}
 .clink:hover{text-shadow:0 0 14px rgba(255,59,92,.6)}
-/* стрелки-лычки в гутерах */
+/* стрелки-лычки без круга, в гутерах */
 .sl-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:6;width:52px;height:52px;background:transparent;border:none;color:var(--text);cursor:pointer;display:grid;place-items:center;filter:drop-shadow(0 2px 8px rgba(0,0,0,.7));opacity:.85;transition:opacity .2s,color .2s}
 .sl-btn:hover{opacity:1;color:var(--red3)}
 .sl-btn.prev{left:4px}
@@ -186,6 +188,8 @@ a.cellink:hover{color:var(--red3);border-color:rgba(255,59,92,.5)}
 .rl-compact.res-b{font-weight:800}
 .rl-li{text-align:left;font-size:12.5px;color:var(--muted);margin:2px 0}
 .rl-dash{text-align:center;color:var(--dim)}
+/* SKILLS */
+td.sk-name{text-align:left;color:var(--text);font-weight:700}
 .pips{display:inline-flex;gap:5px;justify-content:center}
 .pips i{width:14px;height:6px;background:var(--line2);transform:skewX(-16deg)}
 .pips i.f{background:linear-gradient(90deg,var(--red2),var(--red3))}
@@ -206,13 +210,14 @@ body[data-view="show"] .tbl-projects{display:none}
 .tl-date{display:block;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:4px 0}
 .tl-role{color:var(--red3);font-weight:600;font-size:14px;margin:0 0 8px}
 .tl p.res{color:var(--muted);font-size:14.5px}
-/* EDU */
-.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.ecard{border:1px solid var(--line);background:var(--panel);padding:22px;transition:border-color .3s}
+/* EDU: 5 в строку на широких */
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+@media (min-width:1100px){.edu{grid-template-columns:repeat(5,1fr)}}
+.ecard{border:1px solid var(--line);background:var(--panel);padding:22px;transition:border-color .3s;display:flex;flex-direction:column}
 .ecard:hover{border-color:var(--red2)}
-.ecard .yr{font-family:var(--disp);color:var(--red);font-size:13px;letter-spacing:.14em}
-.ecard h3{font-size:16px;margin:8px 0 4px}
-.ecard p{color:var(--muted);font-size:13.5px}
+.ecard .yr{display:inline-block;align-self:flex-start;font-family:var(--disp);color:var(--red3);font-size:12px;letter-spacing:.14em;border:1px solid rgba(255,59,92,.4);padding:2px 8px;margin-bottom:10px}
+.ecard h3{font-size:15px;margin:0 0 6px}
+.ecard p{color:var(--muted);font-size:13px}
 /* FOOTER */
 footer{border-top:1px solid var(--line);background:var(--bg2);padding:64px 0 40px}
 .fgrid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
@@ -469,6 +474,15 @@ function richLines(lines,isResult,catName){
   });
   return out.join('');
 }
+function catPct(cell){
+  var lines=splitCell(cell);
+  for(var i=0;i<lines.length;i++){
+    var l=lines[i];
+    if(/^\d+(?:[.,]\d+)?\s?%$/.test(l)) return parseFloat(l);
+    if(l==='–'||l==='-') return null;
+  }
+  return null;
+}
 function cardResult(name){
   var r=resRow(name); if(!r) return '';
   var lines=splitCell(r['результат']||'');
@@ -486,8 +500,7 @@ var RES_COLS=[
   {key:'игровые системы',label:'Игровые системы'},
   {key:'мета-игра',alt:'мета-гейм',label:'Мета-игра'},
   {key:'баланс',label:'Баланс'},
-  {key:'ux/ui-дизайн',label:'UX/UI-Дизайн'},
-  {key:'результат',label:'Результат'}
+  {key:'ux/ui-дизайн',label:'UX/UI-Дизайн'}
 ];
 function resVal(r,c){ if(!r) return ''; return (r[c.key] || (c.alt? r[c.alt]:'') || '').trim(); }
 
@@ -569,11 +582,16 @@ function render(){
 
   renderTable('id',-1);
 
-  /* навыки */
+  /* навыки: авто-скрытие пустых строк и групп */
+  function isEmptySkill(s){
+    var e=(s['experience']||'').trim(), c=(s['cases']||'').trim();
+    return (!e||e==='–') && (!c||c==='–');
+  }
   var srows='', last='';
   skills.forEach(function(s){
-    if(s['group']&&s['group']!==last){ last=s['group']; srows+='<tr class="grp"><td colspan="4">'+esc(s['group'])+'</td></tr>'; }
     if(!s['skill']) return;
+    if(isEmptySkill(s)) return;
+    if(s['group']&&s['group']!==last){ last=s['group']; srows+='<tr class="grp"><td colspan="4">'+esc(s['group'])+'</td></tr>'; }
     var pips='<span class="pips">'+[1,2,3,4,5].map(function(x){return '<i class="'+(x<=+s['level']?'f':'')+'"></i>';}).join('')+'</span>';
     var links=parseLinks(s['cases']);
     var cases;
@@ -582,7 +600,7 @@ function render(){
       var txt=(s['cases']||'').trim();
       cases=(txt&&txt!=='–')? txt.split(';').map(function(t){t=t.trim(); return t? '<span class="casechip">'+esc(t)+'</span>':'';}).join('') : '–';
     }
-    srows+='<tr id="skill-'+slug(s['skill'])+'"><td style="text-align:left" class="pn">'+esc(s['skill'])+'</td><td>'+pips+'</td><td>'+esc(s['experience']||'')+'</td><td class="case" style="text-align:left">'+cases+'</td></tr>';
+    srows+='<tr id="skill-'+slug(s['skill'])+'"><td class="sk-name">'+esc(s['skill'])+'</td><td>'+pips+'</td><td>'+esc(s['experience']||'')+'</td><td class="case" style="text-align:left">'+cases+'</td></tr>';
   });
   $('#skillsTable').innerHTML='<table><thead><tr><th style="text-align:left">Навык</th><th>Уровень</th><th>Опыт</th><th style="text-align:left">Кейсы</th></tr></thead><tbody>'+srows+'</tbody></table>';
 
@@ -607,16 +625,16 @@ function render(){
   initPages(); initViews(); initAnim(); initFlash(); initSort(); initTop(); initLang();
 }
 
-/* ЛОК-АП: SARVAS – эталон ширины; имя и роль тянутся к нему трекингом */
+/* ЛОК-АП: SARVAS – эталон ширины; имя и роль дотягиваются трекингом */
 function buildLockup(hero){
   var brand=hero['brand']||'SARVAS';
   var name=hero['nameview']||hero['name']||'';
   var role=(hero['role']||'').toUpperCase();
   $('#lockup').innerHTML=
-    '<svg class="lockup-svg" viewBox="0 0 640 176" role="img" aria-label="'+esc(brand+' – '+name+' – '+role)+'" overflow="visible">'+
-    '<text id="lkB" x="0" y="80" class="lk-brand">'+esc(brand)+'</text>'+
-    '<text id="lkN" x="0" y="128" class="lk-name">'+esc(name)+'</text>'+
-    '<text id="lkR" x="0" y="166" class="lk-role">'+esc(role)+'</text>'+
+    '<svg class="lockup-svg" viewBox="0 0 640 190" role="img" aria-label="'+esc(brand+' – '+name+' – '+role)+'" overflow="visible">'+
+    '<text id="lkB" x="0" y="84" class="lk-brand">'+esc(brand)+'</text>'+
+    '<text id="lkN" x="0" y="136" class="lk-name">'+esc(name)+'</text>'+
+    '<text id="lkR" x="0" y="178" class="lk-role">'+esc(role)+'</text>'+
     '</svg>';
   fitLockup();
 }
@@ -659,6 +677,7 @@ function sortVal(p,key){
   }
   return 0;
 }
+/* таблица: 2 базовые + 6 результатов; Результат% считается кодом */
 function renderTable(key,dir){
   var rows=DATA.projects.slice().sort(function(a,b){
     var va=sortVal(a,key), vb=sortVal(b,key);
@@ -668,28 +687,40 @@ function renderTable(key,dir){
   });
   var html=rows.map(function(p){
     var r=resRow(p['проект']);
-    var allDash=!r || RES_COLS.every(function(c){ var v=resVal(r,c); return !v||v==='–'; });
+    var sum=0, cnt=0;
+    RES_COLS.forEach(function(c){
+      var pc=catPct(resVal(r,c));
+      if(pc!==null){ sum+=pc; cnt++; }
+    });
+    var resultPct=cnt>0? Math.round(sum/cnt) : null;
     var plink=p['ссылка на проект']&&p['ссылка на проект']!=='–'?'<a href="'+esc(p['ссылка на проект'])+'" target="_blank" rel="noopener">'+esc(p['проект'])+'</a>':esc(p['проект']);
-    var comp=p['ссылка на компанию']&&p['ссылка на компанию']!=='–'?'<a class="comp" href="'+esc(p['ссылка на компанию'])+'" target="_blank" rel="noopener">'+esc(p['компания']||'')+'</a>':'<span class="comp">'+esc(p['компания']||'')+'</span>';
+    var comp=p['ссылка на компанию']&&p['ссылка на компания']||p['ссылка на компанию']&&p['ссылка на компанию']!=='–'?'<a class="comp" href="'+esc(p['ссылка на компанию'])+'" target="_blank" rel="noopener">'+esc(p['компания']||'')+'</a>':'<span class="comp">'+esc(p['компания']||'')+'</span>';
     var term2=(p['срок']||'')+(p['занятость']? ' · '+p['занятость']:'');
     var resCols=RES_COLS.map(function(c){
-      if(allDash) return '<td class="res-cell res-empty"><div class="rl-dash">–</div></td>';
       var v=resVal(r,c);
       if(!v||v==='–') return '<td class="res-cell res-empty"><div class="rl-dash">–</div></td>';
-      var isRes=c.key==='результат';
-      return '<td class="res-cell'+(isRes?' res-final':'')+'">'+richLines(splitCell(v),isRes,c.label)+'</td>';
+      return '<td class="res-cell">'+richLines(splitCell(v),false,c.label)+'</td>';
     }).join('');
+    var resCell;
+    var rv=r? (r['результат']||'') : '';
+    var rlines=splitCell(rv).filter(function(l){ return !/^\d+(?:[.,]\d+)?\s?%$/.test(l); });
+    if(!rv || rlines.length===0){
+      resCell='<td class="res-cell res-empty"><div class="rl-dash">–</div></td>';
+    } else {
+      var head=(resultPct!==null)? '<div class="rl-pct">'+resultPct+'%</div>' : '';
+      resCell='<td class="res-cell res-final">'+head+richLines(rlines,true,'Результат')+'</td>';
+    }
     return '<tr>'+
       '<td class="proj"><span class="pn">'+plink+'</span>'+comp+'<span class="meta">'+esc(p['жанр']||'')+' · '+esc(p['платформа']||'')+' · '+esc(p['монетизация']||'')+'</span><br>'+badge(p['статус']||'')+'</td>'+
       '<td class="td-period"><span class="td-role"><span class="g">'+esc(gradeOf(p))+'</span> <span class="r">'+esc(roleOf(p))+'</span></span><span class="p-line">'+esc(p['период']||'')+'</span><span class="dim">'+esc(term2)+'</span></td>'+
-      resCols+'</tr>';
+      resCols+resCell+'</tr>';
   }).join('');
-  function cls(k){ return key===k?(dir<0?'desc':'asc'):''; }
+  function cls(k,extra){ return (extra?extra+' ':'')+(key===k?(dir<0?'desc':'asc'):''); }
   var resHead=RES_COLS.map(function(c){ return '<th>'+esc(c.label)+'</th>'; }).join('');
   $('#projTable').innerHTML='<table class="wide"><thead><tr>'+
     '<th data-key="title" class="'+cls('title')+'">Проект</th>'+
     '<th data-key="period" class="'+cls('period')+'">Период · Роль</th>'+
-    resHead+
+    resHead+'<th>Результат</th>'+
     '</tr></thead><tbody>'+html+'</tbody></table>';
 }
 function initSort(){
