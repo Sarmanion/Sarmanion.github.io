@@ -4,16 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SARVAS – геймдизайнер Василь Сарманаев</title>
-<!-- ID: Site_Build_Final_v16
-     v16: SVG-lockup (textLength), стрелки-лычки без круга в гутерах, жанр белый,
-     бейдж статуса inline+clone, результаты по РЕГЛАМЕНТ v14 §15. -->
+<!-- ID: Site_Build_Final_v18 · OG-превью = covers/logo2.png (лого, не фото) -->
 <meta name="description" content="Портфолио гейм-дизайнера Василя Сарманаева (SARVAS). Игровые системы, мета-игра, баланс, UX/UI, документация и прототипы – от концепта до релиза.">
 <meta property="og:title" content="SARVAS – Гейм-дизайнер Василь Сарманаев">
 <meta property="og:description" content="Портфолио гейм-дизайнера полного цикла. Игровые системы, мета-игра, баланс, UX/UI.">
 <meta property="og:url" content="https://sarvasgd.github.io/CV/">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://sarvasgd.github.io/CV/covers/photo.jpg">
+<meta property="og:image" content="https://sarvasgd.github.io/CV/covers/logo2.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SARVAS Game Design – логотип">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SARVAS – Гейм-дизайнер Василь Сарманаев">
+<meta name="twitter:description" content="Портфолио гейм-дизайнера полного цикла. Игровые системы, мета-игра, баланс, UX/UI.">
+<meta name="twitter:image" content="https://sarvasgd.github.io/CV/covers/logo2.png">
 <link rel="icon" type="image/png" href="covers/logo.png">
 <meta name="theme-color" content="#0c0a0e">
 <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/imperial">
@@ -85,7 +89,7 @@ section{content-visibility:auto}
   background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.05) 35%,rgba(255,255,255,.12) 50%,rgba(255,59,92,.08) 62%,transparent 100%);
   filter:blur(14px);mix-blend-mode:screen;animation:glare 9s linear infinite}
 @keyframes glare{from{transform:translateX(0)}to{transform:translateX(320%)}}
-/* SVG-lockup: три строки одной ширины */
+/* ЛОК-АП: SARVAS – эталон ширины; имя и роль тянутся к нему трекингом */
 .lockup-svg{width:min(640px,100%);height:auto;display:block;overflow:visible}
 .lk-brand{font-family:var(--imp);font-size:84px;fill:var(--text)}
 .lk-name{font-family:var(--disp);font-size:34px;fill:var(--text)}
@@ -116,7 +120,7 @@ h2 .idx{font-size:.55em;color:var(--red);letter-spacing:.1em}
 .vmode{margin-left:auto;display:flex;gap:8px}
 .vmode button{font-family:var(--disp);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);background:var(--panel);border:1px solid var(--line2);padding:8px 14px;cursor:pointer;transition:color .2s,border-color .2s}
 .vmode button.active{color:var(--red3);border-color:rgba(255,59,92,.5)}
-/* CARDS / PAGES + гутеры под стрелки */
+/* CARDS / PAGES */
 .pages-wrap{position:relative;padding:0 64px}
 .pages{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
 .pages::-webkit-scrollbar{display:none}
@@ -140,7 +144,7 @@ h2 .idx{font-size:.55em;color:var(--red);letter-spacing:.1em}
 .cbody p{color:var(--muted);font-size:14.5px;margin-bottom:16px}
 .clink{font-family:var(--disp);font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-top:auto}
 .clink:hover{text-shadow:0 0 14px rgba(255,59,92,.6)}
-/* стрелки-лычки: без круга, крупные, в гутерах */
+/* стрелки-лычки в гутерах */
 .sl-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:6;width:52px;height:52px;background:transparent;border:none;color:var(--text);cursor:pointer;display:grid;place-items:center;filter:drop-shadow(0 2px 8px rgba(0,0,0,.7));opacity:.85;transition:opacity .2s,color .2s}
 .sl-btn:hover{opacity:1;color:var(--red3)}
 .sl-btn.prev{left:4px}
@@ -167,7 +171,7 @@ td.proj{text-align:center}
 .comp{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red3);opacity:.8;margin-top:4px}
 a.comp:hover{opacity:1;text-decoration:underline}
 .meta{display:block;font-size:12px;color:var(--dim);font-weight:400;margin-top:3px}
-.badge{display:inline;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:3px 8px;line-height:1.7;font-family:var(--disp);font-size:10px;letter-spacing:.14em;text-transform:uppercase;border:1px solid;background:rgba(12,10,14,.5);margin-top:6px}
+.badge{display:inline-block;padding:4px 10px;font-family:var(--disp);font-size:10px;letter-spacing:.14em;text-transform:uppercase;border:1px solid;background:rgba(12,10,14,.5);margin-top:6px;text-wrap:balance}
 .td-period .td-role{display:block;margin-bottom:6px}
 .td-period .g,.td-period .r{color:var(--text);font-weight:600}
 .td-period .p-line{display:block;white-space:nowrap}
@@ -441,7 +445,7 @@ function resRow(name){
   for(var k in RES){ if(k===base || base.indexOf(k)===0 || k.indexOf(base)===0) return RES[k]; }
   return null;
 }
-/* РЕГЛАМЕНТ v14 §15: % и чип – центр; компакт и подпункты – лево; компакт в Результат – жирный */
+/* РЕГЛАМЕНТ v14 §15: % и чип – центр; компакт и подпункты – лево; компакт жирный только в «Результат» */
 function richLines(lines,isResult,catName){
   var out=[];
   lines.forEach(function(line){
@@ -514,16 +518,7 @@ function render(){
   $('#hName').textContent=hero['nameview']||hero['name']||'';
   $('#hTag').textContent=hero['tagline']||'';
 
-  /* SVG-lockup: три строки одной ширины (textLength) */
-  var W=640;
-  var brand=hero['brand']||'SARVAS';
-  var name=hero['nameview']||hero['name']||'';
-  var role=(hero['role']||'').toUpperCase();
-  $('#lockup').innerHTML='<svg class="lockup-svg" viewBox="0 0 '+W+' 176" role="img" aria-label="'+esc(brand+' – '+name+' – '+role)+'">'
-    +'<text x="0" y="80" class="lk-brand" textLength="'+W+'" lengthAdjust="spacing">'+esc(brand)+'</text>'
-    +'<text x="0" y="128" class="lk-name" textLength="'+W+'" lengthAdjust="spacing">'+esc(name)+'</text>'
-    +'<text x="0" y="166" class="lk-role" textLength="'+W+'" lengthAdjust="spacing">'+esc(role)+'</text>'
-    +'</svg>';
+  buildLockup(hero);
 
   $('#hStats').innerHTML=metrics.map(function(m){
     var val=parseFloat(m['value'])||0, max=parseFloat(m['max'])||0;
@@ -612,6 +607,43 @@ function render(){
   initPages(); initViews(); initAnim(); initFlash(); initSort(); initTop(); initLang();
 }
 
+/* ЛОК-АП: SARVAS – эталон ширины; имя и роль тянутся к нему трекингом */
+function buildLockup(hero){
+  var brand=hero['brand']||'SARVAS';
+  var name=hero['nameview']||hero['name']||'';
+  var role=(hero['role']||'').toUpperCase();
+  $('#lockup').innerHTML=
+    '<svg class="lockup-svg" viewBox="0 0 640 176" role="img" aria-label="'+esc(brand+' – '+name+' – '+role)+'" overflow="visible">'+
+    '<text id="lkB" x="0" y="80" class="lk-brand">'+esc(brand)+'</text>'+
+    '<text id="lkN" x="0" y="128" class="lk-name">'+esc(name)+'</text>'+
+    '<text id="lkR" x="0" y="166" class="lk-role">'+esc(role)+'</text>'+
+    '</svg>';
+  fitLockup();
+}
+function fitLockup(){
+  var b=$('#lkB'), n=$('#lkN'), r=$('#lkR');
+  if(!b || !b.getComputedTextLength) return;
+  b.removeAttribute('textLength');
+  if(n) n.removeAttribute('textLength');
+  if(r) r.removeAttribute('textLength');
+  var wb=b.getComputedTextLength()||0;
+  var wn=n? (n.getComputedTextLength()||0) : 0;
+  var wr=r? (r.getComputedTextLength()||0) : 0;
+  var target=Math.max(wb,wn,wr);
+  if(target<=0) return;
+  [[n,wn],[r,wr]].forEach(function(pair){
+    var t=pair[0], w=pair[1];
+    if(t && w>0 && w<target-1){
+      t.setAttribute('textLength',target);
+      t.setAttribute('lengthAdjust','spacing');
+    }
+  });
+}
+var lkT;
+window.addEventListener('resize',function(){ clearTimeout(lkT); lkT=setTimeout(fitLockup,150); });
+window.addEventListener('load',function(){ fitLockup(); setTimeout(fitLockup,300); });
+if(document.fonts && document.fonts.ready){ document.fonts.ready.then(fitLockup).catch(function(){}); }
+
 var MON={'янв':1,'фев':2,'мар':3,'апр':4,'май':5,'июн':6,'июл':7,'авг':8,'сен':9,'окт':10,'ноя':11,'дек':12};
 function periodKey(s){
   var m=String(s).match(/([a-zа-я]+)[^\d]*(\d{4})/i);
@@ -627,7 +659,6 @@ function sortVal(p,key){
   }
   return 0;
 }
-/* таблица: Проект (центр) + Период·Роль (центр) + 6 результатов */
 function renderTable(key,dir){
   var rows=DATA.projects.slice().sort(function(a,b){
     var va=sortVal(a,key), vb=sortVal(b,key);
@@ -671,7 +702,6 @@ function initSort(){
     renderTable(key,dir);
   });
 }
-/* кольцо: клоны первой/последней страниц, тихий jump на скролл-энд */
 function initPages(){
   var el=$('#pages'); if(!el) return;
   var pages=Array.prototype.slice.call(el.children);
