@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SARVAS – геймдизайнер Василь Сарманаев</title>
-<!-- ID: Site_Build_Final_v20 -->
+<!-- ID: Site_Build_Final_v21 · якоря #gallery/#results, образование реверсом в коде -->
 <meta name="description" content="Портфолио гейм-дизайнера Василя Сарманаева (SARVAS). Игровые системы, мета-игра, баланс, UX/UI, документация и прототипы – от концепта до релиза.">
 <meta property="og:title" content="SARVAS – Гейм-дизайнер Василь Сарманаев">
 <meta property="og:description" content="Портфолио гейм-дизайнера полного цикла. Игровые системы, мета-игра, баланс, UX/UI.">
@@ -190,6 +190,7 @@ a.cellink:hover{color:var(--red3);border-color:rgba(255,59,92,.5)}
 .rl-dash{text-align:center;color:var(--dim)}
 /* SKILLS */
 td.sk-name{text-align:left;color:var(--text);font-weight:700}
+tr.grp td{background:var(--bg2);color:var(--red3);font-family:var(--disp);font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:10px 16px;text-align:left;cursor:default}
 .pips{display:inline-flex;gap:5px;justify-content:center}
 .pips i{width:14px;height:6px;background:var(--line2);transform:skewX(-16deg)}
 .pips i.f{background:linear-gradient(90deg,var(--red2),var(--red3))}
@@ -302,7 +303,7 @@ footer{border-top:1px solid var(--line);background:var(--bg2);padding:64px 0 40p
           <button id="vTable" aria-label="Показать проекты и результаты в виде таблицы">Результаты</button>
         </div>
       </div>
-      <div class="show-wrap reveal">
+      <div class="show-wrap reveal" id="gallery">
         <div class="pages-wrap">
           <div class="pages" id="pages"></div>
           <button class="sl-btn prev" id="slPrev" aria-label="Предыдущая страница проектов"><svg viewBox="0 0 24 24"><polyline points="16 5 9 12 16 19"/><polyline points="11 8 7.5 12 11 16"/></svg></button>
@@ -513,7 +514,7 @@ function render(){
   var resultsSec=sec('Проекты-Результаты');
   var orderSec=sec('Порядок витрины');
   var exp=(sec('Опыт')||{}).rows||[];
-  var edu=(sec('Образование')||{}).rows||[];
+  var edu=((sec('Образование')||{}).rows||[]).slice().reverse(); /* от раннего к поздним – в коде */
   var contacts=(sec('Контакты')||{}).rows||[];
   var statuses=(sec('Статусы')||{}).rows||[];
   var footer=kv((sec('Футер')||{}).rows);
@@ -623,6 +624,7 @@ function render(){
   $('#fCopy').innerHTML='<span>'+esc(footer['copy']||'')+'</span><span>'+esc(footer['geo']||'')+'</span>';
 
   initPages(); initViews(); initAnim(); initFlash(); initSort(); initTop(); initLang();
+  applyHash();
 }
 
 /* ЛОК-АП: SARVAS – эталон ширины; имя и роль дотягиваются трекингом */
@@ -694,7 +696,7 @@ function renderTable(key,dir){
     });
     var resultPct=cnt>0? Math.round(sum/cnt) : null;
     var plink=p['ссылка на проект']&&p['ссылка на проект']!=='–'?'<a href="'+esc(p['ссылка на проект'])+'" target="_blank" rel="noopener">'+esc(p['проект'])+'</a>':esc(p['проект']);
-    var comp=p['ссылка на компанию']&&p['ссылка на компания']||p['ссылка на компанию']&&p['ссылка на компанию']!=='–'?'<a class="comp" href="'+esc(p['ссылка на компанию'])+'" target="_blank" rel="noopener">'+esc(p['компания']||'')+'</a>':'<span class="comp">'+esc(p['компания']||'')+'</span>';
+    var comp=p['ссылка на компанию']&&p['ссылка на компанию']!=='–'?'<a class="comp" href="'+esc(p['ссылка на компанию'])+'" target="_blank" rel="noopener">'+esc(p['компания']||'')+'</a>':'<span class="comp">'+esc(p['компания']||'')+'</span>';
     var term2=(p['срок']||'')+(p['занятость']? ' · '+p['занятость']:'');
     var resCols=RES_COLS.map(function(c){
       var v=resVal(r,c);
@@ -764,16 +766,30 @@ function bindArrows(el){
   if(nx) nx.addEventListener('click',function(){ el.scrollTo({left:el.scrollLeft+step(),behavior:RM?'auto':'smooth'}); });
   if(pv) pv.addEventListener('click',function(){ el.scrollTo({left:el.scrollLeft-step(),behavior:RM?'auto':'smooth'}); });
 }
+/* якоря: #gallery → витрина, #results → таблица */
+function setView(x,push){
+  document.body.dataset.view=x; localStorage.setItem('sarvasView',x);
+  var a=$('#vShow'), b=$('#vTable');
+  if(a) a.classList.toggle('active',x==='show');
+  if(b) b.classList.toggle('active',x==='table');
+  if(push){ try{ history.replaceState(null,'', x==='table' ? '#results' : '#gallery'); }catch(e){} }
+}
+function scrollToEl(el){
+  if(!el) return;
+  setTimeout(function(){ el.scrollIntoView({behavior:RM?'auto':'smooth',block:'start'}); },60);
+}
+function applyHash(){
+  var h=location.hash;
+  if(h==='#results'){ setView('table',false); scrollToEl($('#projTable')); }
+  else if(h==='#gallery'){ setView('show',false); scrollToEl($('#gallery')); }
+}
+window.addEventListener('hashchange',applyHash);
 function initViews(){
   var v=localStorage.getItem('sarvasView')||'show';
-  function set(x){ document.body.dataset.view=x; localStorage.setItem('sarvasView',x);
-    var a=$('#vShow'), b=$('#vTable');
-    if(a) a.classList.toggle('active',x==='show');
-    if(b) b.classList.toggle('active',x==='table'); }
+  setView(v,false);
   var a=$('#vShow'), b=$('#vTable');
-  if(a) a.addEventListener('click',function(){set('show');});
-  if(b) b.addEventListener('click',function(){set('table');});
-  set(v);
+  if(a) a.addEventListener('click',function(){ setView('show',true); });
+  if(b) b.addEventListener('click',function(){ setView('table',true); });
 }
 function initLang(){
   var b=$('#langBtn'); if(!b) return;
